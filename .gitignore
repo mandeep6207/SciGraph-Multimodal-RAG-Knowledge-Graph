@@ -1,12 +1,75 @@
-# Ignore local test data 
-data/
+# ==============================================================================
+# SciGraph :: Git Ignore Configuration
+# ==============================================================================
 
-# Ignore Python compiled bytecode (this is what that new folder is)
-**/__pycache__/
-*.pyc
-
-# Ignore local models/caches
-.cache/
-
-# Ignore .env
+# Secrets, Environment & Credentials
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.token
+
+# Python compiled bytecode & runtime cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Dependencies & Build Artifacts
+node_modules/
+dist/
+build/
+*.egg-info/
+
+# Local cache & temporary files
+.cache/
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+chrome_temp/
+screenshots/chrome_temp/
+
+# Redundant temporary migration artifacts
+orig_frontend_*
+backup_checkpoint/
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Large intermediate ingestion outputs (optional: keep knowledge graph data/rag_storage)
+data/uploads/*
+!data/uploads/.gitkeep
+data/output/*
+!data/output/.gitkeep
+data/benchmark_test_files/
+data/rag_storage/parser_cache/

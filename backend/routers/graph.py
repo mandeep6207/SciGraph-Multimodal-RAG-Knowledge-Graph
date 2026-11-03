@@ -1,3 +1,4 @@
+import time
 import logging
 import re
 from typing import Optional
@@ -22,7 +23,7 @@ class QueryRequest(BaseModel):
     query: Optional[str] = None
     mode: str = "mix"
     only_need_context: bool = False
-    return_nodes: bool = False
+    return_nodes: bool = True
 
     def get_query_text(self) -> str:
         text = self.question or self.query or ""
@@ -63,6 +64,7 @@ async def query(req: QueryRequest):
     if not query_text:
         raise HTTPException(status_code=400, detail="Query or question text is required")
 
+    t0 = time.time()
     capture = QueryLogCapture() if req.return_nodes else None
     if capture:
         for name in ["lightrag", "raganything"]:
@@ -94,15 +96,19 @@ async def query(req: QueryRequest):
             for name in ["lightrag", "raganything"]:
                 logging.getLogger(name).removeHandler(capture)
 
+    latency_ms = round((time.time() - t0) * 1000, 1)
+
     if req.only_need_context:
         ctx = str(answer) if answer else "No relevant information found."
-        return {"context": ctx, "mode": req.mode}
+        return {"context": ctx, "mode": req.mode, "latency_ms": latency_ms}
 
     ans_str = str(answer) if answer else "No results found."
     result: dict = {
         "answer": ans_str,
         "response": ans_str,
         "mode": req.mode,
+        "latency_ms": latency_ms,
+        "retrieved_nodes": capture.entity_names if capture else [],
     }
 
     if req.return_nodes and capture:

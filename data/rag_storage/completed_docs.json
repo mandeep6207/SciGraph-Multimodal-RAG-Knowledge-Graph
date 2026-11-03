@@ -1,0 +1,210 @@
+{
+  "quantum_coherence_topological_qubits.pdf": {
+    "chunks": 1,
+    "nodes": 6,
+    "relations": 0,
+    "finished_at": 1793741004.0989664,
+    "timings": {
+      "extracting": 0.032,
+      "chunking": 0.023,
+      "embedding": 0.005,
+      "indexing": 0.006,
+      "total": 0.07
+    }
+  },
+  "monoclonal_antibody_purification_protocol.docx": {
+    "chunks": 3,
+    "nodes": 6,
+    "relations": 0,
+    "finished_at": 1793741004.0964563,
+    "timings": {
+      "extracting": 0.055,
+      "chunking": 0.001,
+      "embedding": 0.003,
+      "indexing": 0.004,
+      "total": 0.06
+    }
+  },
+  "patient_biomarker_cohort_longitudinal.csv": {
+    "chunks": 1,
+    "nodes": 7415913,
+    "relations": 0,
+    "finished_at": 1793741004.1724815,
+    "timings": {
+      "extracting": 0.004,
+      "chunking": 0.016,
+      "embedding": 0.002,
+      "indexing": 0.002,
+      "total": 0.02
+    }
+  },
+  "small_molecule_kinase_inhibitor_screening.xlsx": {
+    "chunks": 1,
+    "nodes": 6,
+    "relations": 0,
+    "finished_at": 1793741004.212339,
+    "timings": {
+      "extracting": 0.02,
+      "chunking": 0.038,
+      "embedding": 0.002,
+      "indexing": 0.003,
+      "total": 0.06
+    }
+  },
+  "gravitational_wave_merger_astrophysics.pptx": {
+    "chunks": 1,
+    "nodes": 2,
+    "relations": 0,
+    "finished_at": 1793741004.2102256,
+    "timings": {
+      "extracting": 0.025,
+      "chunking": 0.032,
+      "embedding": 0.001,
+      "indexing": 0.002,
+      "total": 0.06
+    }
+  },
+  "riemannian_metric_geodesic_flow.tex": {
+    "chunks": 1,
+    "nodes": 4,
+    "relations": 0,
+    "finished_at": 1793741004.292911,
+    "timings": {
+      "extracting": 0.0,
+      "chunking": 0.032,
+      "embedding": 0.003,
+      "indexing": 0.004,
+      "total": 0.04
+    }
+  },
+  "long_term_potentiation_nmda_plasticity.md": {
+    "chunks": 1,
+    "nodes": 5,
+    "relations": 0,
+    "finished_at": 1793741004.2902455,
+    "timings": {
+      "extracting": 0.0,
+      "chunking": 0.032,
+      "embedding": 0.002,
+      "indexing": 0.003,
+      "total": 0.04
+    }
+  },
+  "single_cell_transcriptomics_pathways.html": {
+    "chunks": 2,
+    "nodes": 4,
+    "relations": 0,
+    "finished_at": 1793741004.2913153,
+    "timings": {
+      "extracting": 0.0,
+      "chunking": 0.032,
+      "embedding": 0.003,
+      "indexing": 0.003,
+      "total": 0.04
+    }
+  },
+  "tandem_mass_spectrometry_proteomics.json": {
+    "chunks": 1,
+    "nodes": 5,
+    "relations": 0,
+    "finished_at": 1793741004.3821986,
+    "timings": {
+      "extracting": 0.002,
+      "chunking": 0.028,
+      "embedding": 0.001,
+      "indexing": 0.001,
+      "total": 0.03
+    }
+  },
+  "crispr_cas9_base_editing_oncology.pdf": {
+    "chunks": 1,
+    "nodes": 0,
+    "relations": 0,
+    "finished_at": 1793741004.0948343,
+    "timings": {
+      "extracting": 0.032,
+      "chunking": 0.024,
+      "embedding": 0.002,
+      "indexing": 0.003,
+      "total": 0.06
+    }
+  },
+  "GA-Unit-3.pdf": {
+    "chunks": 6,
+    "nodes": 6,
+    "relations": 0,
+    "finished_at": 1793742787.4565942,
+    "timings": {
+      "extracting": 0.005,
+      "chunking": 0.022,
+      "embedding": 0.002,
+      "indexing": 0.002,
+      "total": 0.03
+    }
+  },
+  "GA-Unit-2.pdf": {
+    "chunks": 6,
+    "nodes": 3,
+    "relations": 0,
+    "finished_at": 1793742787.457264,
+    "timings": {
+      "extracting": 0.007,
+      "chunking": 0.022,
+      "embedding": 0.002,
+      "indexing": 0.002,
+      "total": 0.03
+    }
+  },
+  "GA-Unit-4.pdf": {
+    "chunks": 6,
+    "nodes": 94,
+    "relations": 0,
+    "finished_at": 1793742787.5770447,
+    "timings": {
+      "extracting": 0.003,
+      "chunking": 0.028,
+      "embedding": 0.001,
+      "indexing": 0.002,
+      "total": 0.03
+    }
+  },
+  "GA-Unit-5.pdf": {
+    "chunks": 3,
+    "nodes": 3,
+    "relations": 0,
+    "finished_at": 1793742787.578389,
+    "timings": {
+      "extracting": 0.003,
+      "chunking": 0.027,
+      "embedding": 0.002,
+      "indexing": 0.002,
+      "total": 0.03
+    }
+  },
+  "GA-Unit-1.pdf": {
+    "chunks": 15,
+    "nodes": 31,
+    "relations": 27,
+    "finished_at": 1793742990.5274065,
+    "timings": {
+      "extracting": 0.006,
+      "chunking": 0.002,
+      "embedding": 91.434,
+      "indexing": 111.753,
+      "total": 203.2
+    }
+  },
+  "Deep_Learning_and_Applications_Question_Bank.pdf": {
+    "chunks": 1,
+    "nodes": 0,
+    "relations": 0,
+    "finished_at": 1793746914.2320745,
+    "timings": {
+      "extracting": 0.203,
+      "chunking": 0.023,
+      "embedding": 3.153,
+      "indexing": 3.854,
+      "total": 7.23
+    }
+  }
+}

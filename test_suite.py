@@ -1,5 +1,5 @@
 """
-Comprehensive Test Suite for The Brain
+Comprehensive Test Suite for SciGraph — Scientific Intelligence Workspace
 Tests every API endpoint, router, background job system, graph manager, reranker, and providers.
 
 Run with:
@@ -89,7 +89,7 @@ def run_tests():
     global passed, failed
 
     print("=" * 70)
-    print("RUNNING COMPREHENSIVE AUDIT & TEST SUITE FOR THE BRAIN")
+    print("RUNNING COMPREHENSIVE AUDIT & TEST SUITE FOR SCIGRAPH")
     print("=" * 70)
 
     # Set mock RAG BEFORE creating TestClient (lifespan skips in TESTING mode,
@@ -108,7 +108,7 @@ def run_tests():
     resp = client.get("/")
     assert_test(
         "GET / (Root HTML)",
-        resp.status_code == 200 and "THE BRAIN" in resp.text.upper(),
+        resp.status_code == 200 and "SCIGRAPH" in resp.text.upper(),
         f"-> status={resp.status_code}",
     )
 

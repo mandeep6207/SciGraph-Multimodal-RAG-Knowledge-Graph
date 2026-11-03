@@ -4,6 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Project root directory (dynamic resolution - avoids hardcoded drive letters)
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Application Identity
+APP_NAME = "SciGraph"
+APP_FULL_TITLE = "SciGraph — Scientific Intelligence Workspace"
+APP_TAGLINE = "Explore Research. Connect Knowledge. Discover What's Next."
+
 # Engine selection
 LLM_ENGINE = os.getenv("LLM_ENGINE", "ollama").lower()
 
@@ -19,9 +27,9 @@ RERANKER_BASE_URL = os.getenv("RERANKER_BASE_URL", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "sk-no-key-required")
 
 # Model names
-LLM_MODEL = os.getenv("LLM_MODEL", "qwen3.5:9b")
-VISION_MODEL = os.getenv("VISION_MODEL", "qwen2.5vl:latest")
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "qwen3-embedding:8b")
+LLM_MODEL = os.getenv("LLM_MODEL", "qwen2.5:3b")
+VISION_MODEL = os.getenv("VISION_MODEL", "")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "nomic-embed-text")
 RERANKER_MODEL = os.getenv("RERANKER_MODEL", "BAAI/bge-reranker-v2-m3")
 
 # Model settings
@@ -45,22 +53,55 @@ RERANK_BY_DEFAULT = os.getenv("RERANK_BY_DEFAULT", "false").lower() in ("true", 
 
 # Neo4j & Graph Storage
 GRAPH_STORAGE = os.getenv("GRAPH_STORAGE", "Neo4JStorage")
-NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://127.0.0.1:7687")
 NEO4J_USERNAME = os.getenv("NEO4J_USERNAME", "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "")
 NEO4J_DATABASE = os.getenv("NEO4J_DATABASE", "neo4j")
 
-# Filestructure
-WORKING_DIR = os.getenv("WORKING_DIR", "/app/rag_storage")
-UPLOAD_DIR = os.getenv("UPLOAD_DIR", "/app/uploads")
-OUTPUT_DIR = os.getenv("OUTPUT_DIR", "/app/output")
+# Safe dynamic path resolution
+def _resolve_dir(env_val: str, default_rel: str) -> str:
+    if env_val and env_val.strip():
+        p = Path(env_val.strip())
+        if p.is_absolute():
+            # If path points to obsolete folder or parent does not exist, fall back to current workspace
+            if "The-Brain" in str(p) or not p.parent.exists():
+                return str(BASE_DIR / default_rel)
+            return str(p)
+        return str(BASE_DIR / p)
+    return str(BASE_DIR / default_rel)
+
+WORKING_DIR = _resolve_dir(os.getenv("WORKING_DIR", ""), "data/rag_storage")
+UPLOAD_DIR = _resolve_dir(os.getenv("UPLOAD_DIR", ""), "data/uploads")
+OUTPUT_DIR = _resolve_dir(os.getenv("OUTPUT_DIR", ""), "data/output")
 PARSER = os.getenv("PARSER", "mineru")
 
 # Persistent files
 HIDDEN_TYPES_FILE = Path(WORKING_DIR) / "hidden_types.json"
 CONV_FILE = Path(WORKING_DIR) / "conversations.json"
 COMPLETED_LOG = Path(WORKING_DIR) / "completed_docs.json"
+PROFILE_FILE = Path(WORKING_DIR) / "profile.json"
+WORKSPACES_FILE = Path(WORKING_DIR) / "workspaces.json"
 
-# Document settings
-ALLOWED_EXTENSIONS = {".pdf", ".docx", ".doc", ".txt", ".md", ".pptx", ".xlsx"}
+# Document settings & Universal Format Support
+ALLOWED_EXTENSIONS = {
+    # PDF
+    ".pdf",
+    # Images
+    ".png", ".jpg", ".jpeg", ".webp", ".tiff", ".bmp",
+    # Word
+    ".docx", ".doc",
+    # Excel & Tabular
+    ".xlsx", ".xls", ".csv",
+    # PowerPoint
+    ".pptx", ".ppt",
+    # LaTeX & Scientific References
+    ".tex", ".bib",
+    # Text & Documents
+    ".txt", ".md", ".rtf",
+    # Web Formats
+    ".html", ".htm",
+    # Structured Data
+    ".json", ".xml",
+}
 MAX_UPLOAD_BYTES = 500 * 1024 * 1024  # 500 MB
+MAX_CONCURRENT_INGESTIONS = int(os.getenv("MAX_CONCURRENT_INGESTIONS", "3"))

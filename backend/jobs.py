@@ -9,11 +9,12 @@ from pathlib import Path
 
 
 @dataclass
-# Job structure
 class Job:
     id: str
     filename: str
-    status: str = "queued"
+    status: str = "queued"          # queued, extracting, chunking, embedding, indexing, done, failed, cancelled
+    stage: str = "queued"           # current processing stage
+    progress: int = 0               # 0 to 100 percentage
     created_at: float = field(default_factory=time.time)
     started_at: float = 0.0
     finished_at: float = 0.0
@@ -25,9 +26,30 @@ class Job:
     block_types: dict = field(default_factory=dict)
     multimodal_progress: int = 0
     multimodal_total: int = 0
+    cancelled: bool = False
+    file_path: str = ""
+    file_size: int = 0
+    stage_timings: dict = field(default_factory=lambda: {
+        "extracting": 0.0,
+        "chunking": 0.0,
+        "embedding": 0.0,
+        "indexing": 0.0,
+        "total": 0.0
+    })
 
-    def push(self, kind: str, message: str, **extra):
-        event = {"kind": kind, "message": message, "ts": time.time(), **extra}
+    def push(self, kind: str, message: str, stage: str = None, progress: int = None, **extra):
+        if stage:
+            self.stage = stage
+        if progress is not None:
+            self.progress = progress
+        event = {
+            "kind": kind,
+            "message": message,
+            "stage": self.stage,
+            "progress": self.progress,
+            "ts": time.time(),
+            **extra
+        }
         self.events.append(event)
         if kind == "chunk":
             self.chunks += 1
@@ -42,6 +64,8 @@ class Job:
             "job_id": self.id,
             "filename": self.filename,
             "status": self.status,
+            "stage": self.stage,
+            "progress": self.progress,
             "created_at": self.created_at,
             "started_at": self.started_at,
             "finished_at": self.finished_at,
@@ -52,10 +76,13 @@ class Job:
             "block_types": self.block_types,
             "multimodal_progress": self.multimodal_progress,
             "multimodal_total": self.multimodal_total,
+            "cancelled": self.cancelled,
+            "file_size": self.file_size,
+            "stage_timings": self.stage_timings,
         }
 
 
-# Logging
+# Logging Handler for LightRAG events
 class JobLogHandler(logging.Handler):
     """Parses LightRAG/MinerU logs to track node, relation, and chunk progress."""
 
@@ -138,15 +165,16 @@ class JobManager:
         self.working_dir = Path(working_dir)
         self.completed_log = self.working_dir / "completed_docs.json"
 
-        # State variables that used to be globals
+        # Jobs and queue management
         self.jobs: dict[str, Job] = {}
-        self.jobs_order: deque = deque(maxlen=50)
+        self.jobs_order: deque = deque(maxlen=100)
         self.processing_queue: deque[tuple[Job, str]] = deque()
+        self.active_jobs: dict[str, Job] = {}
         self.queue_paused: bool = False
         self.current_job: Job | None = None
 
     def load_completed(self) -> dict:
-        """Load {filename: {chunks, nodes, relations, finished_at}} from disk."""
+        """Load {filename: {chunks, nodes, relations, finished_at, timings}} from disk."""
         try:
             if self.completed_log.exists():
                 return json.loads(self.completed_log.read_text(encoding="utf-8"))
@@ -155,7 +183,7 @@ class JobManager:
         return {}
 
     def save_completed(
-        self, filename: str, chunks: int, nodes: int, relations: int, finished_at: float
+        self, filename: str, chunks: int, nodes: int, relations: int, finished_at: float, timings: dict = None
     ):
         """Append a successfully completed doc to the persistent log."""
         try:
@@ -166,6 +194,7 @@ class JobManager:
                 "nodes": nodes,
                 "relations": relations,
                 "finished_at": finished_at,
+                "timings": timings or {},
             }
             self.completed_log.write_text(json.dumps(docs, indent=2), encoding="utf-8")
         except Exception as e:
@@ -173,9 +202,9 @@ class JobManager:
                 f"Could not save completed_docs.json: {e}"
             )
 
-    def new_job(self, filename: str) -> Job:
+    def new_job(self, filename: str, file_path: str = "", file_size: int = 0) -> Job:
         """Create a new job and push it to the tracking system."""
-        job = Job(id=str(uuid.uuid4()), filename=filename)
+        job = Job(id=str(uuid.uuid4()), filename=filename, file_path=file_path, file_size=file_size)
         self.jobs[job.id] = job
         self.jobs_order.append(job.id)
 
@@ -185,6 +214,72 @@ class JobManager:
             if jid not in live_ids:
                 del self.jobs[jid]
         return job
+
+    def cancel_job(self, job_id: str) -> bool:
+        """Cancel a queued or active job."""
+        if job_id not in self.jobs:
+            return False
+        job = self.jobs[job_id]
+        job.cancelled = True
+        job.status = "cancelled"
+        job.stage = "cancelled"
+        job.push("cancelled", "Job cancelled by user", stage="cancelled", progress=0)
+
+        # Remove from queue if present
+        self.processing_queue = deque(
+            [item for item in self.processing_queue if item[0].id != job_id]
+        )
+        if job_id in self.active_jobs:
+            del self.active_jobs[job_id]
+        return True
+
+    def retry_job(self, job_id: str) -> bool:
+        """Retry a failed or cancelled job."""
+        if job_id not in self.jobs:
+            return False
+        job = self.jobs[job_id]
+        if not job.file_path or not Path(job.file_path).exists():
+            return False
+
+        job.status = "queued"
+        job.stage = "queued"
+        job.progress = 0
+        job.error = ""
+        job.cancelled = False
+        job.started_at = 0.0
+        job.finished_at = 0.0
+        job.push("queued", f"Job re-queued for processing: {job.filename}", stage="queued", progress=0)
+        self.processing_queue.append((job, job.file_path))
+        return True
+
+    def remove_job(self, job_id: str) -> bool:
+        """Remove a job from manager state."""
+        if job_id in self.jobs:
+            del self.jobs[job_id]
+        if job_id in self.active_jobs:
+            del self.active_jobs[job_id]
+        self.jobs_order = deque([jid for jid in self.jobs_order if jid != job_id], maxlen=100)
+        self.processing_queue = deque([item for item in self.processing_queue if item[0].id != job_id])
+        return True
+
+    def clear_completed(self) -> int:
+        """Remove all completed jobs from active tracking view."""
+        completed_ids = [
+            jid for jid, job in self.jobs.items() if job.status in ("done", "completed")
+        ]
+        for jid in completed_ids:
+            self.remove_job(jid)
+        return len(completed_ids)
+
+    def get_queue_status(self) -> dict:
+        """Return status of all workers and queue."""
+        return {
+            "paused": self.queue_paused,
+            "queued_count": len(self.processing_queue),
+            "active_count": len(self.active_jobs),
+            "active_jobs": [j.to_dict() for j in self.active_jobs.values()],
+            "total_tracked": len(self.jobs),
+        }
 
     def get_all_jobs_dict(self) -> list[dict]:
         """Return a formatted list of jobs for the API endpoint."""

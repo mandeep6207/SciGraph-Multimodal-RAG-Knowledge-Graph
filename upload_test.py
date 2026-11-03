@@ -1,11 +1,12 @@
-"""Quick end-to-end upload + query test for The Brain."""
+"""Quick end-to-end upload + query test for SciGraph."""
 import json
 import time
 import urllib.request
 import urllib.parse
+from pathlib import Path
 
 BASE = "http://127.0.0.1:8100"
-PDF_PATH = r"d:\The-Brain-main\audit_test.pdf"
+PDF_PATH = str(Path(__file__).resolve().parent / "audit_test.pdf")
 
 
 def upload_pdf(path):
@@ -58,7 +59,7 @@ def get_stats():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("THE BRAIN — End-to-End Audit Test")
+    print("SCIGRAPH — End-to-End Audit Test")
     print("=" * 60)
 
     # 1. Health
@@ -109,9 +110,9 @@ if __name__ == "__main__":
         print(f"    ERROR: {e}")
 
     # 6. Query
-    print("\n[6] Query — 'What is The Brain and what technology does it use?'")
+    print("\n[6] Query — 'What is SciGraph and what technology does it use?'")
     try:
-        q_resp = query_rag("What is The Brain and what technology does it use?")
+        q_resp = query_rag("What is SciGraph and what technology does it use?")
         answer = q_resp.get("answer", q_resp.get("response", str(q_resp)))
         print(f"    Answer: {answer[:500]}")
     except Exception as e:

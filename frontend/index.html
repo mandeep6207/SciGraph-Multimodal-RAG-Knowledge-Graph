@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>THE BRAIN</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23080808%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-size=%2254%22 font-weight=%22bold%22><tspan fill=%22%23ffffff%22>T</tspan><tspan fill=%22%2339ff14%22>B</tspan></text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SciGraph — Scientific Intelligence Workspace</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23090C0A%22/><text x=%2250%25%22 y=%2253%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-size=%2244%22 font-weight=%22bold%22><tspan fill=%22%23E9E8DF%22>S</tspan><tspan fill=%22%23B5F36B%22>G</tspan></text></svg>">
 
-<link rel="stylesheet" href="/ui/style.css">
+  <!-- Google Fonts: Space Grotesk, Sora, Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
 
+  <!-- SciGraph Design System Stylesheets -->
+  <link rel="stylesheet" href="/ui/css/design-system.css">
+  <link rel="stylesheet" href="/ui/css/themes.css">
+  <link rel="stylesheet" href="/ui/css/layout.css">
+  <link rel="stylesheet" href="/ui/css/components.css">
+  <link rel="stylesheet" href="/ui/css/animations.css">
+
+  <!-- Vendor Scripts for Local 3D Graph & Markdown -->
   <script src="/ui/vendor/marked.min.js"></script>
   <script src="/ui/vendor/three.min.js"></script>
   <script>
     // Polyfill THREE.Timer for Three.js r128 compatibility with 3d-force-graph
     if (window.THREE && !window.THREE.Timer) {
       window.THREE.Timer = class Timer {
-        constructor() {
-          this._clock = new THREE.Clock();
-        }
+        constructor() { this._clock = new THREE.Clock(); }
         getDelta() { return this._clock.getDelta(); }
         getElapsedTime() { return this._clock.getElapsedTime(); }
         update() { return this; }
@@ -37,382 +44,1530 @@
   <script src="/ui/vendor/three-spritetext.min.js"></script>
 </head>
 <body>
-<div id="app">
+<div id="app-container">
 
-  <!-- ─── Header ───────────────────────────────────────────────────────── -->
-  <div id="header">
-    <span class="logo">THE <span>BRAIN</span></span>
-    
-    <nav class="nav">
-      <a href="/" class="nav-btn" style="text-decoration:none; display:inline-flex; align-items:center;">⌂ Home</a>
-      <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
-      <button class="nav-btn" data-tab="upload" id="nav-upload">Upload</button>
-      <button class="nav-btn" data-tab="documents">Documents</button>
-      <button class="nav-btn" data-tab="logs">Live Log</button>
-      <button class="nav-btn" data-tab="query">Query</button>
-      <button class="nav-btn" data-tab="graph">Graph</button>
-    </nav>
-
-    <div class="header-right">
-      <div class="model-tag">
-        <div class="status-dot" id="status-dot"></div>
-        <span id="model-tag">—</span>
-      </div>
-
-      <a href="https://github.com/Hastur-HP/The-Brain" target="_blank" title="View Source on GitHub"
-         style="color: #888; padding: 8px; border-radius: 50%; transition: 0.2s; display: flex; align-items: center; margin-left: 4px;"
-         onmouseover="this.style.color='#fff'; this.style.backgroundColor='rgba(255,255,255,0.05)'" 
-         onmouseout="this.style.color='#888'; this.style.backgroundColor='transparent'">
-        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-        </svg>
+  <!-- ========================================================================
+       A. LEFT SIDEBAR — PRIMARY NAVIGATION
+       ======================================================================== -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="brand-link" title="SciGraph Landing Page">
+        <div class="brand-icon">SG</div>
+        <div class="brand-text">
+          <div class="brand-title">Sci<span>Graph</span></div>
+          <div class="brand-sub">Scientific Intelligence</div>
+        </div>
       </a>
-    </div>
-  </div>
-
-  <!-- ─── Content ──────────────────────────────────────────────────────── -->
-  <div id="content">
-
-    <!-- ══ DASHBOARD ══════════════════════════════════════════════════════ -->
-    <div class="tab-panel active" id="tab-dashboard">
-
-      <div class="stat-grid">
-        <div class="glass-card stat-card">
-          <div class="stat-value" id="stat-processed">0</div>
-          <div class="stat-label">Processed</div>
-        </div>
-        <div class="glass-card stat-card">
-          <div class="stat-value cyan" id="stat-nodes">0</div>
-          <div class="stat-label">Knowledge Nodes</div>
-        </div>
-        <div class="glass-card stat-card">
-          <div class="stat-value orange" id="stat-relations">0</div>
-          <div class="stat-label">Relations</div>
-        </div>
-        <div class="glass-card stat-card">
-          <div class="stat-value" id="stat-queued" style="color:var(--text-mid)">0</div>
-          <div class="stat-label">Queued / Waiting</div>
-        </div>
-      </div>
- 
-      <div class="paused-banner" id="paused-banner">
-        <span>⏸</span>
-        <span>Queue is paused — current job will finish, next won't start until resumed.</span>
-        <button class="btn btn-warn btn-sm" onclick="resumeQueue()" style="margin-left:auto">Resume</button>
-      </div>
-
-      <div id="active-container">
-        <div class="glass-card idle-state" id="idle-state">
-          <div class="idle-icon">◈</div>
-          <div class="idle-text">No document currently processing</div>
-        </div>
-        <div id="active-job-panel" style="display:none">
-          <div class="glass-card active-job-panel">
-            <div class="active-job-header">
-              <div>
-                <div class="active-job-name" id="active-filename">—</div>
-                <div class="active-job-meta" id="active-meta">—</div>
-              </div>
-              <div class="active-controls">
-                <span class="status-badge badge-parsing" id="active-status-badge">parsing</span>
-                <button class="btn btn-warn btn-sm" id="pause-btn" onclick="toggleQueuePause()">Pause Queue</button>
-              </div>
-            </div>
-
-            <div class="section-title" style="margin-bottom:10px">MinerU Pipeline</div>
-            <div class="stages-grid" id="stages-grid">
-              </div>
-
-            <div class="glass-card extraction-bar" id="entity-bar" style="display:none">
-              <div class="extraction-header">
-                <span class="extraction-title">Entity &amp; Relation Extraction</span>
-                <span class="extraction-pct" id="entity-pct">0%</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill orange" id="entity-fill" style="width:0%"></div>
-              </div>
-              <div class="stage-sub" id="entity-sub"></div>
-            </div>
-
-            <div class="glass-card extraction-bar" id="multimodal-bar" style="display:none;margin-top:8px">
-              <div class="extraction-header">
-                <span class="extraction-title">Multimodal Processing (VLM)</span>
-                <span class="extraction-pct" id="multimodal-pct">0%</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill orange" id="multimodal-fill" style="width:0%"></div>
-              </div>
-              <div class="stage-sub" id="multimodal-sub"></div>
-            </div>
-
-            <div class="glass-card block-types" id="block-types-panel" style="display:none;margin-top:10px">
-              <div class="block-types-title">Content Block Types</div>
-              <div id="block-types-bars"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <button class="collapse-toggle" id="sidebar-collapse-btn" title="Toggle Sidebar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
     </div>
 
-    <div class="tab-panel" id="tab-upload">
-      <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
-        <div class="drop-icon">⬆</div>
-        <div class="drop-title">Drop files here or click to browse</div>
-        <div class="drop-sub">Files are queued and then processed...</div>
-        <div class="drop-types">
-          <span class="drop-type-tag">PDF</span>
-          <span class="drop-type-tag">DOCX</span>
-          <span class="drop-type-tag">PPTX</span>
-          <span class="drop-type-tag">TXT</span>
-          <span class="drop-type-tag">MD</span>
-          <span class="drop-type-tag">HTML</span>
-        </div>
-      </div>
-      <input type="file" id="file-input" multiple accept=".pdf,.docx,.pptx,.txt,.md,.html,.png,.jpg,.jpeg">
-
-      <div class="queue-header">
-        <span class="queue-count" id="queue-count">0 files in queue</span>
-        <div class="queue-actions">
-          <button class="btn btn-secondary btn-sm" onclick="clearUploadQueue()">Clear All</button>
-          <button class="btn btn-primary btn-sm" id="process-btn" onclick="processQueue()">Process Queue ▶</button>
-        </div>
-      </div>
-      <div class="queue-list" id="upload-queue-list">
-        <div class="queue-empty">No files in queue — drop some above</div>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="tab-documents">
-
-      <div class="glass-card kb-stats" id="kb-stats">
-        <div class="kb-stat">
-          <span class="kb-stat-value" id="kb-docs">0</span>
-          <span class="kb-stat-label">Documents</span>
-        </div>
-        <div class="kb-stat">
-          <span class="kb-stat-value" id="kb-nodes" style="color:var(--cyan)">0</span>
-          <span class="kb-stat-label">Nodes</span>
-        </div>
-        <div class="kb-stat">
-          <span class="kb-stat-value" id="kb-relations" style="color:var(--orange)">0</span>
-          <span class="kb-stat-label">Relations</span>
-        </div>
-        <div class="kb-stat" style="margin-left:auto;align-items:flex-end">
-          <button class="btn btn-secondary btn-sm" onclick="refreshAll()">↻ Refresh</button>
-        </div>
-      </div>
-
-      <div class="docs-layout">
-        <div class="glass-card" id="failed-section" style="display:none; border-color: rgba(255, 60, 60, 0.3);">
-          <div class="section-title" style="color: var(--red)">
-            <span id="failed-title">Failed / Orphaned Jobs</span>
-            <button class="btn btn-danger btn-sm" onclick="clearAllFailed()" style="margin-left:auto;margin-right:0">Clear All</button>
-          </div>
-          <div class="doc-list" id="failed-list"></div>
-        </div>
-
-        <div class="docs-split">
-          <div class="glass-card" style="display: flex; flex-direction: column;">
-            <div class="section-title">Processed Documents (Done)</div>
-            <div class="doc-list" id="processed-list" style="flex: 1; overflow-y: auto;">
-              <div class="empty-state">No processed documents</div>
-            </div>
-          </div>
-          
-          <div class="glass-card" style="display: flex; flex-direction: column;">
-            <div class="section-title">Queued Documents</div>
-            <div class="doc-list" id="queued-list" style="flex: 1; overflow-y: auto;">
-              <div class="empty-state">No queued documents</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ LIVE LOG ════════════════════════════════════════════════════════ -->
-    <div class="tab-panel" id="tab-logs" style="padding-bottom:24px">
-      <div class="log-panel" style="height: 100%;">
-        <div class="log-controls">
-          <select class="log-job-select" id="log-job-select" onchange="selectLogJob(this.value)">
-            <option value="">— Select a job —</option>
-          </select>
-          <input type="text" class="log-search" id="log-search" placeholder="Filter logs…" oninput="filterLogs()">
-          <span class="log-spacer"></span>
-          <button class="toggle-btn on" id="autoscroll-btn" onclick="toggleAutoScroll()">Auto-scroll</button>
-          <button class="btn btn-secondary btn-sm" onclick="clearDisplayedLogs()">Clear View</button>
-        </div>
-        <div class="glass-card log-stream" id="log-stream">
-          <div class="empty-state">Select a job above to view its log</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ QUERY ════════════════════════════════════════════════════════ -->
-    <div class="tab-panel" id="tab-query" style="padding: 90px 24px 24px 24px;">
-      <div class="query-container">
-        
-        <div class="glass-card query-sidebar-left">
-          <div class="sidebar-header">
-            <span>Chat History</span>
-            <button class="btn btn-secondary btn-sm" onclick="newConversation()" style="padding:4px 8px; font-size:9px;">+ New</button>
-          </div>
-          <div id="conv-list" class="conv-list">
-            <div style="font-size:11px;color:var(--text-dim);text-align:center;margin-top:20px;">No history</div>
-          </div>
-        </div>
-
-        <div class="glass-card query-main">
-          <div id="chat-messages" class="chat-messages">
-            <div class="empty-state" style="margin:auto">Start a new conversation</div>
-          </div>
-          
-          <div class="query-input-row">
-            <textarea class="query-input" id="query-input"
-              placeholder="Ask something about your documents… (Ctrl+Enter to submit)"
-              rows="1"
-              onkeydown="handleQueryKey(event)"
-              oninput="autoResize(this)"></textarea>
-            
-            <div class="mode-wrapper">
-              <select class="mode-select" id="mode-select">
-                <option value="mix">mix</option>
-                <option value="hybrid">hybrid</option>
-                <option value="local">local</option>
-                <option value="global">global</option>
-                <option value="naive">naive</option>
-              </select>
-            </div>
-            <button class="btn btn-primary" id="ask-btn" onclick="submitChat()">Ask</button>
-          </div>
-        </div>
-
-        <div class="query-sidebar-right">
-          <div class="glass-card query-live-log" id="query-live-log">
-            <div class="sidebar-header"><span>Live Query Log</span></div>
-            <div id="query-log-stream" class="log-stream-mini">Waiting for query...</div>
-          </div>
-          
-          <div class="glass-card query-stats" id="query-stats" style="display:none;">
-            <div class="sidebar-header" style="margin-bottom:8px;"><span>Query Stats</span></div>
-            <div id="query-stats-content"></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ══ GRAPH ═══════════════════════════════════════════════════════════ -->
-    <div class="tab-panel" id="tab-graph" style="padding:0;height:100%">
-      <div id="graph-container" style="position:relative;width:100%;height:100%">
-
-        <div class="glass-card" style="position:absolute; top:90px; left:16px; z-index:11; display:flex; gap:8px; width:280px; padding:12px 16px;">
-          <input type="text" id="graph-search" class="query-input" placeholder="Search nodes…"
-            style="min-height:36px; padding:8px 12px; flex:1;"
-            oninput="debounceSearch(this.value)">
-          <button class="btn btn-secondary" onclick="resetGraph()" style="padding:8px 12px;">Reset</button>
-        </div>
-
-        <div class="glass-card" style="position:absolute; top:170px; left:16px; z-index:10; display:flex; flex-direction:column; gap:14px; width:280px; padding:16px;">
-          <div id="graph-stats" style="font-size:11px; color:var(--text-mid); text-align:center;">
-            Loading graph…
-          </div>
-
-          <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; position:relative; z-index:20;">
-              <div style="font-size:10px; color:var(--text-mid); text-transform:uppercase; letter-spacing:0.1em; font-weight:700">Node Types</div>
-              
-              <button class="btn btn-secondary btn-sm" onclick="toggleHideMenu()" style="padding:4px 10px; font-size:9px; border-radius:100px;">Hide ▾</button>
-
-              <div id="hide-menu" style="display:none; position:absolute; top:100%; right:0; margin-top:8px; width:200px; flex-direction:column; gap:10px; padding:16px; background:rgba(5,5,8,0.95); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.1); border-radius:16px; box-shadow:0 12px 40px rgba(0,0,0,0.6);">
-                <div style="font-size:10px; color:var(--text-mid); text-transform:uppercase; letter-spacing:0.1em; font-weight:700">Persistently Hide</div>
-                <div id="hide-menu-items" style="display:flex; flex-direction:column; gap:8px; max-height:250px; overflow-y:auto; padding-right:4px;">
-                  </div>
-              </div>
-            </div>
-
-            <div id="legend-items" style="display:flex; flex-wrap:wrap; gap:8px"></div>
-          </div>
-
-          <div id="current-view-panel" style="display:none; margin-top:4px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.05);">
-            <div style="color:var(--text-dim); font-size:10px; text-transform:uppercase; margin-bottom:6px; letter-spacing:1px;">Exploring Neighborhood</div>
-            <div id="current-view-name" style="font-size:14px; font-weight:bold; margin-bottom:8px; word-wrap:break-word;"></div>
-            <div id="current-view-desc" style="color:var(--text-mid); font-size:11px; line-height:1.5; max-height:100px; overflow-y:auto; margin-bottom:12px;"></div>
-            <button class="btn btn-secondary" style="width:100%" onclick="resetToMainGraph()">← Back to Main</button>
-          </div>
-        </div>
-
-        <div id="node-info" class="glass-card" style="position:absolute; top:90px; right:16px; z-index:10; width:280px; display:none;">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px">
-            <span id="node-info-type" style="font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase"></span>
-            <button onclick="document.getElementById('node-info').style.display='none'"
-              style="background:transparent; border:none; color:var(--text-dim); cursor:pointer; font-size:16px; padding:0;">✕</button>
-          </div>
-          <div id="node-info-name" style="font-weight:700; color:#fff; margin-bottom:8px; word-break:break-word; line-height:1.4"></div>
-          <div id="node-info-desc" style="color:var(--text-mid); font-size:11px; line-height:1.6; word-break:break-word; max-height:160px; overflow-y:auto"></div>
-          <div id="node-info-degree" style="margin-top:8px; font-size:10px; color:var(--text-dim)"></div>
-          <button class="btn btn-secondary" onclick="focusNode(currentNode)" style="margin-top:12px; width:100%;">
-            Explore Neighborhood
-          </button>
-        </div>
-
-        <div id="graph-settings-panel" class="glass-card" style="position:absolute; bottom:60px; right:16px; z-index:10; width:260px; display:none; flex-direction:column; gap:12px;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="color:var(--text-mid); text-transform:uppercase; letter-spacing:0.1em; font-size:10px;">Node Limit</span>
-            <span id="node-limit-val" style="color:var(--green); font-weight:bold;">1000</span>
-          </div>
-          <input type="range" id="node-limit-slider" min="100" max="3000" step="100" value="1000"
-            style="width:100%; cursor:pointer; accent-color:var(--green);"
-            oninput="document.getElementById('node-limit-val').textContent = this.value"
-            onchange="updateGraphLimit(this.value)">
-          <div style="font-size:9px; color:var(--text-dim); text-align:center;">Higher values impact performance</div>
-          
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
-            <span style="color:var(--text-mid); text-transform:uppercase; letter-spacing:0.1em; font-size:10px;">Node Distance</span>
-            <span id="node-dist-val" style="color:var(--green); font-weight:bold;">120</span>
-          </div>
-          <input type="range" id="node-dist-slider" min="50" max="300" step="10" value="120"
-            style="width:100%; cursor:pointer; accent-color:var(--green);"
-            oninput="document.getElementById('node-dist-val').textContent = this.value"
-            onchange="updateGraphDistance(this.value)">
-
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
-            <span style="color:var(--text-mid); text-transform:uppercase; letter-spacing:0.1em; font-size:10px;">Node Repulsion</span>
-            <span id="node-repel-val" style="color:var(--green); font-weight:bold;">1300</span>
-          </div>
-          <input type="range" id="node-repel-slider" min="100" max="3000" step="100" value="1300"
-            style="width:100%; cursor:pointer; accent-color:var(--green);"
-            oninput="document.getElementById('node-repel-val').textContent = this.value"
-            onchange="updateGraphRepulsion(this.value)">
-        </div>
-
-        <button onclick="document.getElementById('graph-settings-panel').style.display = document.getElementById('graph-settings-panel').style.display === 'none' ? 'flex' : 'none'" 
-          class="glass-card" style="position:absolute; bottom:16px; right:16px; z-index:10; width:40px; height:40px; padding:0; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--text-mid); transition:0.2s;"
-          onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-mid)'">
-          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+    <div class="sidebar-scroll">
+      <!-- EXPLORATION -->
+      <div class="nav-group">
+        <div class="nav-group-label">Exploration</div>
+        <button class="nav-item active" data-nav="overview">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </span>
+          <span class="nav-label">Overview</span>
         </button>
 
-        <!-- Graph mount point -->
-        <div id="3d-graph" style="width:100%;height:100%"></div>
+        <button class="nav-item" data-nav="library">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </span>
+          <span class="nav-label">Research Library</span>
+        </button>
 
-        <!-- Loading overlay -->
-        <div id="graph-loading" style="
-          position:absolute;inset:0;display:flex;align-items:center;
-          justify-content:center;background:rgba(8,8,8,0.7);z-index:20">
-          <div style="text-align:center;font-family:'JetBrains Mono',monospace">
-            <div style="font-size:28px;margin-bottom:12px;opacity:0.4">◈</div>
-            <div style="color:#39ff14;font-size:12px;letter-spacing:0.1em" id="graph-loading-msg">
-              Initialising…
+        <button class="nav-item" data-nav="graph">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="18" cy="18" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <circle cx="18" cy="6" r="3"></circle>
+              <line x1="8.5" y1="7.5" x2="15.5" y2="16.5"></line>
+              <line x1="8.5" y1="16.5" x2="15.5" y2="7.5"></line>
+            </svg>
+          </span>
+          <span class="nav-label">Knowledge Graph</span>
+        </button>
+      </div>
+
+      <!-- INTELLIGENCE -->
+      <div class="nav-group">
+        <div class="nav-group-label">Intelligence</div>
+        <button class="nav-item" data-nav="assistant">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </span>
+          <span class="nav-label">Research Copilot</span>
+        </button>
+
+        <button class="nav-item" data-nav="comparison">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </span>
+          <span class="nav-label">Paper Comparison</span>
+        </button>
+
+        <button class="nav-item" data-nav="insights">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </span>
+          <span class="nav-label">Research Insights</span>
+        </button>
+
+        <button class="nav-item" data-nav="history">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </span>
+          <span class="nav-label">Research History</span>
+        </button>
+      </div>
+
+      <!-- CONTEXTS & RAG -->
+      <div class="nav-group">
+        <div class="nav-group-label">Contexts & RAG</div>
+        <button class="nav-item" data-nav="workspaces">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </span>
+          <span class="nav-label">Workspaces</span>
+        </button>
+
+        <button class="nav-item" data-nav="collections">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </span>
+          <span class="nav-label">Collections</span>
+        </button>
+
+        <button class="nav-item" data-nav="import">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </span>
+          <span class="nav-label">Import Pipeline</span>
+        </button>
+      </div>
+
+      <!-- SYSTEM -->
+      <div class="nav-group" style="margin-top: auto;">
+        <div class="nav-group-label">System</div>
+        <button class="nav-item" data-nav="settings">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </span>
+          <span class="nav-label">Settings</span>
+        </button>
+
+        <button class="nav-item" data-nav="profile">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </span>
+          <span class="nav-label">User Profile</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sidebar Footer: Mandeep Kumar Profile Snippet & Logout -->
+    <div class="sidebar-footer">
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        <div class="sidebar-profile-card" data-nav="profile" title="View Profile" style="flex: 1;">
+          <div class="user-avatar-sm" id="sidebar-avatar">MK</div>
+          <div class="user-info-sm">
+            <div class="user-name-sm" id="sidebar-user-name">Mandeep Kumar</div>
+            <div class="user-role-sm" id="sidebar-user-role">Workspace Owner</div>
+          </div>
+        </div>
+        <a href="/login" class="action-icon-btn" title="Sign Out" style="margin-left: 6px; color: var(--text-tertiary); display: flex; align-items: center; justify-content: center; text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       B. TOP HEADER & MAIN VIEWPORT
+       ======================================================================== -->
+  <main id="main-viewport">
+    <header id="top-header">
+      <div class="header-left">
+        <div class="page-title-wrap">
+          <h1 class="page-title" id="page-header-title">Research Overview</h1>
+          <div class="page-breadcrumb" id="page-header-breadcrumb">Intelligence / Overview</div>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <div class="global-search-box">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="global-search-input" placeholder="Search papers, concepts, entities, methods...">
+          <span class="search-shortcut">Ctrl+K</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- Quick Action Upload -->
+        <button class="btn btn-sm btn-primary" data-nav="library" style="padding: 5px 12px; font-size: 12px; font-weight: 600;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Upload Paper
+        </button>
+
+        <!-- Backend Status Indicator -->
+        <div class="backend-indicator" title="Local Intelligence Engine">
+          <div class="status-dot" id="header-status-dot"></div>
+          <span id="header-model-tag" style="font-family: var(--font-mono);">Connecting...</span>
+        </div>
+
+        <!-- Light/Dark Mode Switcher -->
+        <button class="action-icon-btn theme-toggle-btn" title="Toggle Theme (Light/Dark)">
+          <svg class="theme-icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Notifications / Audit History -->
+        <button class="action-icon-btn" title="Research Audit & History" data-nav="history">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="badge-dot"></span>
+        </button>
+
+        <!-- User Profile Avatar & Dropdown -->
+        <div style="position: relative;">
+          <button class="profile-btn" id="header-profile-btn" title="User Menu">
+            <div class="user-avatar-sm" id="header-avatar" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-default); color: var(--accent-primary);">MK</div>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="dropdown-menu" id="profile-dropdown-menu">
+            <div class="dropdown-header">
+              <div class="name" id="dropdown-user-name">Mandeep Kumar</div>
+              <div class="handle" id="dropdown-user-handle">@mandeep6207</div>
+            </div>
+            <button class="dropdown-item" data-nav="profile">View Profile</button>
+            <button class="dropdown-item" id="btn-edit-profile">Edit Profile</button>
+            <button class="dropdown-item" data-nav="settings">Account Settings</button>
+            <button class="dropdown-item" data-nav="workspaces">Manage Workspaces</button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item theme-toggle-btn">Toggle Light/Dark Theme</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================================================
+         C. MAIN CONTENT AREA — MODULAR PANELS
+         ======================================================================== -->
+    <div id="content-area">
+
+      <!-- 1. OVERVIEW DASHBOARD -->
+      <section class="panel active" id="panel-overview">
+        <!-- Editorial Hero Centerpiece -->
+        <div class="dashboard-hero stagger-1">
+          <div class="hero-content">
+            <div class="hero-kicker">
+              <span class="pulse-indicator"></span>
+              <span>SCIENTIFIC INTELLIGENCE WORKSPACE</span>
+            </div>
+            <h1 class="hero-headline">Discover the connections behind research.</h1>
+            <p class="hero-supporting">
+              Multimodal intelligence. Connected knowledge. Evidence-driven discovery.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-nav="library">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Add Research Papers
+              </button>
+              <button class="btn btn-secondary" data-nav="graph">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="18" cy="18" r="3"></circle>
+                  <line x1="8.5" y1="7.5" x2="15.5" y2="16.5"></line>
+                </svg>
+                Explore Knowledge Graph
+              </button>
+              <button class="btn btn-outline" data-nav="assistant">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Research Copilot
+              </button>
+            </div>
+          </div>
+          <div class="hero-network-wrap" title="Interactive Scientific Constellation — Drag or Hover to Interact">
+            <canvas id="hero-network-canvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Telemetry Ribbon -->
+        <div class="telemetry-strip stagger-2">
+          <!-- Cell 1: Total Papers -->
+          <div class="telemetry-cell">
+            <div class="telemetry-header">
+              <span class="telemetry-tag">// CORPUS DOCUMENTS</span>
+              <span class="telemetry-badge">PDF / OCR</span>
+            </div>
+            <div class="telemetry-value" id="dash-stat-docs">0</div>
+            <div class="telemetry-desc">Multimodal research papers indexed in vector space</div>
+          </div>
+
+          <!-- Cell 2: Knowledge Entities -->
+          <div class="telemetry-cell accent-emerald">
+            <div class="telemetry-header">
+              <span class="telemetry-tag">// GRAPH ENTITIES</span>
+              <span class="telemetry-badge" style="color: var(--accent-primary); border: 1px solid rgba(181, 243, 107, 0.3);">SYNTHESIZED</span>
+            </div>
+            <div class="telemetry-value" id="dash-stat-nodes">0</div>
+            <div class="telemetry-desc">Discovered concepts, methods, authors, and tasks</div>
+          </div>
+
+          <!-- Cell 3: Knowledge Connections -->
+          <div class="telemetry-cell accent-sage">
+            <div class="telemetry-header">
+              <span class="telemetry-tag">// SEMANTIC RELATIONS</span>
+              <span class="telemetry-badge" style="color: var(--accent-secondary); border: 1px solid rgba(110, 170, 133, 0.3);">DUAL-LEVEL</span>
+            </div>
+            <div class="telemetry-value" id="dash-stat-relations">0</div>
+            <div class="telemetry-desc">Evidence-grounded cross-document knowledge edges</div>
+          </div>
+
+          <!-- Cell 4: Research Queries -->
+          <div class="telemetry-cell accent-amber">
+            <div class="telemetry-header">
+              <span class="telemetry-tag">// INFERENCE QUERIES</span>
+              <span class="telemetry-badge" style="color: var(--accent-amber); border: 1px solid rgba(217, 166, 90, 0.3);">LOCAL LLM</span>
+            </div>
+            <div class="telemetry-value" id="dash-stat-queries">0</div>
+            <div class="telemetry-desc">Synthesized answers across hybrid vector-graph space</div>
+          </div>
+        </div>
+
+        <!-- Compact AI Assistant Entrypoint -->
+        <div class="card stagger-3" style="margin-top: var(--space-4); background: linear-gradient(135deg, rgba(21,29,24,0.92) 0%, rgba(16,22,18,0.85) 100%); border: 1px solid rgba(181, 243, 107, 0.22); padding: 22px 24px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 280px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-primary); box-shadow: 0 0 8px var(--accent-primary);"></span>
+              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-primary); font-family: var(--font-mono);">Universal AI Assistant</span>
+            </div>
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 6px 0;">Start a new conversation</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; max-width: 620px;">
+              Explore scientific questions, work with your research documents, and discover new connections with SciGraph AI.
+            </p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="window.AssistantManager && window.AssistantManager.continueRecentChat ? window.AssistantManager.continueRecentChat() : NavManager.switchTab('assistant')" style="padding: 10px 18px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Continue Recent Chat</span>
+            </button>
+            <button class="btn btn-primary" onclick="window.AssistantManager && window.AssistantManager.startNewChat ? window.AssistantManager.startNewChat() : NavManager.switchTab('assistant')" style="padding: 10px 20px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 0 20px rgba(181, 243, 107, 0.25);">
+              <span>Start New Chat</span>
+              <span style="font-size: 16px;">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. RESEARCH LIBRARY -->
+      <section class="panel" id="panel-library">
+        <!-- Drag and Drop Box -->
+        <div class="dropzone" id="library-dropzone">
+          <input type="file" id="library-file-input" accept=".pdf,.png,.jpg,.jpeg,.webp,.tiff,.bmp,.docx,.doc,.xlsx,.xls,.csv,.pptx,.ppt,.tex,.bib,.txt,.md,.rtf,.html,.htm,.json,.xml" style="display: none;" multiple>
+          <div class="dropzone-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+            </svg>
+          </div>
+          <div class="dropzone-title">Drag & drop scientific research files here, or click to browse</div>
+          <div class="dropzone-hint">Supports 18+ formats: PDF, Images, Word (.docx), Excel (.xlsx, .csv), PPTX, LaTeX (.tex, .bib), Markdown, HTML, JSON/XML up to 500 MB</div>
+        </div>
+
+        <!-- Multi-Format Staging & Ingestion Queue -->
+        <div class="card" id="upload-queue-card" style="display: none; margin-top: var(--space-4);">
+          <div class="card-header" style="padding-bottom: 8px;">
+            <div>
+              <div class="card-title" style="display: flex; align-items: center; gap: 8px;">
+                <span>Universal Ingestion Queue</span>
+                <span class="badge badge-info" id="queue-count-badge">0 files</span>
+                <span class="badge badge-neutral" id="queue-status-indicator" style="font-size: 10px; font-family: var(--font-mono);">ACTIVE</span>
+              </div>
+              <div class="card-subtitle">Concurrent multi-worker ingestion with real-time stage telemetry</div>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button class="btn btn-sm btn-outline" id="queue-pause-btn" onclick="LibraryManager.togglePauseQueue()">Pause Queue</button>
+              <button class="btn btn-sm btn-outline" id="queue-clear-completed-btn" onclick="LibraryManager.clearCompleted()">Clear Done</button>
+              <button class="btn btn-sm btn-outline" id="queue-clear-btn" onclick="LibraryManager.clearQueue()">Dismiss All</button>
+              <button class="btn btn-sm btn-primary" id="queue-upload-all-btn" onclick="LibraryManager.uploadAllQueue()">Upload All Queued</button>
+            </div>
+          </div>
+          <div class="table-container" style="max-height: 280px; overflow-y: auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Paper Name</th>
+                  <th>Size</th>
+                  <th>Status</th>
+                  <th style="width: 220px;">Progress</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="upload-queue-tbody">
+                <!-- Injected by LibraryManager -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Document Repository Table -->
+        <div class="card" style="margin-top: var(--space-6);">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Research Papers Repository</div>
+              <div class="card-subtitle">Search and manage documents stored in your knowledge base</div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="library-search-input" class="form-input" placeholder="Filter papers..." style="width: 200px; padding: 4px 10px;">
+              <button class="btn btn-sm btn-outline" onclick="LibraryManager.refresh()">Refresh</button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Document Name</th>
+                  <th>File Size</th>
+                  <th>Upload Date</th>
+                  <th>Indexing Status</th>
+                  <th style="text-align: right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="library-table-tbody">
+                <!-- Injected by LibraryManager -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="empty-state" id="library-empty-state" style="display: none;">
+            <div class="empty-state-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              </svg>
+            </div>
+            <div class="empty-state-title">No documents found</div>
+            <div class="empty-state-desc">Upload a PDF or adjust your search filter to see papers.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. UNIVERSAL AI ASSISTANT (CHATGPT-INSPIRED WORKSPACE) -->
+      <section class="panel" id="panel-assistant" style="padding-top: var(--space-2);">
+        <div class="universal-chat-layout">
+          <!-- Collapsible Chat History Sidebar -->
+          <div class="chat-sidebar" id="chat-sidebar">
+            <div class="chat-sidebar-header">
+              <button class="btn btn-sm btn-primary" id="btn-new-chat" style="flex: 1; justify-content: center; gap: 6px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>New Chat</span>
+              </button>
+              <button class="action-icon-btn" id="btn-chat-sidebar-toggle" title="Collapse sidebar" style="margin-left: 6px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+              </button>
+            </div>
+            <div style="padding: 8px var(--space-3);">
+              <input type="text" id="chat-search-conv" class="form-input" placeholder="Search conversations..." style="font-size: 11px; padding: 6px 10px; width: 100%; box-sizing: border-box;">
+            </div>
+            <div class="conversation-list" id="conversations-list-container">
+              <!-- Injected by AssistantManager -->
+            </div>
+          </div>
+
+          <!-- Chat Main Viewport -->
+          <div class="chat-main">
+            <!-- Top Controls Bar -->
+            <div class="chat-topbar-universal">
+              <!-- Mode Toggle Pill -->
+              <div class="mode-toggle-group">
+                <button class="mode-toggle-btn active" id="chat-mode-global">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  <span>Global Assistant</span>
+                </button>
+                <button class="mode-toggle-btn" id="chat-mode-research">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  <span>SciGraph Research RAG</span>
+                </button>
+              </div>
+
+              <!-- Model Selector & Sources Picker Trigger -->
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <button class="btn btn-sm btn-outline" id="btn-open-sources-modal" style="display: none; font-size: 11px; padding: 5px 10px; gap: 6px;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                  <span>Sources:</span>
+                  <span id="sources-count-badge" class="badge badge-emerald" style="font-size: 10px;">All (15)</span>
+                </button>
+
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span style="font-size: 11px; color: var(--text-tertiary); font-family: var(--font-mono);">MODEL:</span>
+                  <select id="chat-model-select" class="form-input" style="padding: 5px 10px; font-size: 12px; font-family: var(--font-mono); width: auto; background: var(--bg-surface-elevated); border: 1px solid var(--border-default); color: var(--text-primary); cursor: pointer;">
+                    <option value="openai/gpt-oss-20b" selected>Grok 20B (High Speed & Low Latency)</option>
+                    <option value="openai/gpt-oss-120b">Grok 120B (High Intelligence & Reasoning)</option>
+                    <option value="qwen/qwen3.8-27b">Qwen 3.8 27B (Scientific & Multilingual)</option>
+                    <option value="ollama/qwen2.5:3b">Local Ollama: qwen2.5:3b</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Sources Bar (Visible in Research Mode) -->
+            <div class="chat-sources-chips-bar" id="chat-sources-bar" style="display: none;">
+              <span style="font-size: 11px; font-family: var(--font-mono); color: var(--text-tertiary); text-transform: uppercase;">Grounding Sources:</span>
+              <div id="chat-source-chips-container" style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;"></div>
+              <button class="btn btn-xs btn-ghost" onclick="document.getElementById('btn-open-sources-modal').click()" style="margin-left: auto; font-size: 11px; color: var(--accent-primary);">+ Edit Sources</button>
+            </div>
+
+            <!-- Messages Stream -->
+            <div class="chat-messages" id="chat-messages-container">
+              <!-- Injected by AssistantManager -->
+            </div>
+
+            <!-- Bottom Message Composer -->
+            <div class="chat-composer-wrap">
+              <input type="file" id="chat-file-input" style="display: none;" accept=".pdf,.docx,.doc,.txt,.md,.tex,.json,.csv">
+              <div class="chat-composer-box">
+                <!-- (+) Attachment Button -->
+                <button class="composer-icon-btn" id="chat-attach-btn" title="Upload paper or document to corpus">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+
+                <!-- Textarea -->
+                <textarea id="chat-textarea" rows="1" placeholder="Message Global Assistant... (Powered by Grok / Everyday AI & Code)"></textarea>
+
+                <!-- Send Button -->
+                <button class="composer-send-btn" id="chat-send-btn" title="Send message (Enter)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+
+                <!-- Stop Generating Button (Hidden during idle) -->
+                <button class="composer-stop-btn" id="chat-stop-btn" title="Stop generating" style="display: none;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"></rect></svg>
+                  <span>Stop</span>
+                </button>
+              </div>
+              <div class="composer-footer-hint">
+                <span>Enter to send · Shift+Enter for newline</span>
+                <span>Air-gapped verification · Zero telemetry</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Source Selection Modal -->
+      <div class="modal-backdrop" id="modal-sources-picker">
+        <div class="modal-dialog" style="max-width: 600px;">
+          <div class="modal-header">
+            <div>
+              <div class="modal-title">Select Research Documents as Sources</div>
+              <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">Answers in Research Mode will be strictly synthesized from selected documents</div>
+            </div>
+            <button class="btn btn-sm btn-ghost" id="close-sources-modal">✕</button>
+          </div>
+          <div class="modal-body" style="padding: 12px var(--space-4);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-size: 12px; color: var(--text-tertiary);">Indexed Corpus Documents:</span>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn btn-xs btn-outline" onclick="AssistantManager.selectAllSources()">Select All</button>
+                <button class="btn btn-xs btn-outline" onclick="AssistantManager.clearSelectedSources()">Clear All</button>
+              </div>
+            </div>
+            <div class="table-container" style="max-height: 320px; overflow-y: auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th style="width: 36px; text-align: center;">Pick</th>
+                    <th>Document Name</th>
+                    <th>Yield</th>
+                    <th>Size</th>
+                  </tr>
+                </thead>
+                <tbody id="sources-modal-tbody">
+                  <!-- Injected by AssistantManager -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="document.getElementById('modal-sources-picker').classList.remove('open')">Cancel</button>
+            <button class="btn btn-primary" id="apply-sources-btn">Apply Selection</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. KNOWLEDGE GRAPH -->
+      <section class="panel panel-fullscreen" id="panel-graph">
+        <div class="graph-viewport" style="position: relative; width: 100%; height: calc(100vh - 70px); overflow: hidden;">
+          <div id="3d-graph" style="width: 100%; height: 100%;"></div>
+
+          <!-- Loading overlay -->
+          <div id="graph-loading-overlay" style="position: absolute; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(9, 12, 10, 0.9); z-index: 50; backdrop-filter: blur(4px);">
+            <div style="text-align: center; font-family: var(--font-mono);">
+              <div style="font-size: 32px; margin-bottom: 12px; color: var(--accent-primary); animation: spin 2s linear infinite;">◈</div>
+              <div style="color: var(--accent-primary); font-size: 13px; letter-spacing: 0.1em;" id="graph-loading-msg">
+                Querying Scientific Knowledge Graph...
+              </div>
+            </div>
+          </div>
+
+          <!-- Top HUD Overlay -->
+          <div class="graph-hud" style="position: absolute; top: 16px; left: 16px; right: 16px; display: flex; justify-content: space-between; align-items: flex-start; pointer-events: none; z-index: 10; gap: 12px;">
+            <div class="hud-panel card" style="pointer-events: auto; background: rgba(21, 29, 24, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(181, 243, 107, 0.2); padding: 10px 14px; min-width: 240px;">
+              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-primary); margin-bottom: 4px;">
+                SciGraph 3D Knowledge Network
+              </div>
+              <div class="graph-stats-hud" style="display: flex; gap: 16px; font-size: 12px; font-family: var(--font-mono); color: var(--text-secondary);">
+                <div>Nodes: <span id="graph-hud-nodes" style="color: #B5F36B; font-weight: 600;">0</span></div>
+                <div>Edges: <span id="graph-hud-links" style="color: #6EAA85; font-weight: 600;">0</span></div>
+              </div>
+            </div>
+
+            <div class="hud-panel card" style="pointer-events: auto; background: rgba(21, 29, 24, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(181, 243, 107, 0.2); padding: 6px 12px; width: 280px; display: flex; align-items: center; gap: 8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-primary);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="graph-search-input" placeholder="Search entity in graph..." style="background: transparent; border: none; color: #fff; font-size: 12px; width: 100%; outline: none;">
+            </div>
+          </div>
+
+          <!-- Interactive Entity Type Filter Legend -->
+          <div id="graph-legend-container" style="position: absolute; top: 80px; left: 16px; max-width: 480px; display: flex; flex-wrap: wrap; gap: 4px; z-index: 10; pointer-events: auto;">
+          </div>
+
+          <!-- Bottom Right Physics & Graph Settings Overlay -->
+          <div id="graph-settings-panel" class="card" style="position: absolute; bottom: 64px; right: 16px; z-index: 10; width: 260px; background: rgba(21, 29, 24, 0.92); backdrop-filter: blur(8px); border: 1px solid rgba(181, 243, 107, 0.25); display: none; flex-direction: column; gap: 10px; padding: 12px;">
+            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-primary);">Physics Controls</div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); margin-bottom: 2px;">
+                <span>Node Limit</span>
+                <span id="graph-val-limit" style="color: var(--accent-primary); font-family: var(--font-mono);">300</span>
+              </div>
+              <input type="range" id="graph-slider-limit" min="50" max="1500" step="50" value="300" style="width: 100%; cursor: pointer;">
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); margin-bottom: 2px;">
+                <span>Link Distance</span>
+                <span id="graph-val-distance" style="color: var(--accent-primary); font-family: var(--font-mono);">60</span>
+              </div>
+              <input type="range" id="graph-slider-distance" min="20" max="250" step="10" value="60" style="width: 100%; cursor: pointer;">
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); margin-bottom: 2px;">
+                <span>Node Repulsion</span>
+                <span id="graph-val-repulsion" style="color: var(--accent-primary); font-family: var(--font-mono);">120</span>
+              </div>
+              <input type="range" id="graph-slider-repulsion" min="30" max="500" step="10" value="120" style="width: 100%; cursor: pointer;">
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons HUD -->
+          <div class="graph-controls-hud" style="position: absolute; bottom: 16px; right: 16px; display: flex; gap: 8px; z-index: 10;">
+            <button class="btn btn-sm btn-outline" id="graph-btn-reset" style="background: rgba(21, 29, 24, 0.9); backdrop-filter: blur(8px); border-color: rgba(181, 243, 107, 0.3);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              Reset View
+            </button>
+            <button class="btn btn-sm btn-outline" id="graph-btn-physics-toggle" style="background: rgba(21, 29, 24, 0.9); backdrop-filter: blur(8px); border-color: rgba(181, 243, 107, 0.3);" onclick="
+              const p = document.getElementById('graph-settings-panel');
+              if (p) p.style.display = p.style.display === 'none' ? 'flex' : 'none';
+            ">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              Physics
+            </button>
+          </div>
+
+          <!-- Node Detail Drawer -->
+          <div class="node-drawer card" id="graph-node-drawer" style="position: absolute; top: 16px; right: 16px; width: 340px; max-height: calc(100% - 32px); overflow-y: auto; z-index: 20; background: rgba(21, 29, 24, 0.95); backdrop-filter: blur(12px); border: 1px solid rgba(181, 243, 107, 0.35); box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none; flex-direction: column; padding: 16px;">
+            <div class="node-drawer-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span class="badge" id="node-drawer-type" style="text-transform: uppercase; font-size: 10px; font-weight: 700;">Concept</span>
+              <button class="btn btn-sm btn-ghost" id="close-node-drawer" style="padding: 2px 6px; font-size: 14px;">✕</button>
+            </div>
+            <h3 id="node-drawer-id" style="font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; word-break: break-word;">
+              Entity Name
+            </h3>
+            <div id="node-drawer-degree" style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-primary); margin-bottom: 12px;">
+              0 connections
+            </div>
+            <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">
+              Scientific Summary
+            </div>
+            <p id="node-drawer-desc" style="font-size: 12px; color: #cbd5e1; line-height: 1.6; word-break: break-word; max-height: 240px; overflow-y: auto;">
+              Entity description.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4B. PAPER COMPARISON -->
+      <section class="panel" id="panel-comparison">
+        <div class="card" style="margin-bottom: var(--space-4);">
+          <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <div class="label-technical">// MULTI-PAPER SYNTHESIS MATRIX</div>
+              <h2 style="font-size: 20px; font-weight: 600; color: var(--text-primary); margin-top: 4px;">Cross-Paper Comparative Analysis</h2>
+              <div class="card-subtitle">Side-by-side methodology analysis, claim verification, and structural parameter contrast</div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="ComparisonManager.refresh()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              Refresh Library
+            </button>
+          </div>
+          <div style="margin-top: 12px;">
+            <div style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 8px;">SELECT PAPERS TO COMPARE (MAX 4):</div>
+            <div id="comparison-paper-selector" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+          </div>
+        </div>
+
+        <div id="comparison-matrix-grid"></div>
+      </section>
+
+      <!-- 4C. RESEARCH INSIGHTS -->
+      <section class="panel" id="panel-insights">
+        <div class="card" style="margin-bottom: var(--space-4);">
+          <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <div class="label-technical">// GRAPH TOPOLOGY & ONTOLOGY INSIGHTS</div>
+              <h2 style="font-size: 20px; font-weight: 600; color: var(--text-primary); margin-top: 4px;">Topological Research Intelligence</h2>
+              <div class="card-subtitle">High-degree concept hubs, cross-domain knowledge bridges, and ontological distribution</div>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="InsightsManager.refresh()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              Recalculate Topology
+            </button>
+          </div>
+        </div>
+
+        <div id="insights-view-container"></div>
+      </section>
+
+      <!-- 5. LIVE ACTIVITY -->
+      <section class="panel" id="panel-live-activity">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Live System & Ingestion Activity</div>
+              <div class="card-subtitle">Real-time log events emitted by LightRAG, MinerU, and the query orchestrator</div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-sm btn-outline active" data-log-filter="all">All</button>
+              <button class="btn btn-sm btn-outline" data-log-filter="info">Info</button>
+              <button class="btn btn-sm btn-outline" data-log-filter="warning">Warning</button>
+              <button class="btn btn-sm btn-outline" data-log-filter="error">Error</button>
+              <button class="btn btn-sm btn-secondary" id="live-log-autoscroll-btn">Pause Scroll</button>
+              <button class="btn btn-sm btn-outline" id="live-log-clear-btn">Clear</button>
+            </div>
+          </div>
+
+          <div id="live-log-container" style="max-height: 600px; min-height: 400px; overflow-y: auto; background: #05070d; border-radius: var(--radius-md); padding: var(--space-4); display: flex; flex-direction: column; gap: 6px;">
+            <!-- Real SSE logs stream here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. MY RAG WORKSPACES -->
+      <section class="panel" id="panel-workspaces">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-6);">
+          <div>
+            <h2 style="font-size: var(--text-xl); font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">
+              RAG Workspaces
+            </h2>
+            <p style="font-size: var(--text-sm); color: var(--text-muted);">
+              Manage isolated research workspace contexts, paper collections, and shared scientific knowledge.
+            </p>
+          </div>
+          <button class="btn btn-primary" id="btn-open-new-rag-modal">+ New Workspace</button>
+        </div>
+
+        <!-- Architecture Transparency Notice -->
+        <div class="card" style="margin-bottom: var(--space-6); background: var(--bg-surface); border-left: 3px solid var(--accent-primary);">
+          <div style="font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 2px;">
+            Storage Engine: Unified Scientific Knowledge Graph (LightRAG + NetworkX/Neo4j)
+          </div>
+          <div style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5;">
+            Workspaces organize your research papers into targeted collections. Queries seamlessly leverage both workspace-specific document chunks and the unified global cross-paper knowledge graph.
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-5);" id="workspaces-grid-container">
+          <!-- Injected by WorkspaceManager -->
+        </div>
+      </section>
+
+      <!-- 7. NEW RAG WORKSPACE VIEW -->
+      <section class="panel" id="panel-new-rag">
+        <div class="card" style="max-width: 680px; margin: 0 auto;">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Create New RAG Workspace</div>
+              <div class="card-subtitle">Set up a dedicated research context for targeted inquiry</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Workspace Name</label>
+            <input type="text" id="inline-new-rag-name" class="form-input" placeholder="e.g., Quantum Computing & Superconductivity">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Research Objectives / Description</label>
+            <textarea id="inline-new-rag-desc" class="form-textarea" placeholder="Detail the scope and intended exploration of this workspace..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tags (comma separated)</label>
+            <input type="text" id="inline-new-rag-tags" class="form-input" placeholder="physics, quantum, arxiv-2026">
+          </div>
+          <button class="btn btn-primary" style="margin-top: var(--space-3);" onclick="
+            const name = document.getElementById('inline-new-rag-name').value.trim();
+            const desc = document.getElementById('inline-new-rag-desc').value.trim();
+            const tags = document.getElementById('inline-new-rag-tags').value.split(',').map(t => t.trim()).filter(Boolean);
+            if (!name) { Toast.show('Please enter a workspace name', 'error'); return; }
+            API.createWorkspace({ name, description: desc, tags }).then(() => {
+              Toast.show('Workspace created successfully!', 'success');
+              NavManager.switchTab('workspaces');
+            }).catch(e => Toast.show(e.message, 'error'));
+          ">
+            Create and Open Workspace
+          </button>
+        </div>
+      </section>
+
+      <!-- 8. DOCUMENT COLLECTIONS -->
+      <section class="panel" id="panel-collections">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Document Collections</div>
+              <div class="card-subtitle">Categorize and bundle research papers by topic, domain, or conference</div>
+            </div>
+            <button class="btn btn-sm btn-primary" data-nav="library">+ Add Papers to Collection</button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+            <div class="card" style="background: var(--bg-surface);">
+              <h4 style="font-weight: 600; font-size: var(--text-sm); margin-bottom: 4px;">Primary Scientific Ingestion</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-muted); margin-bottom: 12px;">Default ingested collection containing all active PDFs.</p>
+              <span class="badge badge-info">Active</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. IMPORT & PROCESSING (10-STAGE PIPELINE) -->
+      <section class="panel" id="panel-import">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Import & Multimodal Processing Pipeline</div>
+              <div class="card-subtitle">Layout detection, OCR, equation extraction, chunking, and graph synthesis</div>
+            </div>
+            <button class="btn btn-sm btn-outline" data-nav="library">Ingest Another PDF</button>
+          </div>
+
+          <div id="pipeline-view-container" style="display: block;">
+            <div class="pipeline-box">
+              <div class="pipeline-header">
+                <div class="pipeline-filename">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-primary);">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                  <span id="pipeline-current-filename">Ready for document upload</span>
+                </div>
+                <div class="pipeline-timer">
+                  Elapsed: <span id="pipeline-timer-val">00:00</span>
+                </div>
+              </div>
+
+              <!-- 10 Visual Pipeline Stages Grid -->
+              <div class="pipeline-steps-grid" id="pipeline-steps-grid">
+                <!-- Injected by ProcessingManager -->
+              </div>
+
+              <div style="font-size: var(--text-xs); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">
+                Live Pipeline Execution Stream
+              </div>
+              <div class="pipeline-log-terminal" id="pipeline-log-terminal">
+                <div>[SYSTEM] Pipeline initialized and ready for PDF document intake.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. RESEARCH HISTORY & AUDIT LOGS -->
+      <section class="panel" id="panel-history">
+        <!-- History Header & Tab Switcher -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-4); flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h2 style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px;">Research Audit & History</h2>
+            <p style="font-size: 12px; color: var(--text-secondary); margin: 0;">Comprehensive audit trails of document ingestion pipelines, chunk extractions, and synthesized inferences</p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-sm btn-primary" id="btn-history-tab-docs" onclick="HistoryManager.switchTab('docs')">Document Ingestion History</button>
+            <button class="btn btn-sm btn-secondary" id="btn-history-tab-queries" onclick="HistoryManager.switchTab('queries')">Query Inferences</button>
+            <button class="btn btn-sm btn-outline" onclick="HistoryManager.refresh()">Refresh</button>
+          </div>
+        </div>
+
+        <!-- Section A: Document Ingestion History -->
+        <div class="card" id="history-docs-card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Document Ingestion Logs</div>
+              <div class="card-subtitle">Every ingested paper with parser timings, chunk counts, and ontology nodes</div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <span class="badge badge-emerald" id="history-docs-count-badge">0 documents</span>
+            </div>
+          </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Document Name</th>
+                  <th>Size</th>
+                  <th>Status</th>
+                  <th>Timings (Ext / Chk / Idx)</th>
+                  <th>Yield (Chunks / Nodes)</th>
+                  <th>Ingested Date</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="history-docs-tbody">
+                <tr>
+                  <td colspan="7" style="text-align: center; padding: 24px; color: var(--text-muted);">
+                    Loading document audit history...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section B: Query & Inference History -->
+        <div class="card" id="history-queries-card" style="display: none;">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Research Inference History</div>
+              <div class="card-subtitle">Synthesized research answers with latency metrics and retrieved graph context</div>
+            </div>
+            <button class="btn btn-sm btn-outline" id="btn-clear-history" onclick="HistoryManager.clearQueryHistory()">Clear Queries</button>
+          </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Query Prompt</th>
+                  <th>Mode / Engine</th>
+                  <th>Answer Summary</th>
+                  <th>Latency</th>
+                  <th>Date</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="history-queries-tbody">
+                <tr>
+                  <td colspan="6" style="text-align: center; padding: 24px; color: var(--text-muted);">
+                    No inference queries executed yet.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. ADVANCED FUNCTIONAL WORKSPACE SETTINGS -->
+      <section class="panel" id="panel-settings">
+        <!-- Settings Header & Navigation Tabs -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-5); flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h2 style="font-size: 20px; font-weight: 700; color: #fff; margin: 0 0 2px 0;">Workspace Preferences & System Control</h2>
+            <p style="font-size: 12px; color: var(--text-secondary); margin: 0;">Configure AI inference engines, document parsing thresholds, appearance tokens, and system health</p>
+          </div>
+          <div class="mode-toggle-group">
+            <button class="mode-toggle-btn active" id="stab-btn-models" onclick="SettingsManager.switchTab('models')">AI Models</button>
+            <button class="mode-toggle-btn" id="stab-btn-ingestion" onclick="SettingsManager.switchTab('ingestion')">Research & Ingestion</button>
+            <button class="mode-toggle-btn" id="stab-btn-appearance" onclick="SettingsManager.switchTab('appearance')">Appearance</button>
+            <button class="mode-toggle-btn" id="stab-btn-health" onclick="SettingsManager.switchTab('health')">System Health</button>
+            <button class="mode-toggle-btn" id="stab-btn-security" onclick="SettingsManager.switchTab('security')">Data & Reset</button>
+          </div>
+        </div>
+
+        <!-- TAB 1: AI MODELS -->
+        <div class="settings-tab-pane" id="spane-models">
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Inference Engines & Model Routing</div>
+                <div class="card-subtitle">Default LLMs for open conversational intelligence and document-grounded research</div>
+              </div>
+              <button class="btn btn-sm btn-primary" onclick="SettingsManager.saveModelSettings()">Save Model Settings</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div>
+                <label class="form-label">Global Assistant Default Model</label>
+                <select id="setting-select-global-model" class="form-input" style="width: 100%;">
+                  <option value="openai/gpt-oss-20b" selected>Grok 20B (High Speed & Low Latency · Recommended)</option>
+                  <option value="openai/gpt-oss-120b">Grok 120B (Deep Reasoning & Theoretical Analysis)</option>
+                  <option value="qwen/qwen3.8-27b">Qwen 3.8 27B (Multilingual Scientific)</option>
+                  <option value="ollama/qwen2.5:3b">Local Ollama: qwen2.5:3b</option>
+                </select>
+                <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">Powered by secure server-side Grok API proxy. Latency: ~0.8s.</div>
+              </div>
+
+              <div>
+                <label class="form-label">Research Assistant Grounding Model</label>
+                <select id="setting-select-research-model" class="form-input" style="width: 100%;">
+                  <option value="openai/gpt-oss-20b" selected>Grok 20B (High Speed Grounded Synthesis)</option>
+                  <option value="openai/gpt-oss-120b">Grok 120B (Deep Corpus Evidence Extraction)</option>
+                  <option value="ollama/qwen2.5:3b">Local Ollama: qwen2.5:3b (Air-gapped offline)</option>
+                </select>
+                <div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px;">Generates responses strictly constrained to retrieved evidence with verifiable citations.</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+              <label class="form-label" style="display: flex; justify-content: space-between;">
+                <span>Inference Temperature</span>
+                <span id="setting-val-temp" style="font-family: var(--font-mono); color: var(--accent-primary);">0.7</span>
+              </label>
+              <input type="range" id="setting-range-temp" min="0.0" max="1.0" step="0.05" value="0.7" style="width: 100%; accent-color: var(--accent-primary);" oninput="document.getElementById('setting-val-temp').textContent = this.value">
+              <div style="display: flex; justify-content: space-between; font-size: 10px; color: var(--text-tertiary); font-family: var(--font-mono); margin-top: 4px;">
+                <span>0.0 (Strict / Deterministic)</span>
+                <span>0.7 (Balanced / Scientific)</span>
+                <span>1.0 (Creative / Exploratory)</span>
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- TAB 2: RESEARCH & INGESTION -->
+        <div class="settings-tab-pane" id="spane-ingestion" style="display: none;">
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Universal Document Ingestion & Chunking</div>
+                <div class="card-subtitle">Multi-format parser parameters, concurrency limits, and vector dimensions</div>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+              <div class="card" style="background: var(--bg-surface-elevated); padding: 14px;">
+                <div style="font-size: 11px; color: var(--text-tertiary); text-transform: uppercase;">Embedding Engine</div>
+                <div style="font-size: 14px; font-weight: 600; font-family: var(--font-mono); color: var(--accent-primary); margin-top: 2px;">nomic-embed-text</div>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">768 dimensions · Max 8,192 tokens</div>
+              </div>
+
+              <div class="card" style="background: var(--bg-surface-elevated); padding: 14px;">
+                <div style="font-size: 11px; color: var(--text-tertiary); text-transform: uppercase;">Worker Concurrency</div>
+                <div style="font-size: 14px; font-weight: 600; font-family: var(--font-mono); color: var(--accent-primary); margin-top: 2px;">3 Workers</div>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">Async semaphore non-blocking pool</div>
+              </div>
+
+              <div class="card" style="background: var(--bg-surface-elevated); padding: 14px;">
+                <div style="font-size: 11px; color: var(--text-tertiary); text-transform: uppercase;">Semantic Chunking</div>
+                <div style="font-size: 14px; font-weight: 600; font-family: var(--font-mono); color: var(--accent-primary); margin-top: 2px;">512 Tokens</div>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">64-token stride window overlap</div>
+              </div>
+
+              <div class="card" style="background: var(--bg-surface-elevated); padding: 14px;">
+                <div style="font-size: 11px; color: var(--text-tertiary); text-transform: uppercase;">Graph ML Storage</div>
+                <div style="font-size: 14px; font-weight: 600; font-family: var(--font-mono); color: var(--accent-primary); margin-top: 2px;">NetworkX GraphML</div>
+                <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">data/rag_storage/ (Reboot-persistent)</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+              <label class="form-label">Supported Universal Corpus Formats</label>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class="citation-pill">PDF (.pdf)</span>
+                <span class="citation-pill">Word (.docx, .doc)</span>
+                <span class="citation-pill">Excel (.xlsx, .csv)</span>
+                <span class="citation-pill">PowerPoint (.pptx)</span>
+                <span class="citation-pill">LaTeX (.tex, .bib)</span>
+                <span class="citation-pill">Markdown (.md)</span>
+                <span class="citation-pill">HTML (.html)</span>
+                <span class="citation-pill">JSON (.json)</span>
+                <span class="citation-pill">Images (OCR)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: APPEARANCE -->
+        <div class="settings-tab-pane" id="spane-appearance" style="display: none;">
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Visual Styling & Design System</div>
+                <div class="card-subtitle">Obsidian scientific editorial tokens and typography</div>
+              </div>
+              <button class="btn btn-sm btn-outline theme-toggle-btn">Toggle Light / Dark</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 8px;">Active Color Palette</div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                  <div style="width: 36px; height: 36px; border-radius: 8px; background: #090C0A; border: 1px solid #1F2C24;" title="Primary Obsidian: #090C0A"></div>
+                  <div style="width: 36px; height: 36px; border-radius: 8px; background: #101612; border: 1px solid #1F2C24;" title="Secondary Surface: #101612"></div>
+                  <div style="width: 36px; height: 36px; border-radius: 8px; background: #B5F36B;" title="Signature Emerald: #B5F36B"></div>
+                  <div style="width: 36px; height: 36px; border-radius: 8px; background: #6EAA85;" title="Technical Sage: #6EAA85"></div>
+                  <div style="width: 36px; height: 36px; border-radius: 8px; background: #E9E8DF;" title="Warm Ivory: #E9E8DF"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 8px;">Typography Scale</div>
+                <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+                  Display: <strong style="color: #fff; font-family: var(--font-display);">Space Grotesk</strong><br>
+                  Body: <strong style="color: #fff; font-family: var(--font-body);">Inter</strong><br>
+                  Code / Telemetry: <strong style="color: var(--accent-primary); font-family: var(--font-mono);">JetBrains Mono</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: SYSTEM HEALTH -->
+        <div class="settings-tab-pane" id="spane-health" style="display: none;">
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Live System Telemetry & Connectivity</div>
+                <div class="card-subtitle">Real-time status of backend subsystems, knowledge graph, and external LLM APIs</div>
+              </div>
+              <button class="btn btn-sm btn-outline" onclick="SettingsManager.refreshHealth()">Refresh Diagnostics</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+              <div class="card" style="background: var(--bg-surface-elevated); padding: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">FastAPI Server</span>
+                  <span class="badge badge-emerald">HEALTHY</span>
+                </div>
+                <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-primary); margin-top: 6px;">http://127.0.0.1:8100</div>
+              </div>
+
+              <div class="card" style="background: var(--bg-surface-elevated); padding: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Grok / Groq Cloud</span>
+                  <span class="badge badge-emerald" id="health-grok-status">CONNECTED</span>
+                </div>
+                <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-primary); margin-top: 6px;">Grok 20B / 120B / Qwen</div>
+              </div>
+
+              <div class="card" style="background: var(--bg-surface-elevated); padding: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Ollama Engine</span>
+                  <span class="badge badge-emerald" id="health-ollama-status">ONLINE</span>
+                </div>
+                <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-primary); margin-top: 6px;">qwen2.5:3b · nomic-embed</div>
+              </div>
+
+              <div class="card" style="background: var(--bg-surface-elevated); padding: 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; font-weight: 600; color: var(--text-primary);">Knowledge Graph</span>
+                  <span class="badge badge-emerald" id="health-graph-status">290 NODES</span>
+                </div>
+                <div style="font-size: 11px; font-family: var(--font-mono); color: var(--accent-primary); margin-top: 6px;">125 edges · 15 documents</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: DATA RESET & SECURITY -->
+        <div class="settings-tab-pane" id="spane-security" style="display: none;">
+          <!-- Cache Maintenance -->
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Cache Maintenance</div>
+                <div class="card-subtitle">Manage intermediate parse outputs and deterministic LLM response cache</div>
+              </div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
+              Clearing parse and LLM response caches forces documents to be re-evaluated on next query without erasing your indexed knowledge nodes or vector databases.
+            </p>
+            <button class="btn btn-secondary" id="btn-clear-cache">Clear Parse & Response Cache</button>
+          </div>
+
+          <!-- Critical Data Deletion Controls -->
+          <div class="card" style="border: 1px solid rgba(239, 68, 68, 0.4);">
+            <div class="card-header" style="border-bottom-color: rgba(239, 68, 68, 0.2);">
+              <div>
+                <div class="card-title" style="color: var(--status-danger);">Critical Data Deletion & Factory Reset</div>
+                <div class="card-subtitle">Permanent, protected erasure of all research documents, graph nodes, and vector stores</div>
+              </div>
+            </div>
+            <div class="danger-banner">
+              <strong>Warning: Destructive Operation</strong>
+              This action will permanently delete all uploaded research PDFs, extracted tables, generated vector indices, knowledge graph relationships, and conversations. Source code, configurations, and environment credentials will be preserved.
+            </div>
+            <button class="btn btn-danger" id="btn-open-reset-all-modal">Delete All My Data...</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. HELP & DOCUMENTATION -->
+      <section class="panel" id="panel-help">
+        <div class="card" style="margin-bottom: var(--space-6);">
+          <div class="card-header">
+            <div>
+              <div class="card-title">SciGraph Documentation & Quick Reference</div>
+              <div class="card-subtitle">How to get the most out of your scientific intelligence platform</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6;">
+            <div>
+              <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">1. Multimodal Document Ingestion</h4>
+              <p>Upload scientific PDFs via the Research Library. The pipeline uses MinerU to detect layouts, extract mathematical equations, convert tables to markdown, and run OCR on embedded diagrams.</p>
+            </div>
+            <div>
+              <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">2. Hybrid Retrieval Modes in Assistant</h4>
+              <ul style="margin-left: 20px; display: flex; flex-direction: column; gap: 6px; margin-top: 6px;">
+                <li><strong>Mix (Hybrid)</strong>: Combines vector similarity with multi-hop knowledge graph traversal. Recommended for most scientific questions.</li>
+                <li><strong>Global</strong>: Synthesizes high-level research questions by querying entity community summaries.</li>
+                <li><strong>Local</strong>: Precision lookup anchored around specific named concepts, authors, or experimental techniques.</li>
+                <li><strong>Naive</strong>: Standard dense vector cosine search.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">3. Keyboard Shortcuts</h4>
+              <p>Press <kbd style="background: var(--bg-surface); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">/</kbd> anywhere to focus global search. In the AI Assistant, press <kbd style="background: var(--bg-surface); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">Enter</kbd> to submit a query and <kbd style="background: var(--bg-surface); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">Shift+Enter</kbd> for a newline.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. USER PROFILE (PROFESSIONAL RESEARCHER WORKSTATION) -->
+      <section class="panel" id="panel-profile">
+        <div style="max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-6);">
+          <!-- Top Hero Card -->
+          <div class="card" style="padding: 28px; background: linear-gradient(135deg, rgba(16, 22, 18, 0.95), rgba(21, 29, 24, 0.8));">
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+              <div style="display: flex; gap: 20px; align-items: center;">
+                <div style="position: relative;">
+                  <div class="user-avatar-sm" id="profile-page-avatar" style="width: 84px; height: 84px; font-size: 28px; border: 2px solid var(--accent-primary); box-shadow: 0 0 20px rgba(181, 243, 107, 0.2);">MK</div>
+                  <label class="action-icon-btn" style="position: absolute; bottom: -4px; right: -4px; width: 28px; height: 28px; background: var(--bg-surface-elevated); border: 1px solid var(--border-default); cursor: pointer;" title="Upload Avatar Photo">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                    <input type="file" id="profile-avatar-input" accept="image/*" style="display: none;">
+                  </label>
+                </div>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <h2 id="profile-page-name" style="font-size: 22px; font-weight: 700; color: #fff; margin: 0;">Mandeep Kumar</h2>
+                    <span class="badge badge-emerald" style="font-size: 10px; font-family: var(--font-mono);">VERIFIED RESEARCHER</span>
+                  </div>
+                  <div id="profile-page-title" style="font-size: 13px; color: var(--accent-primary); margin-top: 2px;">Principal AI Research Scientist</div>
+                  <div id="profile-page-handle" style="font-size: 12px; color: var(--text-tertiary); font-family: var(--font-mono); margin-top: 4px;">@mandeep6207 · <span id="profile-page-email">mandeep@scigraph.ai</span></div>
+                </div>
+              </div>
+
+              <!-- Top Action Controls -->
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="btn btn-sm btn-primary" id="btn-edit-profile-page" onclick="document.getElementById('modal-edit-profile').classList.add('open')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                  <span>Edit Profile</span>
+                </button>
+                <a href="/login" class="btn btn-sm btn-danger" style="text-decoration: none; display: flex; align-items: center; gap: 6px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                  <span>Sign Out</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Two-Column Editorial Details -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);">
+            <!-- Left Card: Academic & Affiliations -->
+            <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="card-title" style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">Academic & Organizational Affiliations</div>
+              
+              <div>
+                <label style="font-size: 11px; font-family: var(--font-mono); color: var(--text-tertiary); text-transform: uppercase;">Institution / Laboratory</label>
+                <div id="profile-page-institution" style="font-size: 13.5px; font-weight: 500; color: var(--text-primary); margin-top: 2px;">SciGraph Scientific Intelligence Labs</div>
+              </div>
+
+              <div>
+                <label style="font-size: 11px; font-family: var(--font-mono); color: var(--text-tertiary); text-transform: uppercase;">Department</label>
+                <div id="profile-page-department" style="font-size: 13.5px; font-weight: 500; color: var(--text-primary); margin-top: 2px;">Neural Knowledge Discovery & Graph AI</div>
+              </div>
+
+              <div>
+                <label style="font-size: 11px; font-family: var(--font-mono); color: var(--text-tertiary); text-transform: uppercase;">Primary Research Interests</label>
+                <div id="profile-page-interests-container" style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px;">
+                  <span class="badge badge-emerald">Multimodal RAG</span>
+                  <span class="badge badge-neutral">Knowledge Graphs</span>
+                  <span class="badge badge-info">Latent Space Synthesis</span>
+                  <span class="badge badge-secondary">Diffusion Architectures</span>
+                  <span class="badge badge-neutral">Attention Models</span>
+                </div>
+              </div>
+
+              <div>
+                <label style="font-size: 11px; font-family: var(--font-mono); color: var(--text-tertiary); text-transform: uppercase;">Technical Tooling</label>
+                <div id="profile-page-skills-container" style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px;">
+                  <span class="citation-pill">FastAPI</span>
+                  <span class="citation-pill">LightRAG</span>
+                  <span class="citation-pill">PyTorch</span>
+                  <span class="citation-pill">NetworkX</span>
+                  <span class="citation-pill">Ollama</span>
+                  <span class="citation-pill">Grok API</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Card: Bio & Security Controls -->
+            <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="card-title" style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary);">Theoretical Scope & Session Security</div>
+
+              <div>
+                <label style="font-size: 11px; font-family: var(--font-mono); color: var(--text-tertiary); text-transform: uppercase;">Research Biography</label>
+                <p id="profile-page-bio" style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-top: 4px;">
+                  Researching topological multimodal knowledge graphs, neural entity-relationship extraction, and low-latency grounded reasoning with generative AI.
+                </p>
+              </div>
+
+              <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+                <label style="font-size: 11px; font-family: var(--font-mono); color: var(--text-tertiary); text-transform: uppercase;">Session & Workstation Security</label>
+                <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                    <span style="color: var(--text-secondary);">Workstation Host:</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent-primary);">Windows 11 Native</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                    <span style="color: var(--text-secondary);">Knowledge Graph Store:</span>
+                    <span style="font-family: var(--font-mono); color: var(--accent-primary);">Persistent Disk GraphML</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                    <span style="color: var(--text-secondary);">Session Status:</span>
+                    <span class="badge badge-emerald" style="font-size: 10px;">ACTIVE (AUTHENTICATED)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ========================================================================
+     MODALS & DIALOGS
+     ======================================================================== -->
+
+<!-- 1. Edit Profile Modal -->
+<div class="modal-backdrop" id="modal-edit-profile">
+  <div class="modal-dialog" style="max-width: 560px;">
+    <div class="modal-header">
+      <div class="modal-title">Edit Researcher Profile</div>
+      <button class="btn btn-sm btn-ghost" id="close-edit-profile" onclick="document.getElementById('modal-edit-profile').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div class="form-group">
+          <label class="form-label">Full / Display Name</label>
+          <input type="text" id="input-edit-display-name" class="form-input" value="Mandeep Kumar">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" id="input-edit-email" class="form-input" value="mandeep@scigraph.ai">
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div class="form-group">
+          <label class="form-label">Professional Title</label>
+          <input type="text" id="input-edit-title" class="form-input" value="Principal AI Research Scientist">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Institution / Organization</label>
+          <input type="text" id="input-edit-institution" class="form-input" value="SciGraph Scientific Intelligence Labs">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Department / Lab</label>
+        <input type="text" id="input-edit-department" class="form-input" value="Neural Knowledge Discovery & Graph AI">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Research Bio / Focus</label>
+        <textarea id="input-edit-bio" class="form-textarea" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Research Interests (comma separated)</label>
+        <input type="text" id="input-edit-interests" class="form-input" placeholder="Multimodal RAG, Knowledge Graphs, Diffusion Models">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Technical Skills (comma separated)</label>
+        <input type="text" id="input-edit-skills" class="form-input" placeholder="FastAPI, LightRAG, PyTorch, Ollama, Grok API">
       </div>
     </div>
-
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="cancel-edit-profile" onclick="document.getElementById('modal-edit-profile').classList.remove('open')">Cancel</button>
+      <button class="btn btn-primary" id="save-edit-profile">Save Profile Changes</button>
+    </div>
   </div>
 </div>
 
-<script src="/ui/main.js"></script>
+<!-- 2. New RAG Workspace Modal -->
+<div class="modal-backdrop" id="modal-new-rag">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <div class="modal-title">Create New RAG Workspace</div>
+      <button class="btn btn-sm btn-ghost" id="close-new-rag">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Workspace Name</label>
+        <input type="text" id="input-new-rag-name" class="form-input" placeholder="e.g., Deep Learning in Oncology">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea id="input-new-rag-desc" class="form-textarea" placeholder="Research focus and domains..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tags (comma separated)</label>
+        <input type="text" id="input-new-rag-tags" class="form-input" placeholder="oncology, biology, genomics">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="cancel-new-rag">Cancel</button>
+      <button class="btn btn-primary" id="create-new-rag-btn">Create Workspace</button>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Critical Reset All Data Confirmation Modal (Section 6 Requirement) -->
+<div class="modal-backdrop" id="modal-reset-all-data">
+  <div class="modal-dialog" style="border-color: var(--status-danger);">
+    <div class="modal-header" style="background: var(--status-danger-bg);">
+      <div class="modal-title" style="color: var(--status-danger);">Confirm Full Data Reset</div>
+      <button class="btn btn-sm btn-ghost" id="close-reset-modal">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="danger-banner">
+        <strong>CRITICAL DATA ERASURE</strong>
+        This action will permanently delete:
+        <ul style="margin-left: 20px; margin-top: 6px;">
+          <li>All uploaded research PDF and document files</li>
+          <li>All OCR and layout extraction caches</li>
+          <li>All LightRAG vector indices and KV stores</li>
+          <li>The complete 3D knowledge graph relationships and nodes</li>
+          <li>All AI research conversation histories</li>
+        </ul>
+      </div>
+      <p style="font-size: var(--text-sm); color: var(--text-primary); margin-bottom: 12px;">
+        To confirm permanent deletion, please type <strong style="font-family: var(--font-mono); color: var(--status-danger);">DELETE ALL DATA</strong> in the box below:
+      </p>
+      <input type="text" id="input-confirm-delete-all" class="form-input" placeholder="Type DELETE ALL DATA exactly" style="border-color: var(--status-danger);">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="cancel-reset-modal">Cancel</button>
+      <button class="btn btn-danger" id="btn-execute-reset-all" disabled>Permanently Erase All Data</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- SciGraph Application Modular Scripts -->
+<script src="/ui/js/api.js"></script>
+<script src="/ui/js/theme.js"></script>
+<script src="/ui/js/navigation.js"></script>
+<script src="/ui/js/profile.js"></script>
+<script src="/ui/js/dashboard.js"></script>
+<script src="/ui/js/library.js"></script>
+<script src="/ui/js/processing.js"></script>
+<script src="/ui/js/assistant.js"></script>
+<script src="/ui/js/workspaces.js"></script>
+<script src="/ui/js/graph.js"></script>
+<script src="/ui/js/live-activity.js"></script>
+<script src="/ui/js/comparison.js"></script>
+<script src="/ui/js/insights.js"></script>
+<script src="/ui/js/settings.js"></script>
+<script src="/ui/js/global-assistant.js"></script>
+<script src="/ui/js/history.js"></script>
+<script src="/ui/js/app.js"></script>
+
 </body>
 </html>

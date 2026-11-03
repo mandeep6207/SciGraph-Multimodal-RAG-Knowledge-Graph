@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — SciGraph Scientific Intelligence Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/ui/css/design-system.css">
+  <link rel="stylesheet" href="/ui/css/components.css">
+  <link rel="stylesheet" href="/ui/css/themes.css">
+  <link rel="stylesheet" href="/ui/css/animations.css">
+  <style>
+    body {
+      background-color: var(--bg-primary, #090C0A);
+      color: var(--text-primary, #E3E7E4);
+      font-family: var(--font-body, 'Inter', sans-serif);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Subtle Glows */
+    .ambient-glow-1 {
+      position: absolute;
+      top: -20%;
+      left: 30%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(181, 243, 107, 0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ambient-glow-2 {
+      position: absolute;
+      bottom: -15%;
+      right: 25%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(110, 170, 133, 0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 440px;
+      padding: 24px;
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(181, 243, 107, 0.15), rgba(110, 170, 133, 0.05));
+      border: 1px solid rgba(181, 243, 107, 0.3);
+      color: var(--accent-primary, #B5F36B);
+      margin-bottom: 16px;
+      box-shadow: 0 0 24px rgba(181, 243, 107, 0.1);
+    }
+    .brand-title {
+      font-family: var(--font-display, 'Space Grotesk', sans-serif);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0 0 6px 0;
+    }
+    .brand-tagline {
+      font-size: 13px;
+      color: var(--text-secondary, #A1A8A3);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .login-card {
+      background: var(--bg-surface, #101612);
+      border: 1px solid var(--border-default, #1F2C24);
+      border-radius: 14px;
+      padding: 32px 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .demo-banner {
+      background: rgba(181, 243, 107, 0.06);
+      border: 1px solid rgba(181, 243, 107, 0.2);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .demo-info {
+      font-size: 12px;
+      color: var(--text-secondary, #A1A8A3);
+    }
+    .demo-info strong {
+      color: var(--accent-primary, #B5F36B);
+      display: block;
+      font-size: 13px;
+    }
+
+    .btn-demo-quick {
+      background: var(--accent-primary, #B5F36B);
+      color: #090C0A;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-demo-quick:hover {
+      background: #c5f884;
+      box-shadow: 0 0 12px rgba(181, 243, 107, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .divider-text {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+      font-size: 11px;
+      color: var(--text-tertiary, #646E66);
+      font-family: var(--font-mono, monospace);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .divider-text::before,
+    .divider-text::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid var(--border-subtle, #16201A);
+    }
+    .divider-text:not(:empty)::before { margin-right: 1em; }
+    .divider-text:not(:empty)::after { margin-left: 1em; }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary, #A1A8A3);
+      margin-bottom: 6px;
+    }
+    .form-input-login {
+      width: 100%;
+      box-sizing: border-box;
+      background: var(--bg-surface-elevated, #151D18);
+      border: 1px solid var(--border-default, #1F2C24);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .form-input-login:focus {
+      border-color: var(--accent-primary, #B5F36B);
+      box-shadow: 0 0 0 2px rgba(181, 243, 107, 0.15);
+    }
+
+    .form-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-secondary, #A1A8A3);
+      margin-bottom: 22px;
+    }
+    .form-checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .btn-submit-login {
+      width: 100%;
+      background: var(--bg-surface-elevated, #151D18);
+      border: 1px solid rgba(181, 243, 107, 0.4);
+      color: var(--accent-primary, #B5F36B);
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-submit-login:hover {
+      background: var(--accent-primary, #B5F36B);
+      color: #090C0A;
+      box-shadow: 0 0 16px rgba(181, 243, 107, 0.3);
+    }
+
+    .footer-links {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--text-tertiary, #646E66);
+    }
+    .footer-links a {
+      color: var(--accent-primary, #B5F36B);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .footer-links a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <div class="login-container">
+    <div class="brand-header">
+      <div class="brand-logo-wrap">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="6" cy="6" r="3"></circle>
+          <circle cx="18" cy="18" r="3"></circle>
+          <circle cx="6" cy="18" r="3"></circle>
+          <circle cx="18" cy="6" r="3"></circle>
+          <line x1="8.5" y1="7.5" x2="15.5" y2="16.5"></line>
+          <line x1="8.5" y1="16.5" x2="15.5" y2="7.5"></line>
+        </svg>
+      </div>
+      <h1 class="brand-title">SciGraph</h1>
+      <p class="brand-tagline">Discover the connections behind research.<br><span style="font-size: 11px; opacity: 0.7;">Multimodal intelligence. Connected knowledge. Evidence-driven discovery.</span></p>
+    </div>
+
+    <div class="login-card">
+      <!-- 1-Click Demo Access -->
+      <div class="demo-banner">
+        <div class="demo-info">
+          <strong>Demo Researcher Access</strong>
+          <span>Instant workspace authentication</span>
+        </div>
+        <button class="btn-demo-quick" onclick="demoSignIn()">Quick Demo Enter</button>
+      </div>
+
+      <div class="divider-text">or authenticate via credentials</div>
+
+      <form id="login-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Researcher Email / ID</label>
+          <input type="email" id="login-email" class="form-input-login" value="mandeep@scigraph.ai" required autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Access Token / Password</label>
+          <input type="password" id="login-password" class="form-input-login" value="••••••••••••" required autocomplete="current-password">
+        </div>
+
+        <div class="form-options">
+          <label class="form-checkbox-label">
+            <input type="checkbox" checked style="accent-color: var(--accent-primary, #B5F36B);">
+            <span>Keep session active</span>
+          </label>
+          <a href="#" style="color: var(--text-tertiary); text-decoration: none;" onclick="alert('Demo environment: Simply use Quick Demo Enter or click Enter Workspace.'); return false;">Lost Key?</a>
+        </div>
+
+        <button type="submit" class="btn-submit-login">
+          <span>Enter Scientific Workspace</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="footer-links">
+      <a href="/">← Return to SciGraph Platform Landing</a> &nbsp;·&nbsp; <span style="font-family: var(--font-mono); font-size: 11px;">v2.4.0 Native Windows</span>
+    </div>
+  </div>
+
+  <script>
+    function demoSignIn() {
+      // Store researcher session
+      localStorage.setItem('scigraph_session_active', 'true');
+      localStorage.setItem('scigraph_authenticated_user', JSON.stringify({
+        name: 'Mandeep Kumar',
+        handle: '@mandeep6207',
+        role: 'Workspace Owner & Lead Researcher',
+        email: 'mandeep@scigraph.ai',
+        institution: 'SciGraph Intelligence Labs',
+        authenticated_at: new Date().toISOString()
+      }));
+
+      // Redirect to main workspace
+      window.location.href = '/ui/';
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      demoSignIn();
+    }
+  </script>
+</body>
+</html>

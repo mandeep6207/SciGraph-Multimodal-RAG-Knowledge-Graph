@@ -1,7 +1,7 @@
 services:
-  the-brain:
-    image: ghcr.io/hastur-hp/the-brain:latest
-    container_name: the_brain
+  scigraph:
+    image: scigraph:latest
+    container_name: scigraph_service
     restart: unless-stopped
     network_mode: "host"
     environment:
@@ -55,8 +55,8 @@ services:
       - OUTPUT_DIR=/app/data/output
       - PARSER=mineru
     volumes:
-      - thebrain_data:/app/data
-      - thebrain_mineru_models:/root/.cache/huggingface
+      - scigraph_data:/app/data
+      - scigraph_mineru_models:/root/.cache/huggingface
     depends_on:
       neo4j:
         condition: service_healthy
@@ -95,7 +95,7 @@ volumes:
     name: lightrag_neo4j_data
   neo4j_plugins:
     name: lightrag_neo4j_plugins
-  thebrain_data:
-    name: thebrain_data
-  thebrain_mineru_models:
-    name: thebrain_mineru_models
+  scigraph_data:
+    name: scigraph_data
+  scigraph_mineru_models:
+    name: scigraph_mineru_models

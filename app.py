@@ -34,83 +34,21 @@ from backend.jobs import Job, JobLogHandler
 from backend.config import *
 
 # Import our new API routers
-from backend.routers import documents, graph, system
+from backend.routers import documents, graph, system, assistant
 
 
 # ---------------------------------------------------------------------------
-# Background processing
+# Universal Concurrent Ingestion Pipeline
 # ---------------------------------------------------------------------------
+from backend.ingestion_engine import ingestion_engine
+
 async def _process_document(job: Job, file_path: str):
-    if state.rag is None:
-        job.status = "error"
-        job.push("error", "RAGAnything not initialised")
-        return
-
-    handler = JobLogHandler(job)
-    handler.setLevel(logging.DEBUG)
-    watched_loggers = ["lightrag", "raganything", "magic_pdf"]
-
-    for name in watched_loggers:
-        logging.getLogger(name).addHandler(handler)
-
-    try:
-        job.status = "parsing"
-        job.started_at = time.time()
-        job.push("status", f"Parsing {job.filename} …")
-        job.push("log", "Using MinerU pipeline backend (layout detection + OCR)")
-        if VISION_MODEL:
-            job.push(
-                "log",
-                f"Vision model ({VISION_MODEL}) will process images/tables/equations",
-            )
-
-        stem = Path(file_path).stem
-        for stale in Path(OUTPUT_DIR).glob(f"{stem}*"):
-            if stale.is_dir():
-                shutil.rmtree(stale, ignore_errors=True)
-                job.push("log", f"Cleared stale output directory: {stale.name}")
-
-        await state.rag.process_document_complete(
-            file_path=file_path,
-            output_dir=OUTPUT_DIR,
-            parse_method="auto",
-            backend="pipeline",
-            display_stats=True,
-        )
-
-        job.status = "done"
-        job.finished_at = time.time()
-        job.push(
-            "done",
-            f"✓ Finished — {job.chunks} chunks · {job.nodes} nodes · {job.relations} relations",
-            chunks=job.chunks,
-            nodes=job.nodes,
-            relations=job.relations,
-        )
-        job_manager.save_completed(
-            job.filename, job.chunks, job.nodes, job.relations, job.finished_at
-        )
-
-    except Exception as exc:
-        job.status = "error"
-        job.finished_at = time.time()
-        job.error = str(exc)
-        job.push("error", f"✗ {exc}")
-        base_logger.exception("Processing failed for %s", job.filename)
-    finally:
-        for name in watched_loggers:
-            logging.getLogger(name).removeHandler(handler)
-
+    """Delegates document ingestion to the universal multi-worker engine."""
+    await ingestion_engine.process_document(job, file_path)
 
 async def _queue_worker():
-    """Processes documents. Respects queue_paused flag."""
-    while True:
-        if not job_manager.queue_paused and job_manager.processing_queue:
-            job, file_path = job_manager.processing_queue.popleft()
-            job_manager.current_job = job
-            await _process_document(job, file_path)
-            job_manager.current_job = None
-        await asyncio.sleep(0.5)
+    """Managed by concurrent IngestionEngine supervisor."""
+    pass
 
 
 # ---------------------------------------------------------------------------
@@ -278,10 +216,11 @@ async def lifespan(app: FastAPI):
         asyncio.create_task(asyncio.to_thread(document_reranker.load))
     else:
         base_logger.info("High-speed vector cosine ranking enabled (local reranker bypassed for instant query responses).")
-    base_logger.info("Starting queue worker...")
-    asyncio.create_task(_queue_worker())
+    base_logger.info("Starting Universal Concurrent Ingestion Engine (concurrency=%d)...", MAX_CONCURRENT_INGESTIONS)
+    ingestion_engine.start()
     base_logger.info("RAGAnything ready with storage: %s", effective_graph_storage)
     yield
+    await ingestion_engine.stop()
     await neo4j_manager.close()
     if hasattr(provider, "close"):
         await provider.close()
@@ -290,7 +229,7 @@ async def lifespan(app: FastAPI):
 # ---------------------------------------------------------------------------
 # FastAPI app setup
 # ---------------------------------------------------------------------------
-app = FastAPI(title="RAG-Anything Service", lifespan=lifespan)
+app = FastAPI(title=APP_FULL_TITLE, lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -303,6 +242,7 @@ app.add_middleware(
 app.include_router(documents.router)
 app.include_router(graph.router)
 app.include_router(system.router)
+app.include_router(assistant.router)
 
 # Mount Frontend
 FRONTEND_DIR = Path(__file__).parent / "frontend"
@@ -310,6 +250,20 @@ if FRONTEND_DIR.exists():
     app.mount(
         "/ui", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend"
     )
+
+# Mount Uploads for file access & profile avatars
+if Path(UPLOAD_DIR).exists():
+    app.mount(
+        "/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads"
+    )
+
+
+@app.get("/login", response_class=HTMLResponse)
+def login_page():
+    login_html = FRONTEND_DIR / "login.html"
+    if login_html.exists():
+        return HTMLResponse(login_html.read_text(encoding="utf-8"))
+    return HTMLResponse("<meta http-equiv='refresh' content='0; url=/ui/login.html' />")
 
 
 @app.get("/", response_class=HTMLResponse)

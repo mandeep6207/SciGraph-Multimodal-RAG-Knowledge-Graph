@@ -37,15 +37,37 @@ class Neo4jManager:
                 self.driver = None
 
     def _get_fallback_nx_graph(self):
-        """Helper to get internal LightRAG NetworkX graph if available."""
+        """Helper to get internal LightRAG NetworkX graph from memory or disk with caching."""
+        # 1. Try from in-memory LightRAG state
         try:
             from backend.dependencies import state
-            if state.rag and getattr(state.rag, "lightrag", None):
-                graph_storage = getattr(state.rag.lightrag, "chunk_entity_relation_graph", None)
+            if state.rag:
+                lightrag_inst = getattr(state.rag, "lightrag", None) or state.rag
+                graph_storage = getattr(lightrag_inst, "chunk_entity_relation_graph", None)
                 if graph_storage:
-                    return getattr(graph_storage, "_graph", None)
+                    g = getattr(graph_storage, "_graph", None)
+                    if g is not None and g.number_of_nodes() > 0:
+                        return g
         except Exception:
             pass
+
+        # 2. Try loading from persistent GraphML file on disk with mtime cache
+        try:
+            from pathlib import Path
+            import networkx as nx
+            from backend.config import WORKING_DIR
+            graphml_path = Path(WORKING_DIR) / "graph_chunk_entity_relation.graphml"
+            if graphml_path.exists():
+                mtime = graphml_path.stat().st_mtime
+                if hasattr(self, "_cached_nx_graph") and getattr(self, "_cached_nx_mtime", 0) == mtime:
+                    return self._cached_nx_graph
+                g = nx.read_graphml(graphml_path)
+                self._cached_nx_graph = g
+                self._cached_nx_mtime = mtime
+                return g
+        except Exception as e:
+            _logger.debug(f"Failed to read fallback graphml: {e}")
+
         return None
 
     async def get_stats(self) -> tuple[int, int]:
@@ -57,7 +79,8 @@ class Neo4jManager:
                     total_nodes = (await r1.single())["c"]
                     r2 = await session.run("MATCH ()-[r]->() RETURN count(r) AS c")
                     total_relations = (await r2.single())["c"]
-                    return int(total_nodes), int(total_relations)
+                    if int(total_nodes) > 0:
+                        return int(total_nodes), int(total_relations)
             except Exception as e:
                 _logger.debug(f"Neo4j stats query failed: {e}")
 
@@ -153,7 +176,11 @@ class Neo4jManager:
                         )
 
                     node_list = list(nodes.values())
-                    return {"nodes": node_list, "links": links, "edges": links}
+                    if node_list:
+                        return {"nodes": node_list, "links": links, "edges": links}
+
+            except Exception as e:
+                _logger.warning("Neo4j graph query failed: %s. Using fallback if available.", e)
 
             except Exception as e:
                 _logger.warning("Neo4j graph query failed: %s. Using fallback if available.", e)

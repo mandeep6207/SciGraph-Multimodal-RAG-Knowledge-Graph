@@ -1,0 +1,606 @@
+{
+  "doc-560ab5de89a55fddf7b47381d8d11973": {
+    "relation_pairs": [
+      [
+        "Author",
+        "SciGraph Research Paper"
+      ]
+    ],
+    "count": 1,
+    "create_time": 1793740936,
+    "update_time": 1793740936,
+    "_id": "doc-560ab5de89a55fddf7b47381d8d11973"
+  },
+  "doc-c8e4be070549dd5352701660e11d799b": {
+    "relation_pairs": [
+      [
+        "Semiconductor-superconductor heterostructures",
+        "Topological Quantum Computing"
+      ],
+      [
+        "Majorana zero modes",
+        "Topological Quantum Computing"
+      ],
+      [
+        "Dr. M. Vance",
+        "Topological Quantum Computing"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1793740941,
+    "update_time": 1793740941,
+    "_id": "doc-c8e4be070549dd5352701660e11d799b"
+  },
+  "doc-a491d3beb849d44d764ba9308d49670a": {
+    "relation_pairs": [
+      [
+        "Buffer Composition",
+        "Monoclonal Antibody Chromatography Protocol"
+      ],
+      [
+        "Elution",
+        "Monoclonal Antibody Chromatography Protocol"
+      ],
+      [
+        "Monoclonal Antibody Chromatography Protocol",
+        "Target pHTarget pH"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1793740955,
+    "update_time": 1793740955,
+    "_id": "doc-a491d3beb849d44d764ba9308d49670a"
+  },
+  "doc-c747003228b3dca3651dd872dc4d64d6": {
+    "relation_pairs": [
+      [
+        "Cytotoxicity",
+        "SCG-801"
+      ],
+      [
+        "Cytotoxicity",
+        "SCG-803"
+      ],
+      [
+        "Kinase_Assay_Results",
+        "SCG-801"
+      ],
+      [
+        "SCG-803",
+        "Selectivity_Index"
+      ],
+      [
+        "Kinase_Assay_Results",
+        "SCG-803"
+      ],
+      [
+        "SCG-802",
+        "Selectivity_Index"
+      ],
+      [
+        "IC50_nM",
+        "SCG-802"
+      ],
+      [
+        "IC50_nM",
+        "SCG-801"
+      ],
+      [
+        "IC50_nM",
+        "SCG-803"
+      ],
+      [
+        "Cytotoxicity",
+        "SCG-802"
+      ],
+      [
+        "Kinase_Assay_Results",
+        "SCG-802"
+      ],
+      [
+        "SCG-801",
+        "Selectivity_Index"
+      ]
+    ],
+    "count": 12,
+    "create_time": 1793740967,
+    "update_time": 1793740967,
+    "_id": "doc-c747003228b3dca3651dd872dc4d64d6"
+  },
+  "doc-a71e4e57e55fa44c2b7033cf864fedc9": {
+    "relation_pairs": [
+      [
+        "Multi-messenger Gravitational Radiation Observations",
+        "r-Process Nucleosynthesis"
+      ],
+      [
+        "LIGO-Virgo",
+        "Multi-messenger Gravitational Radiation Observations"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1793740971,
+    "update_time": 1793740971,
+    "_id": "doc-a71e4e57e55fa44c2b7033cf864fedc9"
+  },
+  "doc-0a522303be3ae3d9b177db158000450e": {
+    "relation_pairs": [
+      [
+        "Calcium/calmodulin-dependent Protein Kinase II",
+        "Glutamate"
+      ],
+      [
+        "Calcium/calmodulin-dependent Protein Kinase II",
+        "NMDA Receptor"
+      ],
+      [
+        "Calcium/calmodulin-dependent Protein Kinase II",
+        "Postsynaptic Density"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1793740978,
+    "update_time": 1793740978,
+    "_id": "doc-0a522303be3ae3d9b177db158000450e"
+  },
+  "doc-2caeb7aa3c9d1d3eb9e82c60cf71bea1": {
+    "relation_pairs": [
+      [
+        "Oligodendrocyte Progenitor",
+        "UMAP"
+      ],
+      [
+        "Cluster C2",
+        "Marker Genes"
+      ],
+      [
+        "CD68",
+        "UMAP"
+      ],
+      [
+        "Cluster C1",
+        "Marker Genes"
+      ],
+      [
+        "AIF1",
+        "UMAP"
+      ],
+      [
+        "Glioblastoma Multiforme",
+        "UMAP"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1793740986,
+    "update_time": 1793740986,
+    "_id": "doc-2caeb7aa3c9d1d3eb9e82c60cf71bea1"
+  },
+  "doc-3ea4186753118b14442f9cebd3e0075d": {
+    "relation_pairs": [
+      [
+        "Orbitrap Exploris 480",
+        "Phosphoproteomics Phosphopeptide Enrichment"
+      ],
+      [
+        "Cell cycle checkpoints",
+        "Phosphoproteomics Phosphopeptide Enrichment"
+      ],
+      [
+        "MAPK cascade",
+        "Phosphoproteomics Phosphopeptide Enrichment"
+      ],
+      [
+        "PI3K-Akt signaling",
+        "Phosphoproteomics Phosphopeptide Enrichment"
+      ],
+      [
+        "Phosphoproteomics Phosphopeptide Enrichment",
+        "TMTpro 16-plex Isobaric Labeling"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1793740994,
+    "update_time": 1793740994,
+    "_id": "doc-3ea4186753118b14442f9cebd3e0075d"
+  },
+  "doc-c76034b183ab30b4f8cf57a446a8244b": {
+    "relation_pairs": [
+      [
+        "NumPy",
+        "Pandas"
+      ],
+      [
+        "Eager Execution",
+        "TensorFlow 2 Integration"
+      ],
+      [
+        "Generative Artificial Intelligence",
+        "TensorFlow 2 Integration"
+      ],
+      [
+        "Generative Artificial Intelligence",
+        "tf.GradientTape"
+      ],
+      [
+        "Functional API",
+        "Generative Artificial Intelligence"
+      ],
+      [
+        "Matplotlib",
+        "Seaborn"
+      ],
+      [
+        "Eager Execution",
+        "Generative Artificial Intelligence"
+      ],
+      [
+        "Matplotlib",
+        "Pandas"
+      ],
+      [
+        "Computation Graph Compilation",
+        "Generative Artificial Intelligence"
+      ],
+      [
+        "Introduction to Generative AI",
+        "Python"
+      ],
+      [
+        "Python",
+        "TensorFlow 2 Integration"
+      ],
+      [
+        "Generative Artificial Intelligence",
+        "Model Subclassing"
+      ],
+      [
+        "Generative Artificial Intelligence",
+        "TensorFlow 2"
+      ],
+      [
+        "Computation Graph Compilation",
+        "TensorFlow 2 Integration"
+      ],
+      [
+        "Generative Artificial Intelligence",
+        "NumPy tensor array operations"
+      ]
+    ],
+    "count": 15,
+    "create_time": 1793742849,
+    "update_time": 1793742849,
+    "_id": "doc-c76034b183ab30b4f8cf57a446a8244b"
+  },
+  "doc-a8850120e82c9a7c7c659ecfbb025317": {
+    "relation_pairs": [
+      [
+        "Image Generation",
+        "Likelihood Evaluation"
+      ],
+      [
+        "Medical Image Generation",
+        "X-ray"
+      ],
+      [
+        "Medical Image Generation",
+        "Training Diagnostic Networks"
+      ],
+      [
+        "Image Generation",
+        "Image Quality"
+      ],
+      [
+        "Stability",
+        "Unstable"
+      ],
+      [
+        "Stability",
+        "Stable"
+      ],
+      [
+        "SE/BCE Averaging",
+        "Stability"
+      ],
+      [
+        "3D Convolutions",
+        "Video Generation & Temporal Consistency"
+      ],
+      [
+        "Implicit",
+        "Likelihood Evaluation"
+      ],
+      [
+        "Non-Saturating Heuristic Loss",
+        "Training Stability"
+      ],
+      [
+        "Image Generation",
+        "Latent Space Structure"
+      ],
+      [
+        "Continuous",
+        "Latent Space"
+      ],
+      [
+        "MRI",
+        "Medical Image Generation"
+      ],
+      [
+        "One-Time-Scale Update Rule (TTUR)",
+        "Training Stability"
+      ],
+      [
+        "Spectral Normalization",
+        "Stable"
+      ],
+      [
+        "Image Generation",
+        "Training Stability"
+      ],
+      [
+        "Spectral Normalization",
+        "Training Stability"
+      ],
+      [
+        "Discontinuous",
+        "Latent Space"
+      ],
+      [
+        "Explicit",
+        "Likelihood Evaluation"
+      ],
+      [
+        "Temporal Attention Layers",
+        "Video Generation & Temporal Consistency"
+      ],
+      [
+        "CT",
+        "Medical Image Generation"
+      ]
+    ],
+    "count": 21,
+    "create_time": 1793742923,
+    "update_time": 1793742923,
+    "_id": "doc-a8850120e82c9a7c7c659ecfbb025317"
+  },
+  "doc-120683466c488aabde5236dc609c07ae": {
+    "relation_pairs": [
+      [
+        "Text Decoding Strategies",
+        "Text Generation Applications & Evaluation Metrics"
+      ],
+      [
+        "Fine-Tuning Language Models",
+        "Parameter-Efficient Fine-Tuning"
+      ],
+      [
+        "Text Generation",
+        "UNIT-III"
+      ],
+      [
+        "Direct Preference Optimization",
+        "Fine-Tuning Language Models"
+      ],
+      [
+        "Evaluation Metrics",
+        "Text Decoding Strategies"
+      ],
+      [
+        "Positional Encoding",
+        "Self-Attention Maps"
+      ],
+      [
+        "Fine-Tuning Language Models",
+        "Reinforcement Learning from Human Feedback"
+      ],
+      [
+        "Perplexity",
+        "Text Generation Applications & Evaluation Metrics"
+      ],
+      [
+        "Text Decoding Strategies",
+        "Top-𝐾 Sampling"
+      ],
+      [
+        "ROUGE Score",
+        "Text Generation Applications & Evaluation Metrics"
+      ],
+      [
+        "Fine-Tuning Language Models",
+        "Supervised Fine-Tuning"
+      ],
+      [
+        "Causal Attention Mask",
+        "Self-Attention Maps"
+      ],
+      [
+        "Text Decoding Strategies",
+        "Top-𝑃 (Nucleus) Sampling"
+      ],
+      [
+        "Greedy Decoding",
+        "Text Decoding Strategies"
+      ],
+      [
+        "Evaluation Metrics",
+        "Text Generation Applications & Evaluation Metrics"
+      ],
+      [
+        "Multi-Head Attention",
+        "Self-Attention Maps"
+      ],
+      [
+        "BLEU Score",
+        "Text Generation Applications & Evaluation Metrics"
+      ],
+      [
+        "Scaling Factor",
+        "Self-Attention Maps"
+      ]
+    ],
+    "count": 18,
+    "create_time": 1793742940,
+    "update_time": 1793742940,
+    "_id": "doc-120683466c488aabde5236dc609c07ae"
+  },
+  "doc-99f8fa13cb484b51ce51ba03554bbc27": {
+    "relation_pairs": [
+      [
+        "Advanced Techniques",
+        "Transfer Learning"
+      ],
+      [
+        "Ethical Considerations",
+        "Technological Evolution"
+      ],
+      [
+        "Ethical Considerations",
+        "Transfer Learning"
+      ],
+      [
+        "Ethical Considerations",
+        "Future Directions"
+      ],
+      [
+        "Real Time Performance Inputs",
+        "human performance"
+      ],
+      [
+        "Core Concepts",
+        "Transfer Learning"
+      ],
+      [
+        "Controllable Latent Spaces",
+        "model latent spaces"
+      ],
+      [
+        "Emerging Trends",
+        "Transfer Learning"
+      ],
+      [
+        "Fine-Tuning",
+        "Transfer Learning"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1793742979,
+    "update_time": 1793742979,
+    "_id": "doc-99f8fa13cb484b51ce51ba03554bbc27"
+  },
+  "doc-48d6008cd1275a35c7c59c4f4a9ca833": {
+    "relation_pairs": [
+      [
+        "Causal Transformer Architecture",
+        "UNIT-IV"
+      ],
+      [
+        "Binary Thresholding & Binarization",
+        "MuseGAN"
+      ],
+      [
+        "MIDI",
+        "UNIT-IV"
+      ],
+      [
+        "Human-in-the-Loop Interaction",
+        "MuseGAN"
+      ],
+      [
+        "Perplexity (PPL)",
+        "Target Property"
+      ],
+      [
+        "Positional Encodings",
+        "Standard Absolute Positional Encodings"
+      ],
+      [
+        "Empty Bar Rate (EBR)",
+        "Target Property"
+      ],
+      [
+        "Causal Transformer Architecture",
+        "Music Generation"
+      ],
+      [
+        "MIDI",
+        "Music Generation"
+      ],
+      [
+        "Pitch Class Histogram Distance",
+        "Target Property"
+      ],
+      [
+        "MuseGAN",
+        "Track Interdependence"
+      ],
+      [
+        "3D Transposed Convolutions",
+        "Multi-Bar Generation"
+      ],
+      [
+        "Music Generation",
+        "Piano Roll Representation"
+      ],
+      [
+        "Music Generation",
+        "Transformer-Based Music Generation"
+      ],
+      [
+        "MuseGAN",
+        "Temporal Model"
+      ],
+      [
+        "Positional Encodings",
+        "Relative Positional Encodings"
+      ],
+      [
+        "Relative Positional Encodings",
+        "Standard Absolute Positional Encodings"
+      ],
+      [
+        "Scale Consistency",
+        "Target Property"
+      ],
+      [
+        "Piano Roll Representation",
+        "UNIT-IV"
+      ],
+      [
+        "Music Generation",
+        "UNIT-IV"
+      ],
+      [
+        "LSTM-Based Music Generation",
+        "UNIT-IV"
+      ],
+      [
+        "Transformer-Based Music Generation",
+        "UNIT-IV"
+      ],
+      [
+        "Polyphonic Density",
+        "Target Property"
+      ],
+      [
+        "MuseGAN",
+        "Polyphonic Music Datasets"
+      ],
+      [
+        "MuseGAN",
+        "Wasserstein GAN"
+      ],
+      [
+        "LSTM-Based Music Generation",
+        "Music Generation"
+      ],
+      [
+        "Hybrid Model",
+        "MuseGAN"
+      ]
+    ],
+    "count": 27,
+    "create_time": 1793742990,
+    "update_time": 1793742990,
+    "_id": "doc-48d6008cd1275a35c7c59c4f4a9ca833"
+  }
+}

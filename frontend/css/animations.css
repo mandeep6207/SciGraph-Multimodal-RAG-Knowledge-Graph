@@ -1,0 +1,113 @@
+/* ==========================================================================
+   SCIGRAPH ANIMATIONS — RESTRAINED MOTION & SCIENTIFIC TELEMETRY
+   Smooth, purposeful 120–220ms transitions. Respects prefers-reduced-motion.
+   ========================================================================== */
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes emeraldPulse {
+  0%, 100% {
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(181, 243, 107, 0.4);
+  }
+  50% {
+    opacity: 0.4;
+    box-shadow: 0 0 4px rgba(181, 243, 107, 0.2);
+  }
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Staggered Content Reveals */
+.stagger-1 { animation: panelFadeIn 220ms var(--ease-fast) forwards; animation-delay: 40ms; }
+.stagger-2 { animation: panelFadeIn 220ms var(--ease-fast) forwards; animation-delay: 80ms; }
+.stagger-3 { animation: panelFadeIn 220ms var(--ease-fast) forwards; animation-delay: 120ms; }
+.stagger-4 { animation: panelFadeIn 220ms var(--ease-fast) forwards; animation-delay: 160ms; }
+.stagger-5 { animation: panelFadeIn 220ms var(--ease-fast) forwards; animation-delay: 200ms; }
+
+/* Micro-interaction classes */
+.pulse-indicator {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
+  animation: emeraldPulse 2s infinite ease-in-out;
+}
+
+.skeleton-box {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.8s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

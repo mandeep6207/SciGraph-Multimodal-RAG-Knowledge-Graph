@@ -664,7 +664,7 @@ function renderChat() {
     
     return `
       <div class="chat-bubble ${m.role}">
-        ${m.role === 'ai' ? '<div style="font-size:9px;color:var(--green);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:bold;">The Brain</div>' : ''}
+        ${m.role === 'ai' ? '<div style="font-size:9px;color:var(--green);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:bold;">SciGraph Intelligence</div>' : ''}
         <div class="markdown-body">${content}</div>
       </div>
     `;

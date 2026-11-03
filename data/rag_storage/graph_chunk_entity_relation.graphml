@@ -1,0 +1,3751 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d13" for="edge" attr.name="truncate" attr.type="string"/>
+<key id="d12" for="edge" attr.name="created_at" attr.type="long"/>
+<key id="d11" for="edge" attr.name="file_path" attr.type="string"/>
+<key id="d10" for="edge" attr.name="source_id" attr.type="string"/>
+<key id="d9" for="edge" attr.name="keywords" attr.type="string"/>
+<key id="d8" for="edge" attr.name="description" attr.type="string"/>
+<key id="d7" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d6" for="node" attr.name="truncate" attr.type="string"/>
+<key id="d5" for="node" attr.name="created_at" attr.type="long"/>
+<key id="d4" for="node" attr.name="file_path" attr.type="string"/>
+<key id="d3" for="node" attr.name="source_id" attr.type="string"/>
+<key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="entity_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="entity_id" attr.type="string"/>
+<graph edgedefault="undirected"><node id="SciGraph">
+  <data key="d0">SciGraph</data>
+  <data key="d1">organization</data>
+  <data key="d2">SciGraph is an organization focused on accelerating multimodal scientific RAG with knowledge graph reasoning.</data>
+  <data key="d3">chunk-e45e7daeeeb947e87bc07da407e35fa6</data>
+  <data key="d4">test.txt</data>
+  <data key="d5">1793740804</data>
+  <data key="d6"></data>
+</node>
+<node id="SciGraph Research Paper">
+  <data key="d0">SciGraph Research Paper</data>
+  <data key="d1">content</data>
+  <data key="d2">The SciGraph Research Paper is a scientific document focusing on base editing technologies in oncology.</data>
+  <data key="d3">chunk-560ab5de89a55fddf7b47381d8d11973</data>
+  <data key="d4">crispr_cas9_base_editing_oncology.pdf</data>
+  <data key="d5">1793740935</data>
+  <data key="d6"></data>
+</node>
+<node id="Dr. S. K. Roy">
+  <data key="d0">Dr. S. K. Roy</data>
+  <data key="d1">person</data>
+  <data key="d2">Dr. S. K. Roy is the author of the SciGraph Research Paper.</data>
+  <data key="d3">chunk-560ab5de89a55fddf7b47381d8d11973</data>
+  <data key="d4">crispr_cas9_base_editing_oncology.pdf</data>
+  <data key="d5">1793740935</data>
+  <data key="d6"></data>
+</node>
+<node id="Author">
+  <data key="d0">Author</data>
+  <data key="d3">chunk-560ab5de89a55fddf7b47381d8d11973</data>
+  <data key="d2">Dr. S. K. Roy authored the SciGraph Research Paper.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">crispr_cas9_base_editing_oncology.pdf</data>
+  <data key="d5">1793740936</data>
+  <data key="d6"></data>
+</node>
+<node id="Dr. M. Vance">
+  <data key="d0">Dr. M. Vance</data>
+  <data key="d1">person</data>
+  <data key="d2">Dr. M. Vance is the author of the SciGraph Research Paper titled "Topological Quantum Computing".</data>
+  <data key="d3">chunk-c8e4be070549dd5352701660e11d799b</data>
+  <data key="d4">quantum_coherence_topological_qubits.pdf</data>
+  <data key="d5">1793740941</data>
+  <data key="d6"></data>
+</node>
+<node id="Topological Quantum Computing">
+  <data key="d0">Topological Quantum Computing</data>
+  <data key="d1">concept</data>
+  <data key="d2">The concept of Topological Quantum Computing is discussed in the SciGraph Research Paper.&lt;SEP&gt;The research paper discusses the content related to Topological Quantum Computing.</data>
+  <data key="d3">chunk-c8e4be070549dd5352701660e11d799b</data>
+  <data key="d4">quantum_coherence_topological_qubits.pdf</data>
+  <data key="d5">1793740941</data>
+  <data key="d6"></data>
+</node>
+<node id="Majorana zero modes">
+  <data key="d0">Majorana zero modes</data>
+  <data key="d1">concept</data>
+  <data key="d2">Majorana zero modes are a topic of investigation in the SciGraph Research Paper.</data>
+  <data key="d3">chunk-c8e4be070549dd5352701660e11d799b</data>
+  <data key="d4">quantum_coherence_topological_qubits.pdf</data>
+  <data key="d5">1793740941</data>
+  <data key="d6"></data>
+</node>
+<node id="Semiconductor-superconductor heterostructures">
+  <data key="d0">Semiconductor-superconductor heterostructures</data>
+  <data key="d1">location</data>
+  <data key="d2">The heterostructures are investigated within a specific location, semiconductor-superconductor heterostructures.</data>
+  <data key="d3">chunk-c8e4be070549dd5352701660e11d799b</data>
+  <data key="d4">quantum_coherence_topological_qubits.pdf</data>
+  <data key="d5">1793740941</data>
+  <data key="d6"></data>
+</node>
+<node id="P-101">
+  <data key="d0">P-101</data>
+  <data key="d1">patient</data>
+  <data key="d2">Patient with Patient_ID P-101, age 62, male gender, and a Biomarker_PDL1_Percent of 85, achieved a Complete_Response with a Progression_Free_Months of 24.5.</data>
+  <data key="d3">chunk-3c39b26f8348173a9e95fb149d3213e2</data>
+  <data key="d4">patient_biomarker_cohort_longitudinal.csv</data>
+  <data key="d5">1793740954</data>
+  <data key="d6"></data>
+</node>
+<node id="P-102">
+  <data key="d0">P-102</data>
+  <data key="d1">patient</data>
+  <data key="d2">Patient with Patient_ID P-102, age 54, female gender, and a Biomarker_PDL1_Percent of 42, achieved a Partial_Response with a Progression_Free_Months of 16.2.</data>
+  <data key="d3">chunk-3c39b26f8348173a9e95fb149d3213e2</data>
+  <data key="d4">patient_biomarker_cohort_longitudinal.csv</data>
+  <data key="d5">1793740954</data>
+  <data key="d6"></data>
+</node>
+<node id="P-103">
+  <data key="d0">P-103</data>
+  <data key="d1">patient</data>
+  <data key="d2">Patient with Patient_ID P-103, age 71, male gender, and a Biomarker_PDL1_Percent of 12, experienced a Stable_Disease with a Progression_Free_Months of 8.4.</data>
+  <data key="d3">chunk-3c39b26f8348173a9e95fb149d3213e2</data>
+  <data key="d4">patient_biomarker_cohort_longitudinal.csv</data>
+  <data key="d5">1793740954</data>
+  <data key="d6"></data>
+</node>
+<node id="P-104">
+  <data key="d0">P-104</data>
+  <data key="d1">patient</data>
+  <data key="d2">Patient with Patient_ID P-104, age 49, female gender, and a Biomarker_PDL1_Percent of 92, achieved a Complete_Response with a Progression_Free_Months of 28.1.</data>
+  <data key="d3">chunk-3c39b26f8348173a9e95fb149d3213e2</data>
+  <data key="d4">patient_biomarker_cohort_longitudinal.csv</data>
+  <data key="d5">1793740954</data>
+  <data key="d6"></data>
+</node>
+<node id="Monoclonal Antibody Chromatography Protocol">
+  <data key="d0">Monoclonal Antibody Chromatography Protocol</data>
+  <data key="d1">concept</data>
+  <data key="d2">Monoclonal Antibody Chromatography Protocol is a purification process for therapeutic IgG antibodies, primarily utilizing protein A affinity chromatography. It is also referred to as a chromatography technique, method, and high-throughput purification protocol. Additionally, it is termed an affinity chromatography method and an antibody purification method.</data>
+  <data key="d3">chunk-a491d3beb849d44d764ba9308d49670a</data>
+  <data key="d4">monoclonal_antibody_purification_protocol.docx</data>
+  <data key="d5">1793740955</data>
+  <data key="d6"></data>
+</node>
+<node id="Buffer Composition">
+  <data key="d0">Buffer Composition</data>
+  <data key="d3">chunk-a491d3beb849d44d764ba9308d49670a</data>
+  <data key="d2">The protocol specifies a buffer composition of 20mM Sodium Phosphate at a pH of 7.2.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">monoclonal_antibody_purification_protocol.docx</data>
+  <data key="d5">1793740955</data>
+  <data key="d6"></data>
+</node>
+<node id="Elution">
+  <data key="d0">Elution</data>
+  <data key="d3">chunk-a491d3beb849d44d764ba9308d49670a</data>
+  <data key="d2">The protocol specifies elution conditions using 100mM Sodium Citrate at a pH of 3.4.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">monoclonal_antibody_purification_protocol.docx</data>
+  <data key="d5">1793740955</data>
+  <data key="d6"></data>
+</node>
+<node id="Target pHTarget pH">
+  <data key="d0">Target pHTarget pH</data>
+  <data key="d3">chunk-a491d3beb849d44d764ba9308d49670a</data>
+  <data key="d2">The protocol specifies a target pH of 7.2 for equilibration and 3.4 for elution.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">monoclonal_antibody_purification_protocol.docx</data>
+  <data key="d5">1793740955</data>
+  <data key="d6"></data>
+</node>
+<node id="Kinase_Assay_Results">
+  <data key="d0">Kinase_Assay_Results</data>
+  <data key="d1">content</data>
+  <data key="d2">A document containing assay results for kinase compounds.</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="Sheet: Kinase_Assay_Results">
+  <data key="d0">Sheet: Kinase_Assay_Results</data>
+  <data key="d1">location</data>
+  <data key="d2">The location within the content is the "Sheet: Kinase_Assay_Results".</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="SCG-801">
+  <data key="d0">SCG-801</data>
+  <data key="d1">artifact</data>
+  <data key="d2">SCG-801 is a unique identifier for a compound in kinase assays.</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="EGFR_T790M">
+  <data key="d0">EGFR_T790M</data>
+  <data key="d1">concept</data>
+  <data key="d2">EGFR_T790M is a kinase target associated with SCG-801.</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="IC50_nM">
+  <data key="d0">IC50_nM</data>
+  <data key="d1">concept</data>
+  <data key="d2">IC50_nM is a column header in the content, representing the concentration required for half-maximal inhibition.</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="Selectivity_Index">
+  <data key="d0">Selectivity_Index</data>
+  <data key="d1">concept</data>
+  <data key="d2">Selectivity_Index is a column header in the content, representing the selectivity of the kinase inhibitor.</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="Cytotoxicity">
+  <data key="d0">Cytotoxicity</data>
+  <data key="d1">concept</data>
+  <data key="d2">Cytotoxicity is a column header in the content, representing the toxicity of the compound.</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="SCG-802">
+  <data key="d0">SCG-802</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d2">SCG-802 is associated with the BRAF_V600E kinase target.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="SCG-803">
+  <data key="d0">SCG-803</data>
+  <data key="d3">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d2">SCG-803 is associated with the KRAS_G12D kinase target.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d5">1793740967</data>
+  <data key="d6"></data>
+</node>
+<node id="LIGO-Virgo">
+  <data key="d0">LIGO-Virgo</data>
+  <data key="d1">organization</data>
+  <data key="d2">LIGO-Virgo is a collaboration of gravitational wave observatories.</data>
+  <data key="d3">chunk-a71e4e57e55fa44c2b7033cf864fedc9</data>
+  <data key="d4">gravitational_wave_merger_astrophysics.pptx</data>
+  <data key="d5">1793740970</data>
+  <data key="d6"></data>
+</node>
+<node id="Binary Neutron Star Mergers">
+  <data key="d0">Binary Neutron Star Mergers</data>
+  <data key="d1">event</data>
+  <data key="d2">Binary neutron star mergers are cosmic events observed through gravitational waves and electromagnetic signals.</data>
+  <data key="d3">chunk-a71e4e57e55fa44c2b7033cf864fedc9</data>
+  <data key="d4">gravitational_wave_merger_astrophysics.pptx</data>
+  <data key="d5">1793740970</data>
+  <data key="d6"></data>
+</node>
+<node id="Multi-messenger Gravitational Radiation Observations">
+  <data key="d0">Multi-messenger Gravitational Radiation Observations</data>
+  <data key="d1">event</data>
+  <data key="d2">Observations involving gravitational waves and electromagnetic signals.</data>
+  <data key="d3">chunk-a71e4e57e55fa44c2b7033cf864fedc9</data>
+  <data key="d4">gravitational_wave_merger_astrophysics.pptx</data>
+  <data key="d5">1793740970</data>
+  <data key="d6"></data>
+</node>
+<node id="r-Process Nucleosynthesis">
+  <data key="d0">r-Process Nucleosynthesis</data>
+  <data key="d1">event</data>
+  <data key="d2">r-process nucleosynthesis is a process in stellar nucleosynthesis.</data>
+  <data key="d3">chunk-a71e4e57e55fa44c2b7033cf864fedc9</data>
+  <data key="d4">gravitational_wave_merger_astrophysics.pptx</data>
+  <data key="d5">1793740970</data>
+  <data key="d6"></data>
+</node>
+<node id="NMDA Receptor">
+  <data key="d0">NMDA Receptor</data>
+  <data key="d1">concept</data>
+  <data key="d2">NMDA receptor is a type of ionotropic glutamate receptor that requires magnesium binding and membrane depolarization for activation.</data>
+  <data key="d3">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d4">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d5">1793740978</data>
+  <data key="d6"></data>
+</node>
+<node id="Calcium">
+  <data key="d0">Calcium</data>
+  <data key="d1">data</data>
+  <data key="d2">Calcium is a calcium ion that, when present in the synaptic cleft, triggers the influx of calcium ions into the postsynaptic neuron.</data>
+  <data key="d3">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d4">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d5">1793740978</data>
+  <data key="d6"></data>
+</node>
+<node id="Calmodulin">
+  <data key="d0">Calmodulin</data>
+  <data key="d1">concept</data>
+  <data key="d2">Calmodulin is a calcium-binding protein that plays a crucial role in the calcium-dependent activation of calcium/calmodulin-dependent protein kinase II (CaMKII).</data>
+  <data key="d3">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d4">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d5">1793740978</data>
+  <data key="d6"></data>
+</node>
+<node id="Calcium/calmodulin-dependent Protein Kinase II">
+  <data key="d0">Calcium/calmodulin-dependent Protein Kinase II</data>
+  <data key="d1">method</data>
+  <data key="d2">CaMKII is a protein kinase that is activated by calcium and calmodulin, and it undergoes autophosphorylation at Thr286.</data>
+  <data key="d3">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d4">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d5">1793740978</data>
+  <data key="d6"></data>
+</node>
+<node id="Postsynaptic Density">
+  <data key="d0">Postsynaptic Density</data>
+  <data key="d1">concept</data>
+  <data key="d2">The postsynaptic density is the specialized region of a neuron's membrane where postsynaptic receptors are concentrated, including AMPA receptors.</data>
+  <data key="d3">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d4">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d5">1793740978</data>
+  <data key="d6"></data>
+</node>
+<node id="Glutamate">
+  <data key="d0">Glutamate</data>
+  <data key="d1">data</data>
+  <data key="d2">Glutamate is an excitatory neurotransmitter that binds to NMDA receptors, facilitating the influx of calcium ions and subsequent cellular responses.</data>
+  <data key="d3">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d4">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d5">1793740978</data>
+  <data key="d6"></data>
+</node>
+<node id="Glioblastoma Multiforme">
+  <data key="d0">Glioblastoma Multiforme</data>
+  <data key="d1">location</data>
+  <data key="d2">Glioblastoma Multiforme is a form of malignant brain tumor.</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740985</data>
+  <data key="d6"></data>
+</node>
+<node id="UMAP">
+  <data key="d0">UMAP</data>
+  <data key="d1">method</data>
+  <data key="d2">UMAP is a technique used to approximate and project data onto a lower-dimensional manifold.&lt;SEP&gt;Uniform Manifold Approximation and Projection (UMAP) is a technique used for visualizing and analyzing high-dimensional data, particularly for preserving both local and global structures efficiently.</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1&lt;SEP&gt;chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html&lt;SEP&gt;GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Neural Progenitor">
+  <data key="d0">Neural Progenitor</data>
+  <data key="d1">concept</data>
+  <data key="d2">Neural progenitor cells are progenitor cells related to the nervous system.</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740985</data>
+  <data key="d6"></data>
+</node>
+<node id="Mesenchymal Lineage">
+  <data key="d0">Mesenchymal Lineage</data>
+  <data key="d1">concept</data>
+  <data key="d2">Mesenchymal lineage refers to a cell lineage with mesenchymal characteristics.</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740985</data>
+  <data key="d6"></data>
+</node>
+<node id="Oligodendrocyte Progenitor">
+  <data key="d0">Oligodendrocyte Progenitor</data>
+  <data key="d1">concept</data>
+  <data key="d2">Oligodendrocyte progenitor cells are precursor cells for oligodendrocytes.</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740985</data>
+  <data key="d6"></data>
+</node>
+<node id="CD68">
+  <data key="d0">CD68</data>
+  <data key="d1">content</data>
+  <data key="d2">CD68 is a marker gene associated with macrophages and microglia.</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740985</data>
+  <data key="d6"></data>
+</node>
+<node id="AIF1">
+  <data key="d0">AIF1</data>
+  <data key="d1">content</data>
+  <data key="d2">AIF1 is a marker gene associated with macrophages and microglia.</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740986</data>
+  <data key="d6"></data>
+</node>
+<node id="Cluster C1">
+  <data key="d0">Cluster C1</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d2">Cluster C1 is associated with marker genes for oligodendrocyte progenitor cells.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740986</data>
+  <data key="d6"></data>
+</node>
+<node id="Marker Genes">
+  <data key="d0">Marker Genes</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d2">Cluster C1 is associated with marker genes for oligodendrocyte progenitor cells.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740986</data>
+  <data key="d6"></data>
+</node>
+<node id="Cluster C2">
+  <data key="d0">Cluster C2</data>
+  <data key="d3">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d2">Cluster C2 is associated with marker genes for macrophage/microglia cells.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">single_cell_transcriptomics_pathways.html</data>
+  <data key="d5">1793740986</data>
+  <data key="d6"></data>
+</node>
+<node id="Phosphoproteomics Phosphopeptide Enrichment">
+  <data key="d0">Phosphoproteomics Phosphopeptide Enrichment</data>
+  <data key="d1">event</data>
+  <data key="d2">The experiment aims to enrich phosphopeptides for proteomics analysis.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="Orbitrap Exploris 480">
+  <data key="d0">Orbitrap Exploris 480</data>
+  <data key="d1">artifact</data>
+  <data key="d2">The Orbitrap Exploris 480 is a mass spectrometer used in the experiment.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="28.0 eV">
+  <data key="d0">28.0 eV</data>
+  <data key="d1">data</data>
+  <data key="d2">The collision energy used in the experiment is 28.0 eV.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="4.5 ppm">
+  <data key="d0">4.5 ppm</data>
+  <data key="d1">data</data>
+  <data key="d2">The precursor mass tolerance is set at 4.5 ppm.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="8420 Proteins">
+  <data key="d0">8420 Proteins</data>
+  <data key="d1">concept</data>
+  <data key="d2">The experiment identified 8420 proteins.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="TMTpro 16-plex Isobaric Labeling">
+  <data key="d0">TMTpro 16-plex Isobaric Labeling</data>
+  <data key="d1">method</data>
+  <data key="d2">The experiment employs TMTpro 16-plex isobaric labeling for protein quantification.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="PI3K-Akt signaling">
+  <data key="d0">PI3K-Akt signaling</data>
+  <data key="d1">concept</data>
+  <data key="d2">One of the key pathways studied by the experiment.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="MAPK cascade">
+  <data key="d0">MAPK cascade</data>
+  <data key="d1">concept</data>
+  <data key="d2">Another key pathway studied by the experiment.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="Cell cycle checkpoints">
+  <data key="d0">Cell cycle checkpoints</data>
+  <data key="d1">concept</data>
+  <data key="d2">Another key pathway studied by the experiment.</data>
+  <data key="d3">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d4">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d5">1793740994</data>
+  <data key="d6"></data>
+</node>
+<node id="Python">
+  <data key="d0">Python</data>
+  <data key="d1">concept</data>
+  <data key="d2">Python is a programming language that supports dynamic control structures like if, while, and for.&lt;SEP&gt;Python is a programming language used for deep learning and generative modelling.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61&lt;SEP&gt;chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="TensorFlow">
+  <data key="d0">TensorFlow</data>
+  <data key="d1">method</data>
+  <data key="d2">TensorFlow is a framework for constructing and executing computational graphs for machine learning.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Noah Carter">
+  <data key="d0">Noah Carter</data>
+  <data key="d1">person</data>
+  <data key="d2">Noah Carter is a sprinter who broke a 100m sprint record at the World Athletics Championship.&lt;SEP&gt;Noah Carter is a sprinter who broke the 100m sprint record.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61&lt;SEP&gt;chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-1.pdf&lt;SEP&gt;GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="World Athletics Championship">
+  <data key="d0">World Athletics Championship</data>
+  <data key="d1">event</data>
+  <data key="d2">The World Athletics Championship is a global sports competition for track and field events.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Tokyo">
+  <data key="d0">Tokyo</data>
+  <data key="d1">location</data>
+  <data key="d2">Tokyo is the host city for the World Athletics Championship.&lt;SEP&gt;Tokyo is the host city of the World Athletics Championship.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61&lt;SEP&gt;chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-1.pdf&lt;SEP&gt;GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Suitable">
+  <data key="d0">Suitable</data>
+  <data key="d1">concept</data>
+  <data key="d2">The phrase "Suitable for" indicates something can be used for a specific purpose or context.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Scalable Model Training">
+  <data key="d0">Scalable Model Training</data>
+  <data key="d1">concept</data>
+  <data key="d2">Training models to handle large-scale data and increasing model complexity.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Production Deployment">
+  <data key="d0">Production Deployment</data>
+  <data key="d1">concept</data>
+  <data key="d2">Deploying models into production environments for real-world use.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Performance Optimization">
+  <data key="d0">Performance Optimization</data>
+  <data key="d1">concept</data>
+  <data key="d2">Improving the efficiency and speed of a model's performance.&lt;SEP&gt;Improving the efficiency and speed of a program or system.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Memory Allocation Optimization">
+  <data key="d0">Memory Allocation Optimization</data>
+  <data key="d1">concept</data>
+  <data key="d2">Efforts to minimize the amount of memory a model needs to run.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Constant Folding">
+  <data key="d0">Constant Folding</data>
+  <data key="d1">concept</data>
+  <data key="d2">A technique used to simplify and optimize code by replacing expressions with their computed values.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Independent Sub-Graphs">
+  <data key="d0">Independent Sub-Graphs</data>
+  <data key="d1">concept</data>
+  <data key="d2">Subsets of a graph that can run concurrently without affecting other sub-graphs.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="SavedModel">
+  <data key="d0">SavedModel</data>
+  <data key="d1">method</data>
+  <data key="d2">A format used for exporting machine learning models and deploying them in various environments.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="C++, Java, iOS, Android, web">
+  <data key="d0">C++, Java, iOS, Android, web</data>
+  <data key="d1">artifact</data>
+  <data key="d2">These are platforms or environments where machine learning models can be deployed.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Python Interpreter">
+  <data key="d0">Python Interpreter</data>
+  <data key="d1">artifact</data>
+  <data key="d2">The Python interpreter is software that executes Python code, serving as the runtime environment for Python programs.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="SavedModel format">
+  <data key="d0">SavedModel format</data>
+  <data key="d1">artifact</data>
+  <data key="d2">A specific format used for exporting machine learning models.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Kernel Fusion">
+  <data key="d0">Kernel Fusion</data>
+  <data key="d1">concept</data>
+  <data key="d2">Technique to combine multiple operations into a single, more efficient call.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="GPU call">
+  <data key="d0">GPU call</data>
+  <data key="d1">concept</data>
+  <data key="d2">A single call to a specific function or operation performed by a graphics processing unit (GPU).</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Control Flow">
+  <data key="d0">Control Flow</data>
+  <data key="d1">concept</data>
+  <data key="d2">The mechanism that determines the sequence and flow of execution in a program.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="tf.cond">
+  <data key="d0">tf.cond</data>
+  <data key="d1">concept</data>
+  <data key="d2">TensorFlow's conditional operation, similar to Python's if statement.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="tf.while_loop">
+  <data key="d0">tf.while_loop</data>
+  <data key="d1">concept</data>
+  <data key="d2">TensorFlow's loop operation, similar to Python's while statement.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Parallel Execution">
+  <data key="d0">Parallel Execution</data>
+  <data key="d1">concept</data>
+  <data key="d2">Executing multiple tasks simultaneously to reduce execution time.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Portability &amp; Deployment">
+  <data key="d0">Portability &amp; Deployment</data>
+  <data key="d1">concept</data>
+  <data key="d2">Making a program or system adaptable and suitable for deployment in multiple environments.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Performance Mode">
+  <data key="d0">Performance Mode</data>
+  <data key="d1">concept</data>
+  <data key="d2">Different execution modes or modes of operation for a program or system.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Eager Execution Mode">
+  <data key="d0">Eager Execution Mode</data>
+  <data key="d1">concept</data>
+  <data key="d2">A mode where operations are evaluated immediately, similar to Python's immediate evaluation.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Symbolic">
+  <data key="d0">Symbolic</data>
+  <data key="d1">concept</data>
+  <data key="d2">A mode where a program constructs a static computational graph before execution.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Debugging">
+  <data key="d0">Debugging</data>
+  <data key="d1">concept</data>
+  <data key="d2">The process of finding and correcting errors in software code.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Complexity">
+  <data key="d0">Complexity</data>
+  <data key="d1">concept</data>
+  <data key="d2">The level of difficulty or complexity in a program or system.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Extremely Low">
+  <data key="d0">Extremely Low</data>
+  <data key="d1">concept</data>
+  <data key="d2">A very low level of complexity or difficulty.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Higher">
+  <data key="d0">Higher</data>
+  <data key="d1">concept</data>
+  <data key="d2">A higher level, indicating greater complexity or difficulty.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="High-speed">
+  <data key="d0">High-speed</data>
+  <data key="d1">concept</data>
+  <data key="d2">A high level of speed or efficiency.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Execution Velocity">
+  <data key="d0">Execution Velocity</data>
+  <data key="d1">concept</data>
+  <data key="d2">The speed or efficiency at which a program executes its operations.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Native Python Dynamic Control Structures">
+  <data key="d0">Native Python Dynamic Control Structures</data>
+  <data key="d1">concept</data>
+  <data key="d2">Python's dynamic control structures like if, for, and while.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Preprocessing and Cleaning Data">
+  <data key="d0">Preprocessing and Cleaning Data</data>
+  <data key="d1">concept</data>
+  <data key="d2">The process of preparing and standardizing data before it is used for training a model.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Generative AI Applications">
+  <data key="d0">Generative AI Applications</data>
+  <data key="d1">concept</data>
+  <data key="d2">Applications that use generative artificial intelligence to create or generate new content.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Generative Networks">
+  <data key="d0">Generative Networks</data>
+  <data key="d1">concept</data>
+  <data key="d2">Machine learning models designed to generate new data that mimics the input data distribution.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Hyperbolic Tangent">
+  <data key="d0">Hyperbolic Tangent</data>
+  <data key="d1">concept</data>
+  <data key="d2">A non-linear activation function used in neural networks to introduce non-linearity.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Image Preprocessing and Cleaning">
+  <data key="d0">Image Preprocessing and Cleaning</data>
+  <data key="d1">concept</data>
+  <data key="d2">The process of preparing images for training in machine learning models.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Image Processing">
+  <data key="d0">Image Processing</data>
+  <data key="d1">concept</data>
+  <data key="d2">The process of processing and analyzing images to extract features or prepare them for machine learning tasks.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Pixel Intensity Range Normalization">
+  <data key="d0">Pixel Intensity Range Normalization</data>
+  <data key="d1">concept</data>
+  <data key="d2">Scaling pixel values to fit within a specific range, typically [0, 1] or [-1, 1].</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Spatial Alignment and Standardization">
+  <data key="d0">Spatial Alignment and Standardization</data>
+  <data key="d1">concept</data>
+  <data key="d2">Aligning images to a uniform spatial dimension and standardizing their dimensions.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Data Pipeline Optimization">
+  <data key="d0">Data Pipeline Optimization</data>
+  <data key="d1">concept</data>
+  <data key="d2">Optimizing data processing pipelines to improve efficiency and throughput.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="tf.data.Dataset">
+  <data key="d0">tf.data.Dataset</data>
+  <data key="d1">concept</data>
+  <data key="d2">A library for building and managing data pipelines for machine learning.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Prefetching">
+  <data key="d0">Prefetching</data>
+  <data key="d1">concept</data>
+  <data key="d2">A technique used to improve the performance of data pipelines by fetching data in advance.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Batching">
+  <data key="d0">Batching</data>
+  <data key="d1">concept</data>
+  <data key="d2">Dividing data into fixed-size chunks to optimize the use of resources like CPU and memory.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Parallel CPU Mapping">
+  <data key="d0">Parallel CPU Mapping</data>
+  <data key="d1">concept</data>
+  <data key="d2">Running multiple tasks simultaneously on a CPU to improve performance.</data>
+  <data key="d3">chunk-5be7d93e9d32876646b250f336394a61</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="TensorFlow 2">
+  <data key="d0">TensorFlow 2</data>
+  <data key="d1">concept</data>
+  <data key="d2">TensorFlow 2 is an open-source machine learning platform by Google.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="NumPy">
+  <data key="d0">NumPy</data>
+  <data key="d1">artifact</data>
+  <data key="d2">NumPy is a library for numerical array operations in Python.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Pandas">
+  <data key="d0">Pandas</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Pandas is a library for managing tabular data in Python.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Matplotlib">
+  <data key="d0">Matplotlib</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Matplotlib is a plotting library used in diagnostics.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Seaborn">
+  <data key="d0">Seaborn</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Seaborn is a plotting library used in diagnostics.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Unit-I">
+  <data key="d0">Unit-I</data>
+  <data key="d1">event</data>
+  <data key="d2">Unit-I is an introductory section in a document.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742848</data>
+  <data key="d6"></data>
+</node>
+<node id="Introduction to Generative AI">
+  <data key="d0">Introduction to Generative AI</data>
+  <data key="d1">concept</data>
+  <data key="d2">Introduction to Generative AI is the topic of the text.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Overview of Python and TensorFlow 2">
+  <data key="d0">Overview of Python and TensorFlow 2</data>
+  <data key="d1">concept</data>
+  <data key="d2">Overview of Python and TensorFlow 2 is a subtopic in the text.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Python Data Analysis Library">
+  <data key="d0">Python Data Analysis Library</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Pandas is a library for managing structured tabular data in Python.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="NumPy tensor array operations">
+  <data key="d0">NumPy tensor array operations</data>
+  <data key="d1">concept</data>
+  <data key="d2">NumPy tensor array operations are part of the NumPy library for array operations.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="TensorFlow 2 Integration">
+  <data key="d0">TensorFlow 2 Integration</data>
+  <data key="d1">concept</data>
+  <data key="d2">TensorFlow 2 Integration refers to the adoption of tf.keras as the core API.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Sequential API">
+  <data key="d0">Sequential API</data>
+  <data key="d1">method</data>
+  <data key="d2">Sequential API is a high-level API for straightforward stack-of-layers models.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Functional API">
+  <data key="d0">Functional API</data>
+  <data key="d1">method</data>
+  <data key="d2">Functional API is a high-level API for complex directed acyclic graphs (DAGs).</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Model Subclassing">
+  <data key="d0">Model Subclassing</data>
+  <data key="d1">method</data>
+  <data key="d2">Model Subclassing is a high-level API for complete imperative control over custom forward pass execution.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="tf.GradientTape">
+  <data key="d0">tf.GradientTape</data>
+  <data key="d1">method</data>
+  <data key="d2">tf.GradientTape is a method used for automatic differentiation in TensorFlow.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Eager Execution">
+  <data key="d0">Eager Execution</data>
+  <data key="d1">method</data>
+  <data key="d2">Eager Execution is a programming environment for evaluating operations immediately.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Computation Graph Compilation">
+  <data key="d0">Computation Graph Compilation</data>
+  <data key="d1">method</data>
+  <data key="d2">Computation Graph Compilation uses TensorFlow's @tf.function decorator.</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Principal Component Analysis">
+  <data key="d0">Principal Component Analysis</data>
+  <data key="d1">method</data>
+  <data key="d2">PCA is a linear dimensionality reduction technique that computes eigenvectors of the data covariance matrix to identify orthogonal axes (principal components) maximizing variance.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="t-Distributed Stochastic Neighbor Embedding">
+  <data key="d0">t-Distributed Stochastic Neighbor Embedding</data>
+  <data key="d1">method</data>
+  <data key="d2">t-SNE is a non-linear algorithm that converts Euclidean distances between high-dimensional data points into conditional probabilities, minimizing the Kullback-Leibler (KL) divergence between high-dimensional and low-dimensional probability distributions.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Uniform Manifold Approximation and Projection">
+  <data key="d0">Uniform Manifold Approximation and Projection</data>
+  <data key="d1">method</data>
+  <data key="d2">UMAP is a non-linear manifold learning technique built on Riemannian geometry and algebraic topology.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Latent Space Interpolation Trajectories">
+  <data key="d0">Latent Space Interpolation Trajectories</data>
+  <data key="d1">method</data>
+  <data key="d2">Latent Space Interpolation Trajectories involves linearly or spherically interpolating between two random latent vectors 𝑧1, 𝑧2 ∼𝒩(0, I) to verify smooth and continuous output transformations through the decoder/generator.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Real vs. Synthetic Feature Distribution Overlays">
+  <data key="d0">Real vs. Synthetic Feature Distribution Overlays</data>
+  <data key="d1">method</data>
+  <data key="d2">Real vs. Synthetic Feature Distribution Overlays involves plotting overlapping feature histograms comparing real dataset samples against generated synthetic samples to evaluate distribution match.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="High-Dimensional Data Points">
+  <data key="d0">High-Dimensional Data Points</data>
+  <data key="d1">data</data>
+  <data key="d2">High-dimensional data points are complex data entities existing in multiple dimensions, requiring techniques to reduce dimensions for easier analysis.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="2D or 3D Coordinate Space">
+  <data key="d0">2D or 3D Coordinate Space</data>
+  <data key="d1">data</data>
+  <data key="d2">2D or 3D coordinate space represents simplified data visualization, with two or three dimensions instead of the high-dimensional data points.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="PCA">
+  <data key="d0">PCA</data>
+  <data key="d1">method</data>
+  <data key="d2">Principal Component Analysis (PCA) is a technique used for reducing the dimensionality of high-dimensional data while retaining most of the variance in the data.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="t-SNE">
+  <data key="d0">t-SNE</data>
+  <data key="d1">method</data>
+  <data key="d2">t-Distributed Stochastic Neighbor Embedding (t-SNE) is a method used for visualizing high-dimensional data in 2D or 3D, focusing on local structure rather than global variance.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Latent Space">
+  <data key="d0">Latent Space</data>
+  <data key="d1">concept</data>
+  <data key="d2">Latent space refers to the space in which hidden or abstract features of the data are represented, allowing for interpolation and visualization of latent variables.&lt;SEP&gt;Latent space refers to the abstract space used by generative models for representing the parameters of a probability distribution.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa&lt;SEP&gt;chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-1.pdf&lt;SEP&gt;GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Latent Vectors">
+  <data key="d0">Latent Vectors</data>
+  <data key="d1">data</data>
+  <data key="d2">Latent vectors are abstract data points representing hidden or latent features in high-dimensional data spaces.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Random Latent Vectors">
+  <data key="d0">Random Latent Vectors</data>
+  <data key="d1">data</data>
+  <data key="d2">Random latent vectors are used in interpolation methods like Latent Space Interpolation Trajectories to generate and verify smooth transformations in latent space.</data>
+  <data key="d3">chunk-6b7bb64c7c77afa990b98fea6bfe6daa</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Generative Artificial Intelligence">
+  <data key="d0">Generative Artificial Intelligence</data>
+  <data key="d3">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d2">TensorFlow 2 is used in the field of Generative Artificial Intelligence.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-1.pdf</data>
+  <data key="d5">1793742849</data>
+  <data key="d6"></data>
+</node>
+<node id="Image Generation">
+  <data key="d0">Image Generation</data>
+  <data key="d1">concept</data>
+  <data key="d2">Image generation is the focus of generative AI research, aiming to model real-world images.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Generative Adversarial Networks (GANs)">
+  <data key="d0">Generative Adversarial Networks (GANs)</data>
+  <data key="d1">method</data>
+  <data key="d2">GANs are a type of machine learning model used for generating realistic images.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Ian Goodfellow">
+  <data key="d0">Ian Goodfellow</data>
+  <data key="d1">person</data>
+  <data key="d2">Ian Goodfellow is the inventor of Generative Adversarial Networks.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Minimax Objective Function">
+  <data key="d0">Minimax Objective Function</data>
+  <data key="d1">concept</data>
+  <data key="d2">The Minimax Objective Function is a minimax game used in Generative Adversarial Networks.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Discriminator (D&lt;phi&gt;)">
+  <data key="d0">Discriminator (D&lt;phi&gt;)</data>
+  <data key="d1">method</data>
+  <data key="d2">The Discriminator is a neural network used in GANs to classify images.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Generator (G&lt;theta&gt;)">
+  <data key="d0">Generator (G&lt;theta&gt;)</data>
+  <data key="d1">method</data>
+  <data key="d2">The Generator is a neural network in GANs responsible for creating synthetic images.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Training GANs">
+  <data key="d0">Training GANs</data>
+  <data key="d1">event</data>
+  <data key="d2">Training GANs involves optimizing the Generator and Discriminator networks.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Non-Saturating Heuristic Loss">
+  <data key="d0">Non-Saturating Heuristic Loss</data>
+  <data key="d1">concept</data>
+  <data key="d2">Non-Saturating Heuristic Loss is a technique used to stabilize the training of GANs.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="One-Time-Scale Update Rule (TTUR)">
+  <data key="d0">One-Time-Scale Update Rule (TTUR)</data>
+  <data key="d1">concept</data>
+  <data key="d2">TTUR is a technique used to stabilize GAN training by using different learning rates.</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="𝑦">
+  <data key="d0">𝑦</data>
+  <data key="d1">concept</data>
+  <data key="d2">𝑦 represents a variable in the context of function.</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="MRI">
+  <data key="d0">MRI</data>
+  <data key="d1">artifact</data>
+  <data key="d2">MRI stands for Magnetic Resonance Imaging.</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="CT">
+  <data key="d0">CT</data>
+  <data key="d1">artifact</data>
+  <data key="d2">CT stands for Computed Tomography.</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="X-ray">
+  <data key="d0">X-ray</data>
+  <data key="d1">artifact</data>
+  <data key="d2">X-ray refers to an imaging method using electromagnetic radiation.</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Privacy Regulations">
+  <data key="d0">Privacy Regulations</data>
+  <data key="d1">concept</data>
+  <data key="d2">Privacy Regulations are guidelines or laws concerning data protection.</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Training Diagnostic Networks">
+  <data key="d0">Training Diagnostic Networks</data>
+  <data key="d1">concept</data>
+  <data key="d2">Training diagnostic networks are machine learning models designed for medical image analysis.</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="3D Convolutions">
+  <data key="d0">3D Convolutions</data>
+  <data key="d1">method</data>
+  <data key="d2">3D convolutions are 3-dimensional versions of convolutional neural networks used in video processing.&lt;SEP&gt;3D Convolutions are a type of neural network layer used for processing 3D data.</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068&lt;SEP&gt;chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Temporal Attention Layers">
+  <data key="d0">Temporal Attention Layers</data>
+  <data key="d1">method</data>
+  <data key="d2">Temporal attention layers are used in video generation to handle time dependencies.&lt;SEP&gt;Temporal Attention Layers are used in sequence modeling to focus on specific parts of the sequence.</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068&lt;SEP&gt;chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="SE/BCE Averaging">
+  <data key="d0">SE/BCE Averaging</data>
+  <data key="d1">concept</data>
+  <data key="d2">SE/BCE averaging refers to the process of averaging the loss over the sequence.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Stability">
+  <data key="d0">Stability</data>
+  <data key="d1">concept</data>
+  <data key="d2">Stability is the event where a system's performance or behavior is observed to be consistent and reliable.&lt;SEP&gt;Stability is a measure of the system's behavior or performance under changes or perturbations.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742921</data>
+  <data key="d6"></data>
+</node>
+<node id="Saturation">
+  <data key="d0">Saturation</data>
+  <data key="d1">event</data>
+  <data key="d2">Saturation is an event observed in systems where the output or result exceeds its designed limits.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Stable">
+  <data key="d0">Stable</data>
+  <data key="d1">concept</data>
+  <data key="d2">Stable refers to a state of equilibrium or reliability.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Mode Collapse">
+  <data key="d0">Mode Collapse</data>
+  <data key="d1">event</data>
+  <data key="d2">Mode collapse is an event observed in generative models where the distribution of generated samples collapses to a few modes.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Unstable">
+  <data key="d0">Unstable</data>
+  <data key="d1">concept</data>
+  <data key="d2">Unstable refers to a state where a system's behavior is unpredictable or inconsistent.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Structure">
+  <data key="d0">Structure</data>
+  <data key="d1">concept</data>
+  <data key="d2">Structure refers to the internal organization or layout of something.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Discontinuous">
+  <data key="d0">Discontinuous</data>
+  <data key="d1">concept</data>
+  <data key="d2">Discontinuous refers to the absence of a smooth transition or the presence of abrupt changes.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Continuous">
+  <data key="d0">Continuous</data>
+  <data key="d1">concept</data>
+  <data key="d2">Continuous refers to something that flows or changes without interruption.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Smooth">
+  <data key="d0">Smooth</data>
+  <data key="d1">concept</data>
+  <data key="d2">Smooth refers to something that lacks abrupt changes or interruptions.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Random Empty Regions">
+  <data key="d0">Random Empty Regions</data>
+  <data key="d1">concept</data>
+  <data key="d2">Random empty regions refer to areas in the latent space that do not contain data points.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="KL Divergence">
+  <data key="d0">KL Divergence</data>
+  <data key="d1">concept</data>
+  <data key="d2">KL Divergence is a measure of the difference between two probability distributions.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Spectral Normalization">
+  <data key="d0">Spectral Normalization</data>
+  <data key="d1">concept</data>
+  <data key="d2">Spectral normalization is a technique used to normalize the weights of a neural network.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7&lt;SEP&gt;chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="GANs">
+  <data key="d0">GANs</data>
+  <data key="d1">concept</data>
+  <data key="d2">GANs stands for Generative Adversarial Networks.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="VAEs">
+  <data key="d0">VAEs</data>
+  <data key="d1">concept</data>
+  <data key="d2">VAEs stand for Variational Autoencoders.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Evidence Lower Bound">
+  <data key="d0">Evidence Lower Bound</data>
+  <data key="d1">concept</data>
+  <data key="d2">The Evidence Lower Bound (ELBO) is a lower bound on the evidence for a model's posterior distribution.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Reconstruction Term">
+  <data key="d0">Reconstruction Term</data>
+  <data key="d1">concept</data>
+  <data key="d2">Reconstruction Term refers to the part of the loss function that ensures the model can reconstruct the input.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="MSE">
+  <data key="d0">MSE</data>
+  <data key="d1">concept</data>
+  <data key="d2">MSE stands for Mean Squared Error, a loss function used for regression tasks.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Binary Cross-Entropy">
+  <data key="d0">Binary Cross-Entropy</data>
+  <data key="d1">concept</data>
+  <data key="d2">Binary cross-entropy is a loss function used for binary classification tasks.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="KL Divergence Penalty">
+  <data key="d0">KL Divergence Penalty</data>
+  <data key="d1">concept</data>
+  <data key="d2">KL Divergence Penalty is the term in the ELBO that encourages the latent space to be continuous and smooth.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Mathematical Objective">
+  <data key="d0">Mathematical Objective</data>
+  <data key="d1">concept</data>
+  <data key="d2">Mathematical objective refers to a specific goal or problem formulated mathematically.&lt;SEP&gt;The ELBO (Evidence Lower Bound) is a mathematical objective used in VAEs.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="C. Mathematical Objective">
+  <data key="d0">C. Mathematical Objective</data>
+  <data key="d1">concept</data>
+  <data key="d2">C. ELBO is the mathematical objective for images in VAEs.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Denoising Diffusion Probabilistic Models">
+  <data key="d0">Denoising Diffusion Probabilistic Models</data>
+  <data key="d1">concept</data>
+  <data key="d2">DDPM refers to probabilistic models that denoise images over time.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Forward Process">
+  <data key="d0">Forward Process</data>
+  <data key="d1">concept</data>
+  <data key="d2">The forward process involves adding noise to the image at different time steps.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Reverse Process">
+  <data key="d0">Reverse Process</data>
+  <data key="d1">concept</data>
+  <data key="d2">The reverse process involves denoising the image based on the noise added in the forward process.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="CycleGAN Unpaired Image Translation Pipeline">
+  <data key="d0">CycleGAN Unpaired Image Translation Pipeline</data>
+  <data key="d1">concept</data>
+  <data key="d2">CycleGAN is a pipeline for unpaired image-to-image translation.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Super-Resolution">
+  <data key="d0">Super-Resolution</data>
+  <data key="d1">concept</data>
+  <data key="d2">Super-resolution refers to the process of improving the resolution of images.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="SRGAN">
+  <data key="d0">SRGAN</data>
+  <data key="d1">concept</data>
+  <data key="d2">SRGAN stands for Super-Resolution Generative Adversarial Networks.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="ESRGAN">
+  <data key="d0">ESRGAN</data>
+  <data key="d1">concept</data>
+  <data key="d2">ESRGAN stands for Enhanced Super-Resolution Generative Adversarial Networks.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Pix2Pix">
+  <data key="d0">Pix2Pix</data>
+  <data key="d1">concept</data>
+  <data key="d2">Pix2Pix is a framework for image-to-image translation.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="CycleGAN">
+  <data key="d0">CycleGAN</data>
+  <data key="d1">concept</data>
+  <data key="d2">CycleGAN is a framework for unpaired image-to-image translation.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Medical Image Generation">
+  <data key="d0">Medical Image Generation</data>
+  <data key="d1">concept</data>
+  <data key="d2">Medical image generation involves creating realistic medical images for training.</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7&lt;SEP&gt;chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Image Quality">
+  <data key="d0">Image Quality</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d2">GANs produce high-quality images with sharpness and fine details.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Training Stability">
+  <data key="d0">Training Stability</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d2">GANs are known to be unstable and may suffer from mode collapse and saturation.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Latent Space Structure">
+  <data key="d0">Latent Space Structure</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d2">GANs' latent space is characterized by discontinuous and random regions.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Likelihood Evaluation">
+  <data key="d0">Likelihood Evaluation</data>
+  <data key="d3">chunk-a75dc326169f282d49d448f4d13fd799&lt;SEP&gt;chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d2">GANs do not directly estimate probabilities but use an implicit method for likelihood evaluation.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742922</data>
+  <data key="d6"></data>
+</node>
+<node id="Video Generation &amp; Temporal Consistency">
+  <data key="d0">Video Generation &amp; Temporal Consistency</data>
+  <data key="d3">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d2">3D Convolutions are used in Video Generation &amp; Temporal Consistency.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742923</data>
+  <data key="d6"></data>
+</node>
+<node id="Explicit">
+  <data key="d0">Explicit</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d2">VAEs use explicit probability estimation for likelihood evaluation.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742923</data>
+  <data key="d6"></data>
+</node>
+<node id="Implicit">
+  <data key="d0">Implicit</data>
+  <data key="d3">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d2">GANs use implicit probability estimation, while VAEs use explicit lower-bound estimation.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-2.pdf</data>
+  <data key="d5">1793742923</data>
+  <data key="d6"></data>
+</node>
+<node id="UNIT-III">
+  <data key="d0">UNIT-III</data>
+  <data key="d1">concept</data>
+  <data key="d2">UNIT-III refers to a specific section or unit in a text on Text Generation with Generative AI.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Text Generation">
+  <data key="d0">Text Generation</data>
+  <data key="d1">concept</data>
+  <data key="d2">Text generation is the process of creating text by using AI models.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Generative AI">
+  <data key="d0">Generative AI</data>
+  <data key="d1">concept</data>
+  <data key="d2">Generative AI is a type of AI that generates text, images, and other forms of content.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Text">
+  <data key="d0">Text</data>
+  <data key="d1">concept</data>
+  <data key="d2">Text is the content generated by AI models.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Conditional Probability">
+  <data key="d0">Conditional Probability</data>
+  <data key="d1">concept</data>
+  <data key="d2">The concept of conditional probability is discussed in relation to text generation models.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Sequence Modeling">
+  <data key="d0">Sequence Modeling</data>
+  <data key="d1">concept</data>
+  <data key="d2">Sequence modeling involves modeling sequences of events or data, as seen in text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Autoregressive Language Formulation">
+  <data key="d0">Autoregressive Language Formulation</data>
+  <data key="d1">concept</data>
+  <data key="d2">Autoregressive language formulation is a technique used in text generation models.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Long Short-Term Memory">
+  <data key="d0">Long Short-Term Memory</data>
+  <data key="d1">concept</data>
+  <data key="d2">Long Short-Term Memory (LSTM) is a type of neural network architecture used for sequence modeling.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="LSTM">
+  <data key="d0">LSTM</data>
+  <data key="d1">method</data>
+  <data key="d2">LSTM is a method used for sequence modeling in text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Text Generation with Generative AI">
+  <data key="d0">Text Generation with Generative AI</data>
+  <data key="d1">content</data>
+  <data key="d2">This is the main topic of the text, which is on text generation with generative AI.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Long Short-Term Memory Networks">
+  <data key="d0">Long Short-Term Memory Networks</data>
+  <data key="d1">method</data>
+  <data key="d2">LSTM networks are discussed as a solution to the vanishing gradient problem in recurrent neural networks.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="LSTM Networks">
+  <data key="d0">LSTM Networks</data>
+  <data key="d1">method</data>
+  <data key="d2">LSTM networks are specifically mentioned as addressing the vanishing gradient problem in text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="LSTM Cell">
+  <data key="d0">LSTM Cell</data>
+  <data key="d1">method</data>
+  <data key="d2">The LSTM cell is described as a component within LSTM networks used for sequence modeling in text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Forget Gate">
+  <data key="d0">Forget Gate</data>
+  <data key="d1">method</data>
+  <data key="d2">The Forget gate is a component of the LSTM cell architecture used for text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Input Gate">
+  <data key="d0">Input Gate</data>
+  <data key="d1">method</data>
+  <data key="d2">The Input gate is a component of the LSTM cell architecture used for text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Candidate Cell Update">
+  <data key="d0">Candidate Cell Update</data>
+  <data key="d1">method</data>
+  <data key="d2">The Candidate Cell Update is a component of the LSTM cell architecture used for text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Cell State Update">
+  <data key="d0">Cell State Update</data>
+  <data key="d1">method</data>
+  <data key="d2">The Cell State Update is a component of the LSTM cell architecture used for text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Output Gate">
+  <data key="d0">Output Gate</data>
+  <data key="d1">method</data>
+  <data key="d2">The Output gate is a component of the LSTM cell architecture used for text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Transformer">
+  <data key="d0">Transformer</data>
+  <data key="d1">method</data>
+  <data key="d2">Transformers are described as a type of model used for text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Transformer Decoder">
+  <data key="d0">Transformer Decoder</data>
+  <data key="d1">method</data>
+  <data key="d2">The Transformer decoder is a component used in the Transformer-based text generation model.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Scaled Dot-Product Self-Attention">
+  <data key="d0">Scaled Dot-Product Self-Attention</data>
+  <data key="d1">method</data>
+  <data key="d2">Scaled dot-product self-attention is a component of the Transformer decoder used in text generation.</data>
+  <data key="d3">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Self-Attention Maps">
+  <data key="d0">Self-Attention Maps</data>
+  <data key="d1">concept</data>
+  <data key="d2">Self-attention maps (Q, K, V) are derived from input matrix X.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Scaling Factor">
+  <data key="d0">Scaling Factor</data>
+  <data key="d1">method</data>
+  <data key="d2">The scaling factor (√d) is used to prevent gradient saturation in high-dimensional inner products.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Causal Attention Mask">
+  <data key="d0">Causal Attention Mask</data>
+  <data key="d1">concept</data>
+  <data key="d2">A causal attention mask (M) is applied to hide future tokens in text generation.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Multi-Head Attention">
+  <data key="d0">Multi-Head Attention</data>
+  <data key="d1">concept</data>
+  <data key="d2">Multi-Head Attention (MHA) allows joint attention to different representation subspaces.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Positional Encoding">
+  <data key="d0">Positional Encoding</data>
+  <data key="d1">method</data>
+  <data key="d2">Positional encoding is used to inject sequence order into the input embeddings.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Fine-Tuning Language Models">
+  <data key="d0">Fine-Tuning Language Models</data>
+  <data key="d1">event</data>
+  <data key="d2">Fine-tuning language models involves adapting them for specific downstream tasks.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Supervised Fine-Tuning">
+  <data key="d0">Supervised Fine-Tuning</data>
+  <data key="d1">method</data>
+  <data key="d2">Supervised Fine-Tuning (SFT) trains a model on structured instruction-response pairs.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Parameter-Efficient Fine-Tuning">
+  <data key="d0">Parameter-Efficient Fine-Tuning</data>
+  <data key="d1">method</data>
+  <data key="d2">Parameter-Efficient Fine-Tuning (PEFT / LoRA) uses Low-Rank Adaptation (LoRA) to update only trainable matrices.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Reinforcement Learning from Human Feedback">
+  <data key="d0">Reinforcement Learning from Human Feedback</data>
+  <data key="d1">method</data>
+  <data key="d2">Reinforcement Learning from Human Feedback (RLHF) involves a learned reward model and Proximal Policy Optimization (PPO).</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Direct Preference Optimization">
+  <data key="d0">Direct Preference Optimization</data>
+  <data key="d1">method</data>
+  <data key="d2">Direct Preference Optimization (DPO) directly optimizes the model using preference pairs.</data>
+  <data key="d3">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="𝑦𝑤">
+  <data key="d0">𝑦𝑤</data>
+  <data key="d1">concept</data>
+  <data key="d2">𝑦𝑤 represents a conditional probability in generative models.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="𝑥">
+  <data key="d0">𝑥</data>
+  <data key="d1">concept</data>
+  <data key="d2">𝑥 is a context variable in generative models.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="𝑃base">
+  <data key="d0">𝑃base</data>
+  <data key="d1">concept</data>
+  <data key="d2">𝑃base is a base probability function in generative models.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="𝛽log">
+  <data key="d0">𝛽log</data>
+  <data key="d1">concept</data>
+  <data key="d2">𝛽log is a logarithmic term in generative models.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="𝑃𝜃">
+  <data key="d0">𝑃𝜃</data>
+  <data key="d1">concept</data>
+  <data key="d2">𝑃𝜃 is a conditional probability in generative models.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="100m Sprint Record">
+  <data key="d0">100m Sprint Record</data>
+  <data key="d1">event</data>
+  <data key="d2">A 100-meter sprint record was broken during the World Athletics Championship.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Carbon-Fiber Spikes">
+  <data key="d0">Carbon-Fiber Spikes</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Carbon-fiber spikes are advanced sprinting shoes.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="World Athletics Federation">
+  <data key="d0">World Athletics Federation</data>
+  <data key="d1">organization</data>
+  <data key="d2">The World Athletics Federation is the governing body of the World Athletics Championship.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Greedy Decoding">
+  <data key="d0">Greedy Decoding</data>
+  <data key="d1">method</data>
+  <data key="d2">Greedy Decoding selects the most probable next token at each step.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742939</data>
+  <data key="d6"></data>
+</node>
+<node id="Beam Search">
+  <data key="d0">Beam Search</data>
+  <data key="d1">method</data>
+  <data key="d2">Beam Search maintains multiple high-probability sequences at each step.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="Top-𝐾 Sampling">
+  <data key="d0">Top-𝐾 Sampling</data>
+  <data key="d1">method</data>
+  <data key="d2">Top-𝐾 Sampling retains only the top 𝐾 most probable tokens.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="Top-𝑃 (Nucleus) Sampling">
+  <data key="d0">Top-𝑃 (Nucleus) Sampling</data>
+  <data key="d1">method</data>
+  <data key="d2">Top-𝑃 (Nucleus) Sampling retains only the smallest subset of tokens whose cumulative probability mass exceeds a threshold.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="Text Decoding Strategies &amp; Sampling Techniques">
+  <data key="d0">Text Decoding Strategies &amp; Sampling Techniques</data>
+  <data key="d1">concept</data>
+  <data key="d2">These are methods used in text generation to optimize and diversify the output.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="Text Decoding Strategies">
+  <data key="d0">Text Decoding Strategies</data>
+  <data key="d1">concept</data>
+  <data key="d2">These are techniques used to improve the quality and diversity of text generation.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="Text Generation Applications &amp; Evaluation Metrics">
+  <data key="d0">Text Generation Applications &amp; Evaluation Metrics</data>
+  <data key="d1">concept</data>
+  <data key="d2">These are categories for categorizing applications and metrics used in evaluating text generation models.</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="Evaluation Metrics">
+  <data key="d0">Evaluation Metrics</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d2">Metrics such as Perplexity, BLEU, and ROUGE are used to evaluate text generation models.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="BLEU Score">
+  <data key="d0">BLEU Score</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d2">BLEU Score measures the precision of 𝑛-grams in machine translation.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="ROUGE Score">
+  <data key="d0">ROUGE Score</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d2">ROUGE Score measures the recall-focused 𝑛-gram and longest common subsequence overlap in summarization.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="Perplexity">
+  <data key="d0">Perplexity</data>
+  <data key="d3">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d2">Perplexity measures the average cross-entropy per token, which is a measure of model language quality.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-3.pdf</data>
+  <data key="d5">1793742940</data>
+  <data key="d6"></data>
+</node>
+<node id="Real Time Performance Inputs">
+  <data key="d0">Real Time Performance Inputs</data>
+  <data key="d1">concept</data>
+  <data key="d2">Inputs for real-time enhancement of human performance in accompaniment and production.</data>
+  <data key="d3">chunk-5a6135cb11db83854564319c8740d39c</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Controllable Latent Spaces">
+  <data key="d0">Controllable Latent Spaces</data>
+  <data key="d1">concept</data>
+  <data key="d2">Model latent spaces designed to disentangle various musical attributes and allow independent manipulation.</data>
+  <data key="d3">chunk-5a6135cb11db83854564319c8740d39c</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Transfer Learning">
+  <data key="d0">Transfer Learning</data>
+  <data key="d1">method</data>
+  <data key="d2">Transfer learning enables models to leverage representations from large musical corpora for adaptation to smaller target domains.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Large Multi-Instrument Multi-Genre Symbolic Data">
+  <data key="d0">Large Multi-Instrument Multi-Genre Symbolic Data</data>
+  <data key="d1">data</data>
+  <data key="d2">Large multi-instrument, multi-genre symbolic data serves as the pre-training corpus for music composition laws.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Pre-Training Domain">
+  <data key="d0">Pre-Training Domain</data>
+  <data key="d1">concept</data>
+  <data key="d2">Learning general music composition laws, such as rhythm, voice leading, chord progressions, and octave relationships, on large corpora.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Feature Extraction">
+  <data key="d0">Feature Extraction</data>
+  <data key="d1">method</data>
+  <data key="d2">Feature extraction technique where pre-trained network layers are frozen and a new classifier/generator is trained on target domain data.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Fine-Tuning">
+  <data key="d0">Fine-Tuning</data>
+  <data key="d1">method</data>
+  <data key="d2">Fine-tuning involves updating all network weights or a head classifier/generator on target domain data with a small learning rate to prevent catastrophic forgetting.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Low-Rank Adaptation (LoRA)">
+  <data key="d0">Low-Rank Adaptation (LoRA)</data>
+  <data key="d1">method</data>
+  <data key="d2">Low-rank adaptation technique where rank decomposition matrices are injected into pre-trained weight matrices.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Adapters">
+  <data key="d0">Adapters</data>
+  <data key="d1">method</data>
+  <data key="d2">Adapters are small trainable feed-forward layers inserted inside Transformer attention or feed-forward blocks to keep main parameters frozen.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Conditional Prompting &amp; Attribute Tokens">
+  <data key="d0">Conditional Prompting &amp; Attribute Tokens</data>
+  <data key="d1">method</data>
+  <data key="d2">Conditional prompting involves prepending control tokens to the tokenized sequence during training and fine-tuning to specify specific attributes like tempo, instrumentation, key signature, and genre identity.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Loss Weighting &amp; Stylistic Regularization">
+  <data key="d0">Loss Weighting &amp; Stylistic Regularization</data>
+  <data key="d1">method</data>
+  <data key="d2">Loss weighting and stylistic regularization techniques include adding penalty terms to the negative log-likelihood loss to ensure adherence to genre-specific rules.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Copyright &amp; Training Data Ownership">
+  <data key="d0">Copyright &amp; Training Data Ownership</data>
+  <data key="d1">issue</data>
+  <data key="d2">Training models on protected musical works without explicit licenses raises concerns about copyright infringement and fair use.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Vocal Cloning &amp; Right of Publicity">
+  <data key="d0">Vocal Cloning &amp; Right of Publicity</data>
+  <data key="d1">issue</data>
+  <data key="d2">Synthesizing recognizable vocal timbres from real artists poses ethical risks regarding consent and misrepresentation.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Attribution, Watermarking &amp; Watermark Detection">
+  <data key="d0">Attribution, Watermarking &amp; Watermark Detection</data>
+  <data key="d1">issue</data>
+  <data key="d2">Embedding imperceptible watermarks in generated music files to ensure provenance and prevent deceptive uploads.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Cultural Diversity vs. Bias">
+  <data key="d0">Cultural Diversity vs. Bias</data>
+  <data key="d1">issue</data>
+  <data key="d2">Dominant training sets in AI-generated music tend to favor Western traditions, limiting native support for microtonal systems.</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Core Concepts">
+  <data key="d0">Core Concepts</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d2">Transfer learning is a technique that leverages pre-training and fine-tuning approaches to adapt generative models to specific domains.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="human performance">
+  <data key="d0">human performance</data>
+  <data key="d3">chunk-5a6135cb11db83854564319c8740d39c</data>
+  <data key="d2">Real-time inputs are used to enhance human performance during accompaniment and production.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="model latent spaces">
+  <data key="d0">model latent spaces</data>
+  <data key="d3">chunk-5a6135cb11db83854564319c8740d39c</data>
+  <data key="d2">Controllable latent spaces enable the manipulation of musical attributes like melody, harmony, rhythm, timbre, and dynamics.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Advanced Techniques">
+  <data key="d0">Advanced Techniques</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d2">Transfer learning is a core concept evolving into advanced techniques such as real-time audio synthesis and neural audio codecs.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Emerging Trends">
+  <data key="d0">Emerging Trends</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d2">Transfer learning is a technique that is developing into emerging trends like real-time interactive co-creation and latent spaces for music synthesis.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Ethical Considerations">
+  <data key="d0">Ethical Considerations</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d2">Transfer learning introduces challenges like copyright infringement, vocal cloning risks, and bias in cultural diversity.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Future Directions">
+  <data key="d0">Future Directions</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d2">Ethical considerations are intertwined with the evolution of future AI-driven music generation technologies.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="Technological Evolution">
+  <data key="d0">Technological Evolution</data>
+  <data key="d3">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d2">Ethical considerations drive the evolution of AI-driven music generation, leading to paradigm shifts in methodologies and techniques.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-5.pdf</data>
+  <data key="d5">1793742979</data>
+  <data key="d6"></data>
+</node>
+<node id="UNIT-IV">
+  <data key="d0">UNIT-IV</data>
+  <data key="d1">concept</data>
+  <data key="d2">UNIT-IV focuses on Music Generation using Generative AI.</data>
+  <data key="d3">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Music Generation">
+  <data key="d0">Music Generation</data>
+  <data key="d1">concept</data>
+  <data key="d2">Music generation involves capturing temporal dynamics, harmonic structures, and polyphonic dependencies.</data>
+  <data key="d3">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="MIDI">
+  <data key="d0">MIDI</data>
+  <data key="d1">concept</data>
+  <data key="d2">MIDI represents musical events symbolically and records them as discrete sequences.</data>
+  <data key="d3">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Piano Roll Representation">
+  <data key="d0">Piano Roll Representation</data>
+  <data key="d1">concept</data>
+  <data key="d2">Piano Roll Representation visualizes music as a 2D binary matrix with time steps and pitch dimensions.</data>
+  <data key="d3">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="LSTM-Based Music Generation">
+  <data key="d0">LSTM-Based Music Generation</data>
+  <data key="d1">method</data>
+  <data key="d2">LSTMs process music as temporal sequences by maintaining a persistent cell state for learning long-term patterns.</data>
+  <data key="d3">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Transformer-Based Music Generation">
+  <data key="d0">Transformer-Based Music Generation</data>
+  <data key="d1">method</data>
+  <data key="d2">Transformer architectures process long sequences in parallel to capture multi-bar themes and harmonic structures.</data>
+  <data key="d3">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Causal Transformer Architecture">
+  <data key="d0">Causal Transformer Architecture</data>
+  <data key="d1">method</data>
+  <data key="d2">Causal Transformer Architecture maintains an autoregressive generation pipeline by using causal self-attention.</data>
+  <data key="d3">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="MuseGAN">
+  <data key="d0">MuseGAN</data>
+  <data key="d1">concept</data>
+  <data key="d2">MuseGAN is a method for generating polyphonic music compositions.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="MIDI Dataset">
+  <data key="d0">MIDI Dataset</data>
+  <data key="d1">data</data>
+  <data key="d2">The Lakh MIDI Dataset is used for training MuseGAN.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Symbolic Music Datasets">
+  <data key="d0">Symbolic Music Datasets</data>
+  <data key="d1">data</data>
+  <data key="d2">Symbolic Music Datasets are converted into multi-track piano-roll tensors for training.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Sigmoid">
+  <data key="d0">Sigmoid</data>
+  <data key="d1">method</data>
+  <data key="d2">Sigmoid is used as an activation function in generating layers of MuseGAN.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Wasserstein GAN">
+  <data key="d0">Wasserstein GAN</data>
+  <data key="d1">method</data>
+  <data key="d2">Wasserstein GAN is used to optimize the training of multi-track GANs.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Gradient Penalty (WGAN-GP)">
+  <data key="d0">Gradient Penalty (WGAN-GP)</data>
+  <data key="d1">method</data>
+  <data key="d2">Gradient Penalty (WGAN-GP) is used to handle training instability in multi-track GANs.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="3D Transposed Convolutions">
+  <data key="d0">3D Transposed Convolutions</data>
+  <data key="d1">method</data>
+  <data key="d2">3D Transposed Convolutions are used to expand temporal dimensions for multi-bar generation.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Polyphonic Music Datasets">
+  <data key="d0">Polyphonic Music Datasets</data>
+  <data key="d1">data</data>
+  <data key="d2">Polyphonic Music Datasets are used for training MuseGAN.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Lakh MIDI Dataset">
+  <data key="d0">Lakh MIDI Dataset</data>
+  <data key="d1">data</data>
+  <data key="d2">The Lakh MIDI Dataset is a specific polyphonic music dataset used for training MuseGAN.</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Positional Encodings">
+  <data key="d0">Positional Encodings</data>
+  <data key="d1">concept</data>
+  <data key="d2">Positional encodings are used to inject structural relationships based on the distance between notes, preserving musical motifs.</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Standard Absolute Positional Encodings">
+  <data key="d0">Standard Absolute Positional Encodings</data>
+  <data key="d1">concept</data>
+  <data key="d2">Standard absolute positional encodings struggle with musical concepts such as key transpositions or repeating rhythm motifs.</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Relative Positional Encodings">
+  <data key="d0">Relative Positional Encodings</data>
+  <data key="d1">concept</data>
+  <data key="d2">Relative Positional Encodings are a modification of standard encodings that maintain musical motifs regardless of their position in a piece.</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Pitch Class Histogram Distance">
+  <data key="d0">Pitch Class Histogram Distance</data>
+  <data key="d1">evaluation_metric</data>
+  <data key="d2">Measures KL divergence between the distribution of 12 chromatic pitch classes in generated music and a target dataset.</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Scale Consistency">
+  <data key="d0">Scale Consistency</data>
+  <data key="d1">evaluation_metric</data>
+  <data key="d2">Calculates the ratio of generated notes that fit within a dominant musical scale (e.g., C Major).</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Empty Bar Rate (EBR)">
+  <data key="d0">Empty Bar Rate (EBR)</data>
+  <data key="d1">evaluation_metric</data>
+  <data key="d2">Measures the percentage of generated bars that contain no active note events.</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Polyphonic Density">
+  <data key="d0">Polyphonic Density</data>
+  <data key="d1">evaluation_metric</data>
+  <data key="d2">Calculates the average number of simultaneous active notes per bar or beat.</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Perplexity (PPL)">
+  <data key="d0">Perplexity (PPL)</data>
+  <data key="d1">evaluation_metric</data>
+  <data key="d2">Measures how well an autoregressive model predicts unseen test MIDI event sequences.</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Binary Thresholding &amp; Binarization">
+  <data key="d0">Binary Thresholding &amp; Binarization</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d2">Binary Thresholding and Binarization strategies are applied during inference to form discrete binary notes.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Multi-Bar Generation">
+  <data key="d0">Multi-Bar Generation</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d2">3D Transposed Convolutions are used to expand the temporal dimensions for multi-bar generation.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742989</data>
+  <data key="d6"></data>
+</node>
+<node id="Human-in-the-Loop Interaction">
+  <data key="d0">Human-in-the-Loop Interaction</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d2">Composers can fix specific instrument tracks and use MuseGAN's discriminator/generator for human-in-the-loop synthesis.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742990</data>
+  <data key="d6"></data>
+</node>
+<node id="Track Interdependence">
+  <data key="d0">Track Interdependence</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d2">Composers can tune the ratio between shared and track-private noise to control inter-track dynamics.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742990</data>
+  <data key="d6"></data>
+</node>
+<node id="Hybrid Model">
+  <data key="d0">Hybrid Model</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d2">The Hybrid model combines shared inter-track noise with track-private noise.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742990</data>
+  <data key="d6"></data>
+</node>
+<node id="Target Property">
+  <data key="d0">Target Property</data>
+  <data key="d3">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d2">Measures the similarity between the distribution of 12 chromatic pitch classes in generated music and a target dataset.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742990</data>
+  <data key="d6"></data>
+</node>
+<node id="Temporal Model">
+  <data key="d0">Temporal Model</data>
+  <data key="d3">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d2">The Temporal Model extends the Hybrid model by adding temporal latent variables for multi-bar rhythmic and thematic continuity.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">GA-Unit-4.pdf</data>
+  <data key="d5">1793742990</data>
+  <data key="d6"></data>
+</node>
+<edge source="SciGraph Research Paper" target="Author">
+  <data key="d7">1.0</data>
+  <data key="d8">Dr. S. K. Roy authored the SciGraph Research Paper.</data>
+  <data key="d9">authorship,scientific publication</data>
+  <data key="d10">chunk-560ab5de89a55fddf7b47381d8d11973</data>
+  <data key="d11">crispr_cas9_base_editing_oncology.pdf</data>
+  <data key="d12">1793740936</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dr. M. Vance" target="Topological Quantum Computing">
+  <data key="d7">1.0</data>
+  <data key="d8">Dr. M. Vance authored the SciGraph Research Paper titled "Topological Quantum Computing".</data>
+  <data key="d9">authorship,research subject</data>
+  <data key="d10">chunk-c8e4be070549dd5352701660e11d799b</data>
+  <data key="d11">quantum_coherence_topological_qubits.pdf</data>
+  <data key="d12">1793740941</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Topological Quantum Computing" target="Majorana zero modes">
+  <data key="d7">2.0</data>
+  <data key="d8">Majorana zero modes are investigated within the context of Topological Quantum Computing in the research paper.</data>
+  <data key="d9">concept related,investigation,research topic</data>
+  <data key="d10">chunk-c8e4be070549dd5352701660e11d799b</data>
+  <data key="d11">quantum_coherence_topological_qubits.pdf</data>
+  <data key="d12">1793740941</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Topological Quantum Computing" target="Semiconductor-superconductor heterostructures">
+  <data key="d7">1.0</data>
+  <data key="d8">The heterostructures are investigated within a specific location, semiconductor-superconductor heterostructures, in the research of Topological Quantum Computing.</data>
+  <data key="d9">investigation location,research subject</data>
+  <data key="d10">chunk-c8e4be070549dd5352701660e11d799b</data>
+  <data key="d11">quantum_coherence_topological_qubits.pdf</data>
+  <data key="d12">1793740941</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Monoclonal Antibody Chromatography Protocol" target="Buffer Composition">
+  <data key="d7">1.0</data>
+  <data key="d8">The protocol specifies a buffer composition of 20mM Sodium Phosphate at a pH of 7.2.</data>
+  <data key="d9">buffer specification,methodological support</data>
+  <data key="d10">chunk-a491d3beb849d44d764ba9308d49670a</data>
+  <data key="d11">monoclonal_antibody_purification_protocol.docx</data>
+  <data key="d12">1793740955</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Monoclonal Antibody Chromatography Protocol" target="Elution">
+  <data key="d7">1.0</data>
+  <data key="d8">The protocol specifies elution conditions using 100mM Sodium Citrate at a pH of 3.4.</data>
+  <data key="d9">elution conditions,methodological support</data>
+  <data key="d10">chunk-a491d3beb849d44d764ba9308d49670a</data>
+  <data key="d11">monoclonal_antibody_purification_protocol.docx</data>
+  <data key="d12">1793740955</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Monoclonal Antibody Chromatography Protocol" target="Target pHTarget pH">
+  <data key="d7">1.0</data>
+  <data key="d8">The protocol specifies a target pH of 7.2 for equilibration and 3.4 for elution.</data>
+  <data key="d9">methodological support,pH specification</data>
+  <data key="d10">chunk-a491d3beb849d44d764ba9308d49670a</data>
+  <data key="d11">monoclonal_antibody_purification_protocol.docx</data>
+  <data key="d12">1793740955</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Kinase_Assay_Results" target="SCG-801">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-801 is associated with the EGFR_T790M kinase target.</data>
+  <data key="d9">compound association,kinase target</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Kinase_Assay_Results" target="SCG-802">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-802 is associated with the BRAF_V600E kinase target.</data>
+  <data key="d9">compound association,kinase target</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Kinase_Assay_Results" target="SCG-803">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-803 is associated with the KRAS_G12D kinase target.</data>
+  <data key="d9">compound association,kinase target</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SCG-801" target="IC50_nM">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-801 has an IC50_nM value of 1.4 nM.</data>
+  <data key="d9">concentration,data value</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SCG-801" target="Selectivity_Index">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-801 has a Selectivity_Index value of 450.</data>
+  <data key="d9">data value,selectivity</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SCG-801" target="Cytotoxicity">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-801 has a Cytotoxicity value of Low.</data>
+  <data key="d9">data value,toxicity</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="IC50_nM" target="SCG-802">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-802 has an IC50_nM value of 3.2 nM.</data>
+  <data key="d9">concentration,data value</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="IC50_nM" target="SCG-803">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-803 has an IC50_nM value of 0.8 nM.</data>
+  <data key="d9">concentration,data value</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Selectivity_Index" target="SCG-802">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-802 has a Selectivity_Index value of 220.</data>
+  <data key="d9">data value,selectivity</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Selectivity_Index" target="SCG-803">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-803 has a Selectivity_Index value of 890.</data>
+  <data key="d9">data value,selectivity</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Cytotoxicity" target="SCG-802">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-802 has a Cytotoxicity value of Moderate.</data>
+  <data key="d9">data value,toxicity</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Cytotoxicity" target="SCG-803">
+  <data key="d7">1.0</data>
+  <data key="d8">SCG-803 has a Cytotoxicity value of Low.</data>
+  <data key="d9">data value,toxicity</data>
+  <data key="d10">chunk-c747003228b3dca3651dd872dc4d64d6</data>
+  <data key="d11">small_molecule_kinase_inhibitor_screening.xlsx</data>
+  <data key="d12">1793740967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LIGO-Virgo" target="Multi-messenger Gravitational Radiation Observations">
+  <data key="d7">1.0</data>
+  <data key="d8">LIGO-Virgo provides gravitational wave observations, complemented by electromagnetic observations.</data>
+  <data key="d9">collaboration,observational complementarity</data>
+  <data key="d10">chunk-a71e4e57e55fa44c2b7033cf864fedc9</data>
+  <data key="d11">gravitational_wave_merger_astrophysics.pptx</data>
+  <data key="d12">1793740971</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Multi-messenger Gravitational Radiation Observations" target="r-Process Nucleosynthesis">
+  <data key="d7">1.0</data>
+  <data key="d8">Theoretical predictions from electromagnetic observations are tested through r-process nucleosynthesis.</data>
+  <data key="d9">experimental verification,theoretical framework</data>
+  <data key="d10">chunk-a71e4e57e55fa44c2b7033cf864fedc9</data>
+  <data key="d11">gravitational_wave_merger_astrophysics.pptx</data>
+  <data key="d12">1793740971</data>
+  <data key="d13"></data>
+</edge>
+<edge source="NMDA Receptor" target="Calcium/calmodulin-dependent Protein Kinase II">
+  <data key="d7">1.0</data>
+  <data key="d8">NMDA receptor activation depends on the presence of calcium ions, which are facilitated by calmodulin and trigger the autophosphorylation of CaMKII.</data>
+  <data key="d9">activation mechanism,calcium-dependent</data>
+  <data key="d10">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d11">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d12">1793740978</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Calcium/calmodulin-dependent Protein Kinase II" target="Postsynaptic Density">
+  <data key="d7">1.0</data>
+  <data key="d8">CaMKII's phosphorylation facilitates the insertion of AMPA receptors into the postsynaptic density, enhancing synaptic plasticity.</data>
+  <data key="d9">modulation,receptor insertion</data>
+  <data key="d10">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d11">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d12">1793740978</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Calcium/calmodulin-dependent Protein Kinase II" target="Glutamate">
+  <data key="d7">1.0</data>
+  <data key="d8">Calcium/calmodulin-dependent Protein Kinase II (CaMKII) is activated by the binding of calcium ions and calmodulin to AMPA receptors, which are modulated by glutamate.</data>
+  <data key="d9">activation,neurotransmitter binding</data>
+  <data key="d10">chunk-0a522303be3ae3d9b177db158000450e</data>
+  <data key="d11">long_term_potentiation_nmda_plasticity.md</data>
+  <data key="d12">1793740978</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Glioblastoma Multiforme" target="UMAP">
+  <data key="d7">1.0</data>
+  <data key="d8">UMAP is used to analyze and identify distinct states in glioblastoma multiforme.</data>
+  <data key="d9">data analysis,neoplastic identification</data>
+  <data key="d10">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d11">single_cell_transcriptomics_pathways.html</data>
+  <data key="d12">1793740986</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UMAP" target="Oligodendrocyte Progenitor">
+  <data key="d7">1.0</data>
+  <data key="d8">Oligodendrocyte progenitor cells are associated with a specific marker gene cluster in UMAP analysis.</data>
+  <data key="d9">cellular subpopulation,marker gene association</data>
+  <data key="d10">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d11">single_cell_transcriptomics_pathways.html</data>
+  <data key="d12">1793740986</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UMAP" target="CD68">
+  <data key="d7">1.0</data>
+  <data key="d8">CD68 is a marker gene associated with cellular subpopulations in glioblastoma multiforme.</data>
+  <data key="d9">cellular subpopulation,marker gene association</data>
+  <data key="d10">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d11">single_cell_transcriptomics_pathways.html</data>
+  <data key="d12">1793740986</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UMAP" target="AIF1">
+  <data key="d7">1.0</data>
+  <data key="d8">AIF1 is a marker gene associated with cellular subpopulations in glioblastoma multiforme.</data>
+  <data key="d9">cellular subpopulation,marker gene association</data>
+  <data key="d10">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d11">single_cell_transcriptomics_pathways.html</data>
+  <data key="d12">1793740986</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Cluster C1" target="Marker Genes">
+  <data key="d7">1.0</data>
+  <data key="d8">Cluster C1 is associated with marker genes for oligodendrocyte progenitor cells.</data>
+  <data key="d9">cellular subpopulation,marker gene association</data>
+  <data key="d10">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d11">single_cell_transcriptomics_pathways.html</data>
+  <data key="d12">1793740986</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Marker Genes" target="Cluster C2">
+  <data key="d7">1.0</data>
+  <data key="d8">Cluster C2 is associated with marker genes for macrophage/microglia cells.</data>
+  <data key="d9">cellular subpopulation,marker gene association</data>
+  <data key="d10">chunk-2caeb7aa3c9d1d3eb9e82c60cf71bea1</data>
+  <data key="d11">single_cell_transcriptomics_pathways.html</data>
+  <data key="d12">1793740986</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Phosphoproteomics Phosphopeptide Enrichment" target="Orbitrap Exploris 480">
+  <data key="d7">1.0</data>
+  <data key="d8">The Orbitrap Exploris 480 is used for the enrichment process.</data>
+  <data key="d9">equipment,instrumentation</data>
+  <data key="d10">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d11">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d12">1793740994</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Phosphoproteomics Phosphopeptide Enrichment" target="TMTpro 16-plex Isobaric Labeling">
+  <data key="d7">1.0</data>
+  <data key="d8">TMTpro 16-plex isobaric labeling is used to quantify the identified proteins.</data>
+  <data key="d9">labeling method,quantification</data>
+  <data key="d10">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d11">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d12">1793740994</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Phosphoproteomics Phosphopeptide Enrichment" target="PI3K-Akt signaling">
+  <data key="d7">1.0</data>
+  <data key="d8">PI3K-Akt signaling is a pathway of interest in the experiment.</data>
+  <data key="d9">study focus,target pathway</data>
+  <data key="d10">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d11">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d12">1793740994</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Phosphoproteomics Phosphopeptide Enrichment" target="MAPK cascade">
+  <data key="d7">1.0</data>
+  <data key="d8">MAPK cascade is a pathway of interest in the experiment.</data>
+  <data key="d9">study focus,target pathway</data>
+  <data key="d10">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d11">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d12">1793740994</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Phosphoproteomics Phosphopeptide Enrichment" target="Cell cycle checkpoints">
+  <data key="d7">1.0</data>
+  <data key="d8">Cell cycle checkpoints is a pathway of interest in the experiment.</data>
+  <data key="d9">study focus,target pathway</data>
+  <data key="d10">chunk-3ea4186753118b14442f9cebd3e0075d</data>
+  <data key="d11">tandem_mass_spectrometry_proteomics.json</data>
+  <data key="d12">1793740994</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Python" target="Introduction to Generative AI">
+  <data key="d7">2.0</data>
+  <data key="d8">Python is used to introduce the concept of Generative AI.&lt;SEP&gt;Python is used to introduce Generative AI.</data>
+  <data key="d9">language,programming language,topic</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Python" target="TensorFlow 2 Integration">
+  <data key="d7">1.0</data>
+  <data key="d8">Python is supported by TensorFlow 2 through tf.keras integration.</data>
+  <data key="d9">API,language support</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="TensorFlow 2" target="Generative Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">TensorFlow 2 is used in the field of Generative Artificial Intelligence.</data>
+  <data key="d9">focus area,platform</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="NumPy" target="Pandas">
+  <data key="d7">1.0</data>
+  <data key="d8">NumPy utilizes Pandas for dataset management.</data>
+  <data key="d9">feature,library dependency</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Pandas" target="Matplotlib">
+  <data key="d7">1.0</data>
+  <data key="d8">Pandas integrates with Matplotlib for visualizations.</data>
+  <data key="d9">library integration,visualization</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Matplotlib" target="Seaborn">
+  <data key="d7">1.0</data>
+  <data key="d8">Matplotlib integrates with Seaborn for advanced visualizations.</data>
+  <data key="d9">library integration,visualization</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="NumPy tensor array operations" target="Generative Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">NumPy tensor array operations are used in the training of Generative AI models.</data>
+  <data key="d9">application,functionality</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="TensorFlow 2 Integration" target="Generative Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">TensorFlow 2's tf.keras integration is applied in Generative AI.</data>
+  <data key="d9">API,application</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="TensorFlow 2 Integration" target="Eager Execution">
+  <data key="d7">1.0</data>
+  <data key="d8">Eager Execution mode is used in the integration of TensorFlow 2.</data>
+  <data key="d9">mode,performance</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="TensorFlow 2 Integration" target="Computation Graph Compilation">
+  <data key="d7">1.0</data>
+  <data key="d8">Computation Graph Compilation mode is used in the integration of TensorFlow 2.</data>
+  <data key="d9">mode,performance</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Functional API" target="Generative Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">Functional API is used in complex Generative AI models.</data>
+  <data key="d9">architecture,complexity</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Model Subclassing" target="Generative Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">Model Subclassing is used in the complex Generative AI models.</data>
+  <data key="d9">architecture,complexity</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="tf.GradientTape" target="Generative Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">tf.GradientTape is used for optimization in Generative AI.</data>
+  <data key="d9">application,technique</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Eager Execution" target="Generative Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">Eager Execution mode can be used in Generative AI for performance optimization.</data>
+  <data key="d9">mode,performance</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Computation Graph Compilation" target="Generative Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">Computation Graph Compilation mode can be used in Generative AI for performance optimization.</data>
+  <data key="d9">mode,performance</data>
+  <data key="d10">chunk-5616275fd583edfcf57fa14f736d40af</data>
+  <data key="d11">GA-Unit-1.pdf</data>
+  <data key="d12">1793742849</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Latent Space" target="Continuous">
+  <data key="d7">1.0</data>
+  <data key="d8">A continuous latent space is ideal for interpolating and representing complex structures.</data>
+  <data key="d9">smooth representation,space continuity</data>
+  <data key="d10">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Latent Space" target="Discontinuous">
+  <data key="d7">1.0</data>
+  <data key="d8">Discontinuous latent spaces contain random empty regions, affecting the representation.</data>
+  <data key="d9">empty regions,space discontinuity</data>
+  <data key="d10">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image Generation" target="Image Quality">
+  <data key="d7">1.0</data>
+  <data key="d8">GANs produce high-quality images with sharpness and fine details.</data>
+  <data key="d9">high spatial sharpness,rich fine details</data>
+  <data key="d10">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742922</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image Generation" target="Training Stability">
+  <data key="d7">1.0</data>
+  <data key="d8">GANs are known to be unstable and may suffer from mode collapse and saturation.</data>
+  <data key="d9">prone to mode collapse and saturation,unstable</data>
+  <data key="d10">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742922</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image Generation" target="Latent Space Structure">
+  <data key="d7">1.0</data>
+  <data key="d8">GANs' latent space is characterized by discontinuous and random regions.</data>
+  <data key="d9">discontinuous,random empty regions</data>
+  <data key="d10">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742922</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image Generation" target="Likelihood Evaluation">
+  <data key="d7">1.0</data>
+  <data key="d8">GANs do not directly estimate probabilities but use an implicit method for likelihood evaluation.</data>
+  <data key="d9">implicit,no direct probability estimation</data>
+  <data key="d10">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742922</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Non-Saturating Heuristic Loss" target="Training Stability">
+  <data key="d7">1.0</data>
+  <data key="d8">Using Non-Saturating Heuristic Loss helps stabilize GAN training by ensuring the Generator's outputs are closer to the real data distribution.</data>
+  <data key="d9">ensures stable training by forcing the Generator to output images close to the real data distribution</data>
+  <data key="d10">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742922</data>
+  <data key="d13"></data>
+</edge>
+<edge source="One-Time-Scale Update Rule (TTUR)" target="Training Stability">
+  <data key="d7">1.0</data>
+  <data key="d8">TTUR ensures that the Discriminator updates more rapidly than the Generator, allowing for more informative feedback during training.</data>
+  <data key="d9">ensures the Discriminator updates faster than the Generator to provide meaningful feedback</data>
+  <data key="d10">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742922</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MRI" target="Medical Image Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">Medical Image Generation produces MRI images.</data>
+  <data key="d9">input,output</data>
+  <data key="d10">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CT" target="Medical Image Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">Medical Image Generation synthesizes CT images.</data>
+  <data key="d9">input,output</data>
+  <data key="d10">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="X-ray" target="Medical Image Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">Medical Image Generation creates X-ray images.</data>
+  <data key="d9">input,output</data>
+  <data key="d10">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Training Diagnostic Networks" target="Medical Image Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">Training Diagnostic Networks are trained on synthesized medical images.</data>
+  <data key="d9">input,output</data>
+  <data key="d10">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="3D Convolutions" target="Video Generation &amp; Temporal Consistency">
+  <data key="d7">1.0</data>
+  <data key="d8">3D Convolutions are used in Video Generation &amp; Temporal Consistency.</data>
+  <data key="d9">method</data>
+  <data key="d10">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Temporal Attention Layers" target="Video Generation &amp; Temporal Consistency">
+  <data key="d7">1.0</data>
+  <data key="d8">Temporal Attention Layers improve the temporal consistency of synthesized video sequences.</data>
+  <data key="d9">method</data>
+  <data key="d10">chunk-f88edbe4c826e34a84c491df8811b068</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SE/BCE Averaging" target="Stability">
+  <data key="d7">1.0</data>
+  <data key="d8">Averaging SE/BCE can lead to a more stable performance.</data>
+  <data key="d9">averaging process,performance stability</data>
+  <data key="d10">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Stability" target="Unstable">
+  <data key="d7">1.0</data>
+  <data key="d8">Stability can be inconsistent and unstable, leading to unreliable outcomes.</data>
+  <data key="d9">instability,performance inconsistency</data>
+  <data key="d10">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Stability" target="Stable">
+  <data key="d7">1.0</data>
+  <data key="d8">Stable stability ensures consistent and reliable performance.</data>
+  <data key="d9">optimization,performance consistency</data>
+  <data key="d10">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Stable" target="Spectral Normalization">
+  <data key="d7">1.0</data>
+  <data key="d8">Spectral normalization helps stabilize the network by constraining the weights to be 1-L</data>
+  <data key="d9">constrained weights,network stability</data>
+  <data key="d10">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Spectral Normalization" target="Training Stability">
+  <data key="d7">1.0</data>
+  <data key="d8">Spectral normalization helps stabilize the training process by constraining the network's weight matrices to have a spectral norm (largest singular value) of one.</data>
+  <data key="d9">stabilizes the training by constraining the network's weights</data>
+  <data key="d10">chunk-a75dc326169f282d49d448f4d13fd799</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Likelihood Evaluation" target="Explicit">
+  <data key="d7">1.0</data>
+  <data key="d8">VAEs use explicit probability estimation for likelihood evaluation.</data>
+  <data key="d9">direct probability estimation,explicit modeling</data>
+  <data key="d10">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Likelihood Evaluation" target="Implicit">
+  <data key="d7">1.0</data>
+  <data key="d8">GANs use implicit probability estimation, while VAEs use explicit lower-bound estimation.</data>
+  <data key="d9">no direct estimation,probabilistic estimation</data>
+  <data key="d10">chunk-fcdf9fb2be50ad48fc943fd5744a44c7</data>
+  <data key="d11">GA-Unit-2.pdf</data>
+  <data key="d12">1793742923</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UNIT-III" target="Text Generation">
+  <data key="d7">2.0</data>
+  <data key="d8">The text on Text Generation with Generative AI is part of the section or unit titled UNIT-III.&lt;SEP&gt;UNIT-III focuses on the topic of Text Generation, discussed in more detail in the text.</data>
+  <data key="d9">content-topic,section,section-content,topic</data>
+  <data key="d10">chunk-53e91aac2a78e1fd577ea69243a30777</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Self-Attention Maps" target="Scaling Factor">
+  <data key="d7">1.0</data>
+  <data key="d8">The scaling factor adjusts the self-attention maps to avoid gradient saturation.</data>
+  <data key="d9">normalization,scaling adjustment</data>
+  <data key="d10">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Self-Attention Maps" target="Causal Attention Mask">
+  <data key="d7">1.0</data>
+  <data key="d8">The causal attention mask hides future tokens in the self-attention mechanism.</data>
+  <data key="d9">future token suppression,mask application</data>
+  <data key="d10">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Self-Attention Maps" target="Multi-Head Attention">
+  <data key="d7">1.0</data>
+  <data key="d8">Self-Attention Maps use Multi-Head Attention for joint attention across different subspaces.</data>
+  <data key="d9">joint attention,multi-dimensional attention</data>
+  <data key="d10">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Self-Attention Maps" target="Positional Encoding">
+  <data key="d7">1.0</data>
+  <data key="d8">Positional Encoding injects sequence order into self-attention maps.</data>
+  <data key="d9">embedding injection,sequence order</data>
+  <data key="d10">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Fine-Tuning Language Models" target="Supervised Fine-Tuning">
+  <data key="d7">1.0</data>
+  <data key="d8">Supervised Fine-Tuning adapts fine-tuned models for specific tasks.</data>
+  <data key="d9">fine-tuning method,training adaptation</data>
+  <data key="d10">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Fine-Tuning Language Models" target="Parameter-Efficient Fine-Tuning">
+  <data key="d7">1.0</data>
+  <data key="d8">Parameter-Efficient Fine-Tuning (PEFT) uses LoRA to adapt fine-tuned models.</data>
+  <data key="d9">fine-tuning method,lightweight adaptation</data>
+  <data key="d10">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Fine-Tuning Language Models" target="Reinforcement Learning from Human Feedback">
+  <data key="d7">1.0</data>
+  <data key="d8">RLHF guides fine-tuning using a reward model.</data>
+  <data key="d9">fine-tuning approach,reward-guided optimization</data>
+  <data key="d10">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Fine-Tuning Language Models" target="Direct Preference Optimization">
+  <data key="d7">1.0</data>
+  <data key="d8">DPO optimizes fine-tuned models using preference pairs.</data>
+  <data key="d9">fine-tuning approach,preference-based optimization</data>
+  <data key="d10">chunk-ad608f9ab386088d80a4511b0c3e6ded</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Greedy Decoding" target="Text Decoding Strategies">
+  <data key="d7">1.0</data>
+  <data key="d8">Greedy Decoding selects the most probable next token at each step.</data>
+  <data key="d9">decoding method,deterministic selection</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Top-𝐾 Sampling" target="Text Decoding Strategies">
+  <data key="d7">2.0</data>
+  <data key="d8">Top-𝐾 Sampling controls the randomness in sampling by retaining only the top 𝐾 most probable tokens.&lt;SEP&gt;Top-𝐾 Sampling retains only the top 𝐾 most probable tokens.</data>
+  <data key="d9">diversity control,limited diversity,sampling method,sampling technique</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Top-𝑃 (Nucleus) Sampling" target="Text Decoding Strategies">
+  <data key="d7">1.0</data>
+  <data key="d8">Top-𝑃 (Nucleus) Sampling selects the smallest subset of tokens whose cumulative probability mass exceeds a threshold.</data>
+  <data key="d9">dynamic probability selection,sampling method</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Text Decoding Strategies" target="Text Generation Applications &amp; Evaluation Metrics">
+  <data key="d7">3.0</data>
+  <data key="d8">Text Generation Applications &amp; Evaluation Metrics encompasses various domains including machine translation and summarization.&lt;SEP&gt;Text Decoding Strategies are used in various text generation applications, such as machine translation and summarization.&lt;SEP&gt;Text Decoding Strategies are techniques used in text generation to optimize and diversify the output.</data>
+  <data key="d9">application area,text generation</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Text Decoding Strategies" target="Evaluation Metrics">
+  <data key="d7">1.0</data>
+  <data key="d8">Evaluation metrics such as BLEU and ROUGE are used to evaluate text generation models, which are applications of Text Decoding Strategies.</data>
+  <data key="d9">application area,evaluation</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Text Generation Applications &amp; Evaluation Metrics" target="Evaluation Metrics">
+  <data key="d7">1.0</data>
+  <data key="d8">Metrics such as Perplexity, BLEU, and ROUGE are used to evaluate text generation models.</data>
+  <data key="d9">application domain,evaluation metric</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Text Generation Applications &amp; Evaluation Metrics" target="BLEU Score">
+  <data key="d7">1.0</data>
+  <data key="d8">BLEU Score measures the precision of 𝑛-grams in machine translation.</data>
+  <data key="d9">evaluation metric,machine translation</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Text Generation Applications &amp; Evaluation Metrics" target="ROUGE Score">
+  <data key="d7">1.0</data>
+  <data key="d8">ROUGE Score measures the recall-focused 𝑛-gram and longest common subsequence overlap in summarization.</data>
+  <data key="d9">evaluation metric,summarization</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Text Generation Applications &amp; Evaluation Metrics" target="Perplexity">
+  <data key="d7">1.0</data>
+  <data key="d8">Perplexity measures the average cross-entropy per token, which is a measure of model language quality.</data>
+  <data key="d9">evaluation metric,model language quality</data>
+  <data key="d10">chunk-f598d86599cd3bfb3e4e3b6417d33dc0</data>
+  <data key="d11">GA-Unit-3.pdf</data>
+  <data key="d12">1793742940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Real Time Performance Inputs" target="human performance">
+  <data key="d7">1.0</data>
+  <data key="d8">Real-time inputs are used to enhance human performance during accompaniment and production.</data>
+  <data key="d9">human performance enhancement,real-time input</data>
+  <data key="d10">chunk-5a6135cb11db83854564319c8740d39c</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Controllable Latent Spaces" target="model latent spaces">
+  <data key="d7">1.0</data>
+  <data key="d8">Controllable latent spaces enable the manipulation of musical attributes like melody, harmony, rhythm, timbre, and dynamics.</data>
+  <data key="d9">attribute disentanglement,latent space structuring</data>
+  <data key="d10">chunk-5a6135cb11db83854564319c8740d39c</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Transfer Learning" target="Core Concepts">
+  <data key="d7">1.0</data>
+  <data key="d8">Transfer learning is a technique that leverages pre-training and fine-tuning approaches to adapt generative models to specific domains.</data>
+  <data key="d9">pre-training and fine-tuning,technique</data>
+  <data key="d10">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Transfer Learning" target="Fine-Tuning">
+  <data key="d7">1.0</data>
+  <data key="d8">Transfer learning enables adaptation through fine-tuning, which involves refining model parameters on the target domain data.</data>
+  <data key="d9">adaptation and refinement,technique</data>
+  <data key="d10">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Transfer Learning" target="Advanced Techniques">
+  <data key="d7">1.0</data>
+  <data key="d8">Transfer learning is a core concept evolving into advanced techniques such as real-time audio synthesis and neural audio codecs.</data>
+  <data key="d9">future evolution,method</data>
+  <data key="d10">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Transfer Learning" target="Emerging Trends">
+  <data key="d7">1.0</data>
+  <data key="d8">Transfer learning is a technique that is developing into emerging trends like real-time interactive co-creation and latent spaces for music synthesis.</data>
+  <data key="d9">development,technique</data>
+  <data key="d10">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Transfer Learning" target="Ethical Considerations">
+  <data key="d7">1.0</data>
+  <data key="d8">Transfer learning introduces challenges like copyright infringement, vocal cloning risks, and bias in cultural diversity.</data>
+  <data key="d9">challenges,issue</data>
+  <data key="d10">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Ethical Considerations" target="Future Directions">
+  <data key="d7">1.0</data>
+  <data key="d8">Ethical considerations are intertwined with the evolution of future AI-driven music generation technologies.</data>
+  <data key="d9">issue,technological evolution</data>
+  <data key="d10">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Ethical Considerations" target="Technological Evolution">
+  <data key="d7">1.0</data>
+  <data key="d8">Ethical considerations drive the evolution of AI-driven music generation, leading to paradigm shifts in methodologies and techniques.</data>
+  <data key="d9">issue,paradigm shift</data>
+  <data key="d10">chunk-99f8fa13cb484b51ce51ba03554bbc27</data>
+  <data key="d11">GA-Unit-5.pdf</data>
+  <data key="d12">1793742979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UNIT-IV" target="Music Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">UNIT-IV introduces methods for music generation, including LSTM and Transformer-based approaches.</data>
+  <data key="d9">method application,topic focus</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UNIT-IV" target="MIDI">
+  <data key="d7">1.0</data>
+  <data key="d8">MIDI is used to represent and process musical events in UNIT-IV.</data>
+  <data key="d9">application,representation</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UNIT-IV" target="Piano Roll Representation">
+  <data key="d7">1.0</data>
+  <data key="d8">Piano Roll Representation is used to visualize the structured data of music events.</data>
+  <data key="d9">application,visualization</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UNIT-IV" target="LSTM-Based Music Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">UNIT-IV utilizes LSTM for music generation, focusing on temporal patterns.</data>
+  <data key="d9">LSTM use,method application</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UNIT-IV" target="Transformer-Based Music Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">UNIT-IV applies Transformer architectures for music generation.</data>
+  <data key="d9">Transformer use,method application</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UNIT-IV" target="Causal Transformer Architecture">
+  <data key="d7">1.0</data>
+  <data key="d8">UNIT-IV employs a causal transformer architecture for music generation.</data>
+  <data key="d9">causal self-attention,method application</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Music Generation" target="MIDI">
+  <data key="d7">1.0</data>
+  <data key="d8">MIDI is used as a representation in music generation methods.</data>
+  <data key="d9">method use,representation application</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Music Generation" target="Piano Roll Representation">
+  <data key="d7">1.0</data>
+  <data key="d8">Piano Roll Representation is used to visualize music in music generation methods.</data>
+  <data key="d9">method application,visualization</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Music Generation" target="LSTM-Based Music Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">LSTM is applied for music generation, focusing on long-term patterns.</data>
+  <data key="d9">method application,method use</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Music Generation" target="Transformer-Based Music Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">Transformer architectures are used for music generation.</data>
+  <data key="d9">method application,method use</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Music Generation" target="Causal Transformer Architecture">
+  <data key="d7">1.0</data>
+  <data key="d8">Causal transformer architecture is used for music generation.</data>
+  <data key="d9">method application,method use</data>
+  <data key="d10">chunk-3fc8a2ebcc1e39fbd3ba48d67f7f264d</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MuseGAN" target="Polyphonic Music Datasets">
+  <data key="d7">1.0</data>
+  <data key="d8">MuseGAN is trained using polyphonic music datasets.</data>
+  <data key="d9">music generation,training input</data>
+  <data key="d10">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MuseGAN" target="Binary Thresholding &amp; Binarization">
+  <data key="d7">1.0</data>
+  <data key="d8">Binary Thresholding and Binarization strategies are applied during inference to form discrete binary notes.</data>
+  <data key="d9">note generation,training strategy</data>
+  <data key="d10">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MuseGAN" target="Wasserstein GAN">
+  <data key="d7">1.0</data>
+  <data key="d8">MuseGAN utilizes Wasserstein GAN to stabilize the training process of multi-track GANs.</data>
+  <data key="d9">stability,training method</data>
+  <data key="d10">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MuseGAN" target="Human-in-the-Loop Interaction">
+  <data key="d7">1.0</data>
+  <data key="d8">Composers can fix specific instrument tracks and use MuseGAN's discriminator/generator for human-in-the-loop synthesis.</data>
+  <data key="d9">composition control,human-in-the-loop</data>
+  <data key="d10">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MuseGAN" target="Track Interdependence">
+  <data key="d7">1.0</data>
+  <data key="d8">Composers can tune the ratio between shared and track-private noise to control inter-track dynamics.</data>
+  <data key="d9">composition control,inter-track noise</data>
+  <data key="d10">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MuseGAN" target="Hybrid Model">
+  <data key="d7">1.0</data>
+  <data key="d8">The Hybrid model combines shared inter-track noise with track-private noise.</data>
+  <data key="d9">architecture,noise blending</data>
+  <data key="d10">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MuseGAN" target="Temporal Model">
+  <data key="d7">1.0</data>
+  <data key="d8">The Temporal Model extends the Hybrid model by adding temporal latent variables for multi-bar rhythmic and thematic continuity.</data>
+  <data key="d9">architecture,temporal continuity</data>
+  <data key="d10">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="3D Transposed Convolutions" target="Multi-Bar Generation">
+  <data key="d7">1.0</data>
+  <data key="d8">3D Transposed Convolutions are used to expand the temporal dimensions for multi-bar generation.</data>
+  <data key="d9">model architecture,multi-bar composition</data>
+  <data key="d10">chunk-5f962918487ef320fd45d2de09dceac4</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Positional Encodings" target="Standard Absolute Positional Encodings">
+  <data key="d7">2.0</data>
+  <data key="d8">Standard positional encodings face difficulties in handling musical concepts such as key transpositions or repeating rhythm motifs.&lt;SEP&gt;Standard positional encodings rely on absolute positions of notes, which can be problematic for musical motifs.</data>
+  <data key="d9">concept,technique</data>
+  <data key="d10">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Positional Encodings" target="Relative Positional Encodings">
+  <data key="d7">4.0</data>
+  <data key="d8">Relative Positional Encodings address the shortcomings of standard positional encodings by incorporating distance-based information.&lt;SEP&gt;Relative Positional Encodings are an evolution of Positional Encodings that use distance information to enhance motif preservation.&lt;SEP&gt;Relative Positional Encodings are a variant of Positional Encodings that incorporates distance information between notes.&lt;SEP&gt;Relative Positional Encodings enhance the preservation of musical motifs by accounting for the distance between notes.</data>
+  <data key="d9">concept,technique</data>
+  <data key="d10">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Standard Absolute Positional Encodings" target="Relative Positional Encodings">
+  <data key="d7">1.0</data>
+  <data key="d8">Relative Positional Encodings modify standard encodings by considering the distance between notes to preserve motifs across different positions.</data>
+  <data key="d9">technique</data>
+  <data key="d10">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Pitch Class Histogram Distance" target="Target Property">
+  <data key="d7">1.0</data>
+  <data key="d8">Measures the similarity between the distribution of 12 chromatic pitch classes in generated music and a target dataset.</data>
+  <data key="d9">Harmonic Alignment</data>
+  <data key="d10">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Scale Consistency" target="Target Property">
+  <data key="d7">1.0</data>
+  <data key="d8">Calculates the ratio of generated notes that fit within a dominant musical scale (e.g., C Major).</data>
+  <data key="d9">Musical Key Coherence</data>
+  <data key="d10">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Empty Bar Rate (EBR)" target="Target Property">
+  <data key="d7">1.0</data>
+  <data key="d8">Measures the percentage of generated bars that contain no active note events.</data>
+  <data key="d9">Structural Continuity</data>
+  <data key="d10">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Polyphonic Density" target="Target Property">
+  <data key="d7">1.0</data>
+  <data key="d8">Calculates the average number of simultaneous active notes per bar or beat.</data>
+  <data key="d9">Texture Complexity</data>
+  <data key="d10">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Perplexity (PPL)" target="Target Property">
+  <data key="d7">1.0</data>
+  <data key="d8">Measures how well the autoregressive model predicts unseen test MIDI event sequences.</data>
+  <data key="d9">Model Confidence</data>
+  <data key="d10">chunk-140833bd08793c8ef46f4afbc10aa877</data>
+  <data key="d11">GA-Unit-4.pdf</data>
+  <data key="d12">1793742990</data>
+  <data key="d13"></data>
+</edge>
+</graph></graphml>

@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-    Starts The Brain - Multimodal RAG & 3D Knowledge Graph Service
+    Starts SciGraph — Scientific Intelligence Workspace
 #>
 
 Write-Host "======================================================================" -ForegroundColor Cyan
-Write-Host "                     STARTING THE BRAIN SERVICE                       " -ForegroundColor Cyan
+Write-Host "                     STARTING SCIGRAPH SERVICE                        " -ForegroundColor Cyan
 Write-Host "======================================================================" -ForegroundColor Cyan
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path

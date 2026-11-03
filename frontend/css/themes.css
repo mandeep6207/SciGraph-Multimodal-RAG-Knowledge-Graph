@@ -1,0 +1,121 @@
+/* ==========================================================================
+   SCIGRAPH THEMES — PREMIUM SCIENTIFIC INTELLIGENCE COLOR SYSTEM
+   Art Direction: Dark Editorial, Scientific Instrumentation, Emerald-Lime Signature
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+  --color-scheme: dark;
+
+  /* Backgrounds */
+  --bg-app: #090C0A;
+  --bg-sidebar: #0B0F0D;
+  --bg-header: rgba(9, 12, 10, 0.88);
+  --bg-card: #101612;
+  --bg-card-hover: #141C17;
+  --bg-surface: #151D18;
+  --bg-surface-elevated: #1B261F;
+  --bg-input: #0B100D;
+  --bg-active: rgba(181, 243, 107, 0.12);
+
+  /* Scientific Grid Overlay */
+  --grid-line-color: rgba(190, 220, 190, 0.04);
+  --grid-crosshair: rgba(181, 243, 107, 0.22);
+
+  /* Borders */
+  --border-subtle: rgba(190, 220, 190, 0.07);
+  --border-default: rgba(190, 220, 190, 0.12);
+  --border-strong: rgba(181, 243, 107, 0.32);
+  --border-focus: #B5F36B;
+
+  /* Primary Brand & Accents — Signature Scientific Emerald */
+  --accent-primary: #B5F36B;
+  --accent-primary-hover: #c4f783;
+  --accent-secondary: #6EAA85;
+  --accent-secondary-hover: #81bc98;
+  --accent-amber: #D9A65A;
+  --accent-glow: rgba(181, 243, 107, 0.20);
+  --neon-glow: 0 0 16px rgba(181, 243, 107, 0.28);
+  --neon-subtle: 0 0 8px rgba(181, 243, 107, 0.18);
+
+  /* Typography — Warm Ivory & Technical Sage */
+  --text-primary: #E9E8DF;
+  --text-secondary: #C3C9C1;
+  --text-muted: #929B91;
+  --text-dim: #687367;
+  --text-inverse: #090C0A;
+
+  /* Status Colors */
+  --status-success: #B5F36B;
+  --status-success-bg: rgba(181, 243, 107, 0.14);
+  --status-warning: #D9A65A;
+  --status-warning-bg: rgba(217, 166, 90, 0.14);
+  --status-danger: #E05D52;
+  --status-danger-bg: rgba(224, 93, 82, 0.14);
+  --status-info: #6EAA85;
+  --status-info-bg: rgba(110, 170, 133, 0.14);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 0 24px rgba(181, 243, 107, 0.16);
+}
+
+/* Light Theme — Cool Scientific Ivory Paper */
+[data-theme="light"] {
+  --color-scheme: light;
+
+  /* Backgrounds */
+  --bg-app: #F7F7F2;
+  --bg-sidebar: #FFFFFF;
+  --bg-header: rgba(247, 247, 242, 0.92);
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F2F4ED;
+  --bg-surface: #EBEFE6;
+  --bg-surface-elevated: #DFE6D8;
+  --bg-input: #FFFFFF;
+  --bg-active: rgba(43, 114, 70, 0.12);
+
+  /* Scientific Grid Overlay */
+  --grid-line-color: rgba(40, 80, 50, 0.04);
+  --grid-crosshair: rgba(43, 114, 70, 0.22);
+
+  /* Borders */
+  --border-subtle: rgba(20, 45, 25, 0.07);
+  --border-default: rgba(20, 45, 25, 0.14);
+  --border-strong: rgba(43, 114, 70, 0.35);
+  --border-focus: #2B7246;
+
+  /* Primary Brand & Accents */
+  --accent-primary: #2B7246;
+  --accent-primary-hover: #1f5634;
+  --accent-secondary: #4A8C66;
+  --accent-amber: #B87D2E;
+  --accent-glow: rgba(43, 114, 70, 0.18);
+  --neon-glow: 0 0 16px rgba(43, 114, 70, 0.18);
+  --neon-subtle: 0 0 8px rgba(43, 114, 70, 0.12);
+
+  /* Typography */
+  --text-primary: #121814;
+  --text-secondary: #3D4A41;
+  --text-muted: #647368;
+  --text-dim: #8B998E;
+  --text-inverse: #FFFFFF;
+
+  /* Status Colors */
+  --status-success: #2B7246;
+  --status-success-bg: rgba(43, 114, 70, 0.12);
+  --status-warning: #B87D2E;
+  --status-warning-bg: rgba(184, 125, 46, 0.12);
+  --status-danger: #C8463B;
+  --status-danger-bg: rgba(200, 70, 59, 0.12);
+  --status-info: #4A8C66;
+  --status-info-bg: rgba(74, 140, 102, 0.12);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.14);
+  --shadow-glow: 0 0 24px rgba(43, 114, 70, 0.12);
+}

@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 echo ======================================================================
-echo                      STARTING THE BRAIN SERVICE
+echo                  STARTING SCIGRAPH SERVICE
 echo ======================================================================
 
 cd /d "%~dp0"
@@ -40,7 +40,7 @@ if %ERRORLEVEL% equ 0 (
     echo [INFO] Ollama CLI not in PATH. Ensure your LLM provider is running.
 )
 
-:: 4. Start The Brain via Uvicorn
+:: 4. Start SciGraph via Uvicorn
 echo [INFO] Starting FastAPI application on http://127.0.0.1:8100 ...
 echo [INFO] Frontend UI available at: http://127.0.0.1:8100/
 echo.
