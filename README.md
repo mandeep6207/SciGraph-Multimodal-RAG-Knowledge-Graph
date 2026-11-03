@@ -355,31 +355,34 @@ SciGraph-Multimodal-RAG-Knowledge-Graph/
 ├── start.ps1                   # Native Windows PowerShell launcher
 ├── requirements.txt            # Python dependencies
 ├── .env.example                # Documented configuration template
+├── Dockerfile                  # Container definition
+├── compose.yml                 # Multi-service composition
 ├── backend/
 │   ├── config.py               # Global settings, model routing & path resolution
 │   ├── dependencies.py         # App state, neo4j manager & job instances
 │   ├── ingestion_engine.py     # Concurrent multi-worker document ingestion engine
+│   ├── llm_providers.py        # Groq/Ollama/DeepSeek model client provider
 │   ├── neo4j_utils.py          # Cached NetworkX & Neo4j graph data provider
+│   ├── reranker.py             # Hybrid reranking & vector scoring
 │   ├── universal_parser.py     # Multi-format parsers (PDF, Office, LaTeX, Images)
 │   └── routers/
 │       ├── assistant.py        # Universal AI chat, SSE stream & source filter
 │       ├── documents.py        # Upload, batch intake & document deletion
 │       ├── graph.py            # Knowledge graph API & LightRAG query routing
 │       └── system.py           # System health, telemetry stats & user profile
-├── data/
-│   ├── rag_storage/            # Persisted GraphML (290 nodes/125 edges) & KV stores
-│   └── uploads/                # Active document uploads
 ├── docs/
-│   └── screenshots/            # Verified application screenshots
+│   └── screenshots/            # Verified application screenshots (landing, chat, graph, library)
 ├── frontend/
 │   ├── index.html              # SciGraph Workspace Console & Copilot
 │   ├── landing.html            # Futuristic Obsidian Landing Page
 │   ├── login.html              # 1-Click Demo Researcher authentication
 │   ├── css/                    # Modular components, layout & design system
-│   └── js/                     # Assistant, Graph, Dashboard & Navigation managers
-├── scripts/                    # Verification test suites & automation utilities
-└── test documents/             # 5 Reference research papers on Generative AI
+│   ├── js/                     # Assistant, Graph, Dashboard & Navigation managers
+│   └── vendor/                 # Local 3D force graph, Three.js & Markdown parsers
+└── scripts/                    # End-to-end verification test suites & utilities
 ```
+
+> **Note on Runtime Storage:** Storage directories (`data/rag_storage/` with GraphML & KV stores, and `data/uploads/`) are generated and maintained automatically at runtime. They are excluded from version control to keep the repository lightweight and clean.
 
 ---
 

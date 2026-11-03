@@ -44,9 +44,37 @@ temp/
 chrome_temp/
 screenshots/chrome_temp/
 
-# Redundant temporary migration artifacts
+# Redundant temporary migration artifacts & scratch files
 orig_frontend_*
 backup_checkpoint/
+audit_test.pdf
+scratch_ans.txt
+upload_test.py
+test_suite.py
+test_batch_upload_verification.py
+test_scigraph_platform.py
+
+# Local testing documents & datasets
+test documents/
+test_documents/
+assets/
+
+# Generated runtime data, vector stores & graph storage
+data/
+data/rag_storage/
+data/uploads/
+data/output/
+data/benchmark_test_files/
+
+# Temporary test outputs & one-off debug scripts in scripts
+scripts/*.json
+scripts/check_jobs.py
+scripts/retheme_landing.py
+scripts/verify_chat_fixes.py
+scripts/verify_streaming.py
+scripts/ingest_test_units.py
+scripts/seed_conversations.py
+scripts/test_rag_qa.py
 
 # OS-generated files
 .DS_Store
@@ -65,11 +93,3 @@ desktop.ini
 *.sublime-workspace
 *.swp
 *.swo
-
-# Large intermediate ingestion outputs (optional: keep knowledge graph data/rag_storage)
-data/uploads/*
-!data/uploads/.gitkeep
-data/output/*
-!data/output/.gitkeep
-data/benchmark_test_files/
-data/rag_storage/parser_cache/
